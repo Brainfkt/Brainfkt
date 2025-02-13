@@ -34,3 +34,14 @@
              ▄▓▓▓███████████████▄▄▄▄▄▓██▄▄▄▄█▄▄█▄▓█▄▓██▄▓██▄██████████████▓▓▄
             ▒▒▓▓███████████████████████████████████████████████████████████▓█▄▄
           ▐▓▓▓▓█████████████████████████████████████████████████████████████████▄
+
+<!-- Github Stats -->
+![Brain's GitHub stats](https://github-readme-stats.vercel.app/api?username=Brainfkt
+&show_icons=true
+&theme=dark
+&rank_icon=percentile)
+
+<!-- Top Langages -->
+![Top Langages](https://github-readme-stats.vercel.app/api/top-langs/?username=Brainfkt
+&layout=commpact
+&theme=dark)
