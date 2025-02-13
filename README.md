@@ -43,6 +43,6 @@
 
 <a href="https://github.com/Brainfkt">
   <img height="250" align="center"
-       src="https://github-readme-stats.vercel.app/api/top-langs/?username=Brainfkt&langs_count=8&custom_title=Brain%27s%20Most%20Used%20Languages&theme=default&hide_border=false&bg_color=ffffff&title_color=000000&text_color=000000&icon_color=4c71f2&border_color=e4e2e2"
+       src="https://github-readme-stats.vercel.app/api/top-langs/?username=Brainfkt&layout=donut&langs_count=8&custom_title=Brain%27s%20Most%20Used%20Languages&theme=default&hide_border=false&bg_color=ffffff&title_color=000000&text_color=000000&icon_color=4c71f2&border_color=e4e2e2"
        alt="Brain's Most Used Languages" />
 </a>
