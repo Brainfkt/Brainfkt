@@ -3,188 +3,195 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio personnel hybride data, marketing, UI/UX, programmation, ecriture et projets creatifs.">
-    <meta name="theme-color" content="#07090b">
+    <meta name="description" content="Portfolio d'Enzo de Matos, data analyst oriente design d'interface, marketing analytics, code et systemes.">
+    <meta name="theme-color" content="#070808">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ENZO DE MATOS - Portfolio">
-    <meta property="og:description" content="Data, design, code et culture visuelle pour construire des projets utiles et memorables.">
+    <meta property="og:title" content="Enzo de Matos - Data, interfaces, systemes">
+    <meta property="og:description" content="Je transforme les donnees en interfaces qui racontent quelque chose.">
     <meta property="og:image" content="assets/preview-placeholder.svg">
 
-    <title>ENZO DE MATOS - Portfolio creatif data/design/code</title>
+    <title>Enzo de Matos - Portfolio data / interface / systemes</title>
     <link rel="icon" href="assets/preview-placeholder.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
+    <div class="site-noise" aria-hidden="true"></div>
     <div class="cursor" aria-hidden="true"></div>
 
-    <header class="system-bar">
-      <a class="system-brand" href="#accueil" aria-label="Retour a l'accueil">
-        <span>BRAINFKT</span>
+    <header class="site-header">
+      <a class="brand" href="#accueil" aria-label="Retour a l'accueil">
+        <span class="brand-mark">EDM</span>
+        <span class="brand-slash">/</span>
+        <span>Brainfkt</span>
       </a>
-      <nav class="quick-nav" aria-label="Navigation principale">
+      <nav class="nav" aria-label="Navigation principale">
         <a href="#a-propos">A propos</a>
         <a href="#projets">Projets</a>
+        <a href="#experiences">Experiences</a>
         <a href="#competences">Competences</a>
-        <a href="#parcours">Parcours</a>
+        <a href="#github">GitHub</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="system-meta" aria-label="Etat du site">
-        <span class="system-clock">21:47</span>
-      </div>
+      <a class="header-link" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer">GitHub</a>
     </header>
 
     <main id="accueil">
       <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-copy reveal">
-          <p class="hero-path">SYSTEMS-MINDED CREATIVE</p>
-          <h1 id="hero-title">ENZO DE MATOS</h1>
-          <p class="hero-role">Data analyste / designer UI-UX / developpeur creatif</p>
-          <p class="hero-line">
-            Je transforme les donnees, les idees et les signaux faibles en experiences
-            claires, sensibles et utiles.
+        <div class="hero-main reveal">
+          <p class="identity-line">Enzo de Matos - data analyst, interface design, marketing systems</p>
+          <h1 id="hero-title">Je transforme les donnees en interfaces qui racontent quelque chose.</h1>
+          <p class="hero-subline">Je cherche la zone bizarre entre analyse, produit et expression.</p>
+          <p class="hero-copy">
+            J'aime construire des outils qui rendent les donnees plus lisibles,
+            plus utiles et plus actionnables. Pour moi, une bonne analyse ne
+            s'arrete pas a un resultat : elle doit devenir une interface, une
+            decision ou un systeme plus clair.
           </p>
-          <p class="hero-note">
-            Un profil hybride pour construire des produits qui mesurent, racontent,
-            experimentent et donnent envie d'agir.
-          </p>
-          <div class="hero-actions" aria-label="Actions principales">
-            <a class="button button-primary" href="#projets">Voir mes projets</a>
-            <a class="button" href="mailto:email@example.com">Me contacter</a>
-            <a class="button button-ghost" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer">GitHub</a>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projets">Voir les projets</a>
+            <a class="button" href="#github">Explorer GitHub</a>
+            <a class="button button-muted" href="mailto:email@example.com">Me contacter</a>
           </div>
         </div>
 
-        <aside class="hero-console reveal" aria-label="Tableau de bord personnel">
-          <div class="window-top">
-            <span>tableau_de_bord</span>
-            <span aria-hidden="true">- o x</span>
-          </div>
-          <div class="metrics-grid">
-            <article>
-              <span class="metric-value">06</span>
-              <span class="metric-label">projets</span>
-            </article>
-            <article>
-              <span class="metric-value">4</span>
-              <span class="metric-label">territoires</span>
-            </article>
-            <article>
-              <span class="metric-value">∞</span>
-              <span class="metric-label">idees</span>
-            </article>
-          </div>
-          <div class="signal-card">
-            <div class="signal-bars" aria-hidden="true">
-              <span style="--h: 42%"></span>
-              <span style="--h: 74%"></span>
-              <span style="--h: 56%"></span>
-              <span style="--h: 88%"></span>
-              <span style="--h: 38%"></span>
-              <span style="--h: 66%"></span>
-              <span style="--h: 51%"></span>
-              <span style="--h: 92%"></span>
-              <span style="--h: 44%"></span>
-              <span style="--h: 73%"></span>
-              <span style="--h: 60%"></span>
-              <span style="--h: 35%"></span>
+        <aside class="hero-aside reveal" aria-label="Portrait et systeme de competences">
+          <div class="portrait-card">
+            <div class="portrait-placeholder" aria-label="Placeholder pour futur portrait dithered">
+              <span>Portrait futur</span>
+              <span>image dithered</span>
             </div>
-            <ul class="activity-feed">
-              <li>Analyse marketing en cours</li>
-              <li>Prototype UI en iteration</li>
-              <li>Texte publie dans le laboratoire</li>
-              <li>Nouvelle hypothese a tester</li>
-            </ul>
+            <p>
+              Placeholder pense pour un portrait noir et blanc avec traitement Bayer
+              dithering. L'image reste secondaire : le positionnement passe avant le nom.
+            </p>
           </div>
-          <pre class="ascii-map" aria-hidden="true">   .  . .     .  .
-  .:..:::.  .:..::
- :::  ::::.:::  ::
-  ':..:'  ':..:'</pre>
+          <div class="systems-card">
+            <div class="card-label">Carte systeme</div>
+            <div class="system-map" id="hero-system-map" aria-label="Carte des liens entre data, design, code et marketing"></div>
+          </div>
         </aside>
-
-        <a class="scroll-cue" href="#a-propos" aria-label="Aller a la section a propos">↓</a>
       </section>
 
       <section id="a-propos" class="section-shell about-section" aria-labelledby="about-title">
-        <div class="section-label">01 / A propos</div>
-        <div class="about-grid">
+        <div class="section-index">01 / A propos</div>
+        <div class="about-layout">
           <div class="section-heading reveal">
-            <h2 id="about-title">Je travaille a l'endroit ou les chiffres deviennent des histoires.</h2>
+            <h2 id="about-title">Je travaille a l'intersection de la data, du design et du marketing.</h2>
           </div>
           <div class="about-copy reveal">
             <p>
-              Je navigue entre analyse marketing, design d'interface, code et culture
-              visuelle. Mon terrain de jeu : comprendre un probleme, structurer les
-              signaux, prototyper vite, puis donner une forme claire a ce qui etait flou.
+              Ce qui m'interesse, ce n'est pas seulement de produire des analyses,
+              mais de construire des systemes lisibles : des dashboards, des
+              interfaces, des workflows et des outils qui aident vraiment a decider.
             </p>
             <p>
-              Ce que je cherche a construire : des dashboards qui donnent envie de
-              decider, des interfaces qui respectent l'attention, des outils qui
-              simplifient le complexe et des projets creatifs qui gardent une trace.
+              Mon profil relie analyse marketing, design d'interface, code,
+              workflows IA et reflexion produit. Je pars du probleme, je structure
+              les donnees, je rends les frictions visibles, puis je cherche la
+              forme la plus claire pour agir.
             </p>
           </div>
-          <div class="principles reveal">
+          <div class="about-facts reveal" aria-label="Principes de travail">
             <article>
-              <span>Data + sens</span>
-              <p>Analyser sans perdre le contexte humain, culturel et business.</p>
+              <span>01</span>
+              <strong>Lire le systeme</strong>
+              <p>Comprendre les flux, les contraintes, les outils et les usages avant de produire.</p>
             </article>
             <article>
-              <span>Design + experience</span>
-              <p>Composer des interfaces sobres, memorables et vraiment utilisables.</p>
+              <span>02</span>
+              <strong>Rendre visible</strong>
+              <p>Transformer les donnees et les signaux faibles en interfaces lisibles.</p>
             </article>
             <article>
-              <span>Code + impact</span>
-              <p>Construire des prototypes propres, rapides et faciles a faire evoluer.</p>
+              <span>03</span>
+              <strong>Industrialiser juste assez</strong>
+              <p>Documenter, automatiser et clarifier sans ajouter de complexite inutile.</p>
             </article>
           </div>
         </div>
       </section>
 
       <section id="projets" class="section-shell projects-section" aria-labelledby="projects-title">
-        <div class="section-label">02 / Projets</div>
-        <div class="split-heading reveal">
-          <h2 id="projects-title">Selection de projets fictifs, credibles et prets a remplacer.</h2>
+        <div class="section-index">02 / Projets</div>
+        <div class="section-row reveal">
+          <h2 id="projects-title">Des projets qui relient donnees, interface, marketing et systemes.</h2>
           <p>
-            Les cartes sont generees depuis <code>script.js</code>. Remplace les titres,
-            les liens et les descriptions sans toucher a la structure HTML.
+            Les placeholders sont volontaires : ils cadrent le type de preuves a
+            remplacer par des cas reels, sans separer artificiellement data,
+            design et code.
           </p>
         </div>
         <div class="project-grid" id="project-grid" aria-live="polite"></div>
       </section>
 
-      <section id="competences" class="section-shell skills-section" aria-labelledby="skills-title">
-        <div class="section-label">03 / Competences</div>
-        <div class="split-heading reveal">
-          <h2 id="skills-title">Une boite a outils hybride, entre analyse, produit et expression.</h2>
+      <section id="experiences" class="section-shell experience-section" aria-labelledby="experiences-title">
+        <div class="section-index">03 / Experiences</div>
+        <div class="section-row reveal">
+          <h2 id="experiences-title">Un parcours oriente outils, adoption et clarification.</h2>
           <p>
-            Des competences assez techniques pour produire, assez visuelles pour clarifier,
-            assez creatives pour sortir du format attendu.
+            Une lecture proche du CV, mais pensee comme une archive de problemes
+            traites : contexte, missions, outils et apprentissages.
           </p>
         </div>
-        <div class="skills-grid" id="skills-grid"></div>
+        <div class="experience-grid" id="experience-grid"></div>
       </section>
 
-      <section id="parcours" class="section-shell timeline-section" aria-labelledby="timeline-title">
-        <div class="section-label">04 / Parcours</div>
-        <div class="split-heading reveal">
-          <h2 id="timeline-title">Un parcours construit par accumulation de territoires.</h2>
+      <section id="competences" class="section-shell skills-section" aria-labelledby="skills-title">
+        <div class="section-index">04 / Competences</div>
+        <div class="section-row reveal">
+          <h2 id="skills-title">Mes competences fonctionnent mieux quand elles sont connectees.</h2>
           <p>
-            Formation, alternance, projets personnels, apprentissages transverses :
-            chaque etape ajoute une couche au profil.
+            Je ne veux pas seulement afficher des outils. Je veux montrer comment
+            data analysis, SQL, Python, Power BI, UI/UX, frontend, documentation
+            et workflows IA se combinent pour produire un systeme plus clair.
           </p>
         </div>
-        <div class="timeline" id="timeline"></div>
+        <div class="skills-system reveal">
+          <div class="skill-network" id="skill-network" aria-label="Reseau de competences"></div>
+          <div class="skill-matrix" id="skill-matrix" aria-label="Matrice de competences"></div>
+        </div>
+      </section>
+
+      <section id="github" class="section-shell github-section" aria-labelledby="github-title">
+        <div class="section-index">05 / GitHub</div>
+        <div class="github-layout reveal">
+          <div>
+            <h2 id="github-title">Une carte de depots, pas une liste de liens.</h2>
+            <p>
+              Cette section est prete pour une connexion API GitHub. Pour l'instant,
+              elle utilise des donnees mockees afin de valider l'interface : chaque
+              bulle represente un repo, sa taille indique le poids du depot, et sa
+              composition montre les langages.
+            </p>
+            <a class="button button-primary" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer">Voir mon GitHub</a>
+          </div>
+          <div class="repo-map" id="repo-map" aria-label="Visualisation des repositories GitHub"></div>
+          <aside class="github-notes">
+            <strong>Scaffold API</strong>
+            <p>
+              Le code isole une fonction de donnees pour remplacer les mocks par
+              l'API publique GitHub plus tard, sans changer l'interface.
+            </p>
+            <ul>
+              <li>repos publics</li>
+              <li>taille des depots</li>
+              <li>repartition des langages</li>
+              <li>liens directs</li>
+            </ul>
+          </aside>
+        </div>
       </section>
 
       <section id="contact" class="section-shell contact-section" aria-labelledby="contact-title">
-        <div class="section-label">06 / Contact</div>
-        <div class="contact-panel reveal">
+        <div class="section-index">06 / Contact</div>
+        <div class="contact-layout reveal">
           <div>
-            <h2 id="contact-title">Construisons quelque chose de precis, utile et un peu inattendu.</h2>
+            <h2 id="contact-title">Discutons d'un projet, d'une mission ou d'un systeme a clarifier.</h2>
             <p>
-              Disponible pour echanger autour de data marketing, dashboards, interfaces,
-              projets web, ecriture, experimentation visuelle ou idees d'outils.
+              Contact simple. Pas de formulaire. Si le sujet touche aux donnees,
+              aux interfaces, au marketing ou aux workflows, je peux probablement
+              apporter une structure utile.
             </p>
           </div>
           <div class="contact-grid" id="contact-grid"></div>
@@ -193,9 +200,9 @@
     </main>
 
     <footer class="site-footer">
-      <span>© 2026 ENZO DE MATOS</span>
-      <span>SYSTEMS-MINDED CREATIVE</span>
-      <a href="#accueil">Retour en haut ↑</a>
+      <span>© 2026 Enzo de Matos</span>
+      <span>Data / interface / marketing systems</span>
+      <a href="#accueil">Retour en haut</a>
     </footer>
 
     <script src="script.js" defer></script>

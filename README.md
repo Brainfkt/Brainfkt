@@ -1,60 +1,52 @@
-# ENZO DE MATOS
+# Enzo de Matos
 
 ```text
-data x marketing x design x code x mots
+data analysis x interface design x marketing systems x code
 ```
 
-Je construis des ponts entre analyse, interface, culture visuelle et projets creatifs.  
-Mon territoire : transformer des signaux bruts en objets lisibles, utiles et memorables.
+Je transforme les donnees en interfaces qui racontent quelque chose.
 
-> J'aime les donnees quand elles racontent quelque chose, le design quand il clarifie, et le code quand il rend une idee praticable.
+Je travaille a l'intersection de la data, du design et du marketing. Ce qui m'interesse, ce n'est pas seulement de produire des analyses, mais de construire des systemes lisibles : dashboards, interfaces, workflows, documentation et outils qui aident vraiment a decider.
 
-## Domaines
+## Territoire
 
-![Data](https://img.shields.io/badge/data-analyse%20marketing-71dce5?style=flat-square)
-![Design](https://img.shields.io/badge/design-UI%2FUX-b88cff?style=flat-square)
-![Code](https://img.shields.io/badge/code-creative%20web-ff9b6a?style=flat-square)
-![Writing](https://img.shields.io/badge/ecriture-storytelling-ead37a?style=flat-square)
+![Data](https://img.shields.io/badge/data-analysis-55cbd3?style=flat-square)
+![Design](https://img.shields.io/badge/interface-design-ff8b4a?style=flat-square)
+![Marketing](https://img.shields.io/badge/marketing-systems-f4d35e?style=flat-square)
+![Code](https://img.shields.io/badge/code-workflows-b98cff?style=flat-square)
 
-- Data marketing, segmentation, KPI, dashboards, lecture des comportements.
-- UI/UX, prototypage, direction artistique, experiences simples et memorables.
-- Creative coding, HTML/CSS/JavaScript, React, interfaces experimentales.
-- Ecriture, photographie, musique, narration, culture graphique.
+- Data analysis, SQL, Python, Power BI, data visualization.
+- Marketing analytics, segmentation, dashboards, KPI, campagne.
+- UI/UX, architecture d'information, prototypes, design system.
+- Frontend, GitHub Pages, creative tooling, workflows IA.
+- Documentation, pensee produit, amelioration de systemes.
 
-## Outils favoris
+## Projets a mettre en avant
 
-```text
-SQL        Python       Power BI
-HTML       CSS          JavaScript
-React      Figma        Notion
-Markdown   GitHub       Cafe
-```
-
-## Projets mis en avant
-
-| Projet | Territoire | Statut |
+| Projet | Probleme | Stack |
 | --- | --- | --- |
-| Market Signal Lab | Data marketing, ROI, campagnes | Publie |
-| Pulse BI | Dashboard Power BI editorial | En cours |
-| Clarity Desk | Web app de clarification d'idees | Concept |
-| Fragments d'Interface | Ecriture, culture numerique | Publie |
-| Retail Atlas | UI/UX, pilotage commercial | En cours |
-| Noise Index | Creative coding et musique | Concept |
+| Bank Churners Analysis | rendre le churn bancaire lisible et actionnable | Python, Pandas, Scikit-learn, Power BI |
+| GitHub Repository Map | transformer mes repos en carte visuelle | JavaScript, GitHub API, SVG |
+| Marketing Campaign Dashboard | suivre acquisition, conversion et qualite des leads | Power BI, SQL, DAX |
+| Dithering Studio | creer une signature visuelle pour portraits et assets | TypeScript, Canvas API, React |
+| Creative Portfolio System | faire du portfolio un objet de positionnement | HTML, CSS, JavaScript |
+| AI Workflow Audit | utiliser l'IA sans boite noire fragile | Markdown, Python, LLM workflows |
 
 ## Currently building
 
-- Un portfolio GitHub Pages plus personnel, sombre et editorial.
-- Des dashboards qui racontent mieux les decisions.
-- Des prototypes web courts pour tester des idees de produits.
-- Un laboratoire de textes, visualisations et essais graphiques.
+- Un portfolio plus brutaliste, plus personnel et plus oriente systemes.
+- Une visualisation GitHub qui montre les repos comme une carte de preuves.
+- Des dashboards qui ne s'arretent pas aux chiffres, mais guident une decision.
+- Des workflows IA documentes, testables et vraiment utiles.
 
 ## Signal
 
 ```text
-curiosite      █████████░ 90%
-rigueur        ████████░░ 80%
+analyse        █████████░ 90%
 design         ████████░░ 82%
-experimentation █████████░ 88%
+code           ███████░░░ 72%
+marketing      ████████░░ 84%
+systemes       █████████░ 88%
 ```
 
 ## Contact
@@ -62,10 +54,9 @@ experimentation █████████░ 88%
 - GitHub : <https://github.com/Brainfkt>
 - LinkedIn : <https://linkedin.com/in/votre-profil>
 - Email : <email@example.com>
-- Substack : <https://votre-substack.substack.com>
 
 ---
 
 ```text
-faire propre. rester curieux. construire utile.
+clarifier les donnees. designer les interfaces. fiabiliser les systemes.
 ```
