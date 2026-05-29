@@ -492,8 +492,7 @@ code {
   text-transform: uppercase;
 }
 
-.about-grid,
-.lab-layout {
+.about-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(2rem, 6vw, 5rem);
@@ -514,8 +513,7 @@ code {
 .split-heading,
 .about-copy,
 .hero-console,
-.contact-panel,
-.lab-layout {
+.contact-panel {
   min-width: 0;
 }
 
@@ -818,50 +816,6 @@ code {
   font-size: 0.93rem;
 }
 
-.lab-layout {
-  align-items: start;
-}
-
-.lab-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-.lab-card {
-  min-height: 170px;
-  padding: 1rem;
-  border: 1px solid var(--line);
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.045), transparent 60%),
-    rgba(255, 255, 255, 0.02);
-}
-
-.lab-card h3 {
-  margin: 0;
-  color: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.lab-card p {
-  margin: 0.9rem 0 1rem;
-  color: var(--muted);
-}
-
-.lab-card a {
-  color: var(--ink);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.lab-card a:hover {
-  color: var(--accent);
-}
 
 .contact-panel {
   display: grid;
@@ -913,7 +867,7 @@ code {
 }
 
 .contact-card strong,
-.contact-card span {
+.contact-card .contact-copy span {
   display: block;
 }
 
@@ -924,7 +878,7 @@ code {
   text-transform: uppercase;
 }
 
-.contact-card span {
+.contact-card .contact-copy span {
   margin-top: 0.12rem;
   color: var(--muted);
   font-size: 0.88rem;
@@ -977,7 +931,6 @@ code {
 
   .hero,
   .about-grid,
-  .lab-layout,
   .contact-panel,
   .split-heading {
     grid-template-columns: 1fr;
@@ -1074,7 +1027,6 @@ code {
   .principles,
   .project-grid,
   .skills-grid,
-  .lab-grid,
   .contact-panel {
     grid-template-columns: 1fr;
   }

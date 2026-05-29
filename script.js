@@ -1,5 +1,5 @@
 const profile = {
-  name: "NOM PRENOM",
+  name: "ENZO DE MATOS",
   email: "email@example.com",
   github: "https://github.com/Brainfkt",
   linkedin: "https://linkedin.com/in/votre-profil",
@@ -146,39 +146,6 @@ const timeline = [
   }
 ];
 
-const labItems = [
-  {
-    title: "Textes",
-    text: "Fragments, essais courts, notes de lecture et observations sur la creation numerique.",
-    link: "Lire"
-  },
-  {
-    title: "Prototypes",
-    text: "Interfaces testees vite : outils personnels, micro-SaaS, dashboards et parcours hybrides.",
-    link: "Explorer"
-  },
-  {
-    title: "Idees d'app",
-    text: "Backlog vivant : assistants metier, carnets de signaux, outils de veille et produits culturels.",
-    link: "Voir les pistes"
-  },
-  {
-    title: "Visualisations",
-    text: "Recherches autour de donnees marketing, musique, habitudes, culture et territoires.",
-    link: "Ouvrir"
-  },
-  {
-    title: "Essais graphiques",
-    text: "Typographies, textures, posters, screenshots manipules et compositions systeme.",
-    link: "Regarder"
-  },
-  {
-    title: "Archive sonore",
-    text: "Playlists annotees, liens entre ambiance musicale, rythme visuel et narration.",
-    link: "Ecouter"
-  }
-];
-
 const contacts = [
   {
     label: "Email",
@@ -304,27 +271,6 @@ function renderTimeline() {
   });
 }
 
-function renderLab() {
-  const grid = document.querySelector("#lab-grid");
-  if (!grid) return;
-
-  labItems.forEach((item, index) => {
-    const card = createElement("article", "lab-card reveal");
-    const accents = ["#71dce5", "#ff9b6a", "#b88cff", "#ead37a", "#ff6a88"];
-    card.style.setProperty("--accent", accents[index % accents.length]);
-
-    const link = createElement("a", "", `${item.link} >`);
-    link.href = "#contact";
-
-    appendChildren(card, [
-      createElement("h3", "", item.title),
-      createElement("p", "", item.text),
-      link
-    ]);
-    grid.appendChild(card);
-  });
-}
-
 function renderContacts() {
   const grid = document.querySelector("#contact-grid");
   if (!grid) return;
@@ -339,7 +285,7 @@ function renderContacts() {
     link.style.setProperty("--accent", contact.accent);
 
     const icon = createElement("span", "contact-icon", contact.icon);
-    const text = createElement("span");
+    const text = createElement("span", "contact-copy");
     appendChildren(text, [
       createElement("strong", "", contact.label),
       createElement("span", "", contact.value)
@@ -445,7 +391,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   renderSkills();
   renderTimeline();
-  renderLab();
   renderContacts();
   setupReveal();
   setupCursor();
