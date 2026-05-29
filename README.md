@@ -1,48 +1,130 @@
-                ▀▓██████▓▓▌▄▄
-                   ▀▓▓▓▓▓█▓█▓▓▓▓▄▄           ▄▄                            ▄▄▄▄▄▄▄▄▄
-                      ▀▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▄▒▓▒▒▒  ░▒▒▄▒▒▒▒▒▓▒▄▄▄   ▄▄▄▄▄▒▓▓▓▓██▓▓█████
-                        ▀▀▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒░░░▒░▒▒░░▒▒▒▓▓▒▒▓▓▓▓▓▓█▓▓▓▓█▓███████▓███
-                          ▀▓▓▓▒▒▒▒▒▒▒▒░▒▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████████████▀▀
-                          ▐░░░▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████████▓▓▓▓▓██████▀▀
-                         ▄▒░▒▒▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓█████████████████▒
-                         ▐▓░▒▓▓▓▒▀  ▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓██████████▓▓██▓█▌
-                              ▒▓▒  ▐▒▒▓▓▓░ ▐▒▒▒▒▓▓▓▓▓▓▓▓███▓▓█▓▓▓▓▒ ▐▓███
-                              ▐▓▓▒ ▐▐▒▓▓░  ▒▒▒▒▒▓▓▓▓▓▓▓▓█▓▒░▓▓▓▓▓▓░ ▐▓▓▓▓
-                           ▐  ░▒▓▓▓▒▒▒▒▒▄▄▓▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▒░▒▓█▓▒ ▄▓███▌
-                               ▐▒▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓
-                                ░░▒▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓█▓▓▓█████▓▓▓▓███▓▓▓▒
-                              ░    ░▒▓▒▓▓▓▓▒▒▒▒▓▓▓▓▓▓█▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▒
-                              ▐▒▒    ▐▒▓▓▓▓▒▒▒░▒▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓
-                                    ▐▓▓▒▒▓▓▓▒  ░░▒▓▓▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▓▓▓▌
-                                    ▒▓▓▓▓▒▓▓▓  ▐▒▒▒▓▒▒▒▒▓▓▓▓▓██▓▓▒▒▓▓▒
-                              ▐ ░░░▒▒▓▓▓▒▓▓▓█▓▓▓▒▒▒▓▓▓▓▓▓███▓███▓▒▒▓▌
-                               ░░░░░▓▓▓▓▓▓▓▓███▓▒▒▒▒▓██████████▓▓▓▓▀
-                              ▐░▒▒▒░░▓▓▓▓█▓▓▓▓█▓▓▓▓▒▓▓▓▓███████▓▓▀
-                             ▐ ░▒▒▓▒▒▒▓▓▓▓▓▓▒▒▒▓▓▓▓▓▓▓▓▓█████▓▓▓▌
-                            ▄░ ░▒▒▓▓▓▒▒▒▒░  ░▒▀▒  ▐▒▓▓▓▓▓▓▓█▓▓▓▓▓▒
-                           ▐▒░▒▒▓▓▓▓▓▓▓▓▒▒░▒▓▒▒░  ▐▒▓▓█▓▓▓▓████▓▓▓▄
-                           ▒▒▒▓▓▓█████████▒▒▒▒▒▒▓▒▓▓▓▓▓▓▓████████▓▓▄
-                          ▒▒▓▓▓█████████████▓▓▓▓▒▒▒▒▓▓█████████████▓
-                       ▄▒▒▓▓▓██████████████████████████████████████▓
-                     ▄▓▒▓▓▓████████████████████████████████████████▓▌
-                     ▓▓▓███████████████████████████████████████████▓▓▄
-                    ▓▓▓████████████████████████████████████████████▓▓▓▌
-                 ▄▄▓▓█████████████████████████████████████████████████▓▓
-                ▄▒▓▓█████████████████████████████████████████████████████
-               ▒▒▓█████████████  ████   ▓█  ▄  ▌ ▄▄ ▐▄   ▄████████████████▄
-              ▄▓▓██████████████  ▀▀█     █    ▐▌ ▄  ██▒ ▐██▀██████████████▓▌
-             ▄▓▓▓███████████████▄▄▄▄▄▓██▄▄▄▄█▄▄█▄▓█▄▓██▄▓██▄██████████████▓▓▄
-            ▒▒▓▓███████████████████████████████████████████████████████████▓█▄▄
-          ▐▓▓▓▓█████████████████████████████████████████████████████████████████▄
+# NOM PRENOM - Portfolio Creatif Data / Design / Code
 
-<a href="https://github.com/Brainfkt">
-  <img height="250" align="center"
-       src="https://github-readme-stats.vercel.app/api?username=Brainfkt&show_icons=true&include_all_commits=true&count_private=true&rank_icon=percentile&custom_title=Brain%27s%20GitHub%20Stats&show=stars,commits,prs,issues,contribs,prs_merged,prs_merged_percentage,reviews,discussions_started,discussions_answered&theme=default&hide_border=false&bg_color=ffffff&title_color=000000&text_color=000000&icon_color=4c71f2&border_color=e4e2e2"
-       alt="Brain's GitHub Stats" />
-</a>
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-ready-71dce5?style=flat-square)
+![Stack](https://img.shields.io/badge/stack-HTML%20%2B%20CSS%20%2B%20JS-ff9b6a?style=flat-square)
+![Status](https://img.shields.io/badge/status-portfolio%20vivant-b88cff?style=flat-square)
 
-<a href="https://github.com/Brainfkt">
-  <img height="250" align="center"
-       src="https://github-readme-stats.vercel.app/api/top-langs/?username=Brainfkt&layout=donut&langs_count=8&custom_title=Brain%27s%20Most%20Used%20Languages&theme=default&hide_border=false&bg_color=ffffff&title_color=000000&text_color=000000&icon_color=4c71f2&border_color=e4e2e2"
-       alt="Brain's Most Used Languages" />
-</a>
+Portfolio personnel sombre, editorial et legerement retro, pense pour presenter un profil hybride : data marketing, analyse, UI/UX, programmation, ecriture, projets creatifs et culture artistique.
+
+L'objectif : eviter le portfolio corporate interchangeable et proposer une presence web plus memorable, maintenable et prete pour GitHub Pages.
+
+## Apercu
+
+![Apercu du portfolio](assets/preview-placeholder.svg)
+
+## Fonctionnalites
+
+- Design responsive desktop / mobile.
+- Mode sombre par defaut avec grille fine, texture legere et direction editorial-retro.
+- Sections completes : hero, a propos, projets, competences, parcours, laboratoire, contact.
+- Cartes projets generees depuis `script.js` pour modifier le contenu facilement.
+- Micro-interactions discretes : reveal au scroll, curseur desktop, hover dynamique.
+- Aucun framework, aucune dependance, aucun build obligatoire.
+- Textes en francais et placeholders propres a remplacer.
+
+## Stack
+
+- HTML semantique
+- CSS vanilla
+- JavaScript vanilla
+- GitHub Pages
+
+## Structure
+
+```text
+.
+├── index.html
+├── styles.css
+├── script.js
+├── assets/
+│   ├── noise.svg
+│   └── preview-placeholder.svg
+├── README.md
+├── PROFILE_README.md
+├── project.html
+├── resume.html
+└── style.css
+```
+
+`project.html`, `resume.html` et `style.css` sont des fichiers historiques conserves dans le depot. Le nouveau portfolio utilise `index.html`, `styles.css`, `script.js` et `assets/`.
+
+## Lancer en local
+
+Depuis la racine du depot :
+
+```bash
+python3 -m http.server 8501
+```
+
+Puis ouvrir :
+
+```text
+http://127.0.0.1:8501
+```
+
+## Modifier le contenu
+
+Les donnees principales sont dans `script.js` :
+
+- `profile`
+- `projects`
+- `skills`
+- `timeline`
+- `labItems`
+- `contacts`
+
+Remplace les placeholders :
+
+- `NOM PRENOM`
+- `email@example.com`
+- `https://github.com/Brainfkt`
+- `https://linkedin.com/in/votre-profil`
+- liens GitHub / demo des projets
+
+## Deploiement GitHub Pages
+
+Methode simple depuis l'interface GitHub :
+
+1. Aller dans le depot GitHub.
+2. Ouvrir `Settings`.
+3. Aller dans `Pages`.
+4. Dans `Build and deployment`, choisir `Deploy from a branch`.
+5. Selectionner la branche `main`.
+6. Selectionner le dossier `/root`.
+7. Enregistrer.
+
+Pour ce depot `Brainfkt/Brainfkt`, l'URL de projet sera probablement :
+
+```text
+https://brainfkt.github.io/Brainfkt/
+```
+
+Pour obtenir une URL racine du type :
+
+```text
+https://brainfkt.github.io/
+```
+
+renommer ou creer un depot nomme exactement :
+
+```text
+Brainfkt.github.io
+```
+
+## Roadmap
+
+- Ajouter une vraie capture d'ecran du site dans `assets/`.
+- Remplacer les projets fictifs par des projets reels.
+- Ajouter des pages de cas projet detaillees.
+- Ajouter une version anglaise.
+- Ajouter une action GitHub pour verifier automatiquement les liens.
+- Brancher un formulaire de contact ou un service externe si necessaire.
+
+## Auteur
+
+**NOM PRENOM**
+Data / marketing / UI-UX / code / ecriture / projets creatifs.
+
+- GitHub : <https://github.com/Brainfkt>
+- LinkedIn : <https://linkedin.com/in/votre-profil>
+- Email : <email@example.com>

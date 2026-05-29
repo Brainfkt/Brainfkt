@@ -1,210 +1,221 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio personnel hybride data, marketing, UI/UX, programmation, ecriture et projets creatifs.">
+    <meta name="theme-color" content="#07090b">
 
-<!-- Made with <3 by a nerd who loves data! Feel free to fork this repo or, if you have any questions about how something on here works, reach out to me! -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NOM PRENOM - Portfolio">
+    <meta property="og:description" content="Data, design, code et culture visuelle pour construire des projets utiles et memorables.">
+    <meta property="og:image" content="assets/preview-placeholder.svg">
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>NOM PRENOM - Portfolio creatif data/design/code</title>
+    <link rel="icon" href="assets/preview-placeholder.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
 
-<!-- Local CSS -->
-<link rel="stylesheet" type="text/css" href="style.css">
-
-<!-- Favicon -->
-<link rel="icon" href="img/male-technologist.png" type="image/gif" sizes="16x16">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome, for the icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- Something to do with responsiveness -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Brain's portfolio</title>
-
-<!-- Meta tags for social -->
-    <meta property="og:url" content="https://brainfkt.github.io/index.html"/>
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Brain's portfolio"/>
-    <meta property="og:description" content="I love telling stories with data."/>
-    <meta property="og:site_name" content="Brain's portfolio">
-    <meta property="og:image" content="https://brainfkt.github.io/img/Brain.jpg"/>
-</head>
-
-<body>
-  <!-- alert banner to make an announcement! -->
-  <!-- <div class="alert alert-dismissable brain-banner external-link">
-    <p class="close" data-dismiss="alert" aria-label="close">&times;</p>
-    <strong>Let's work together!</strong> I'm looking for my next role in analytics and storytelling. <a href="mailto:enzo.de_matos@icloud.com?subject=Let's work together" style="border-bottom: 2px solid black; color: black;">Drop me a line</a>!
-  </div> -->
-
-  <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand navbar-hed" href="#">Brain</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link navbar-text" href="#portfolio" style="margin-left:70vw;">Work</a>
-      <a class="nav-item nav-link navbar-text" href="resume.html">Resume</a>
-    </div>
-  </div>
-</nav>
-
-<!-- <div class="container" style="height: 50px;">
-  <div class="row"></div>
-</div> -->
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-3">
-      <img src="img/Brain.jpg" style="padding-top: 5%; margin-bottom:10px; object-fit: cover; height: 250px; object-position: 0% 12%;" width="200px">
-      <p class="greeting" style="margin:0px;">Hi, I'm Enzo! <span style="font-style: italic; font-size: 0.8rem">(he/him)</span></p>
-      <p class="pronunciation">that's <i>[ ɛn.zo ]</i></p>
-      <h6>I'm passionate about analyzing and telling stories with data.</h6>
-
-      <p style="margin-top: 1rem;">
-        <a href="mailto:enzo.de_matos@icloud.com?subject=Wanted to chat about your portfolio" target="_blank"><i class="fa fa-envelope" style="font-size:25px; color: black; margin-right: 20px;"></i></a>
-        <a href="img/Resume of Enzo de Matos.pdf" target="_blank"><i class="fa fa-file-pdf-o" style="font-size:25px; color: black; margin-right: 20px;"></i></a>
-        <a href="https://www.linkedin.com/in/e-d-m/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:25px; color: black; margin-right: 20px;"></i></a>
-        <a href="https://github.com/brainfkt" target="_blank"><i class="fa fa-github-square" style="font-size:25px; color: black; margin-right: 20px;"></i></a>
-      </p>
-    </div>
-
-    <div class="col-md-8">
-      <span class="section-hed">About me</span>
-      <div style="width: 85%">
-        <p class="copy">I design data visualizations, dashboards, websites, and digital tools that communicate complex ideas in simple ways.</p>
-        <p class="copy">I believe in taking a user-centered approach when visualizing data. This involves lots of research, testing, and rapid prototyping. I also think it's critical to collaborate with developers while designing. I'm comfortable using Figma, d3.js, React, Tableau, PowerBI, Python, SQL, the Adobe Creative Suite, and more.</p>
-        <p class="copy">Outside of work, I'm passionate about running, photography, philosophy and AI. Reach out to me if you'd like to chat about those things or about any of my projects below.</p>
+    <header class="system-bar">
+      <a class="system-brand" href="#accueil" aria-label="Retour a l'accueil">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span>portfolio.exe</span>
+      </a>
+      <nav class="quick-nav" aria-label="Navigation principale">
+        <a href="#a-propos">A propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Competences</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#laboratoire">Laboratoire</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="system-meta" aria-label="Etat du site">
+        <span>mode creatif</span>
+        <span class="system-clock">21:47</span>
       </div>
+    </header>
 
-      <span class="section-hed" style="margin-top: 20px;" id="skills">Skills</span>
+    <main id="accueil">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="hero-path">/data/design/code/ecriture</p>
+          <h1 id="hero-title">NOM PRENOM</h1>
+          <p class="hero-role">Data analyste / designer UI-UX / developpeur creatif</p>
+          <p class="hero-line">
+            Je transforme les donnees, les idees et les signaux faibles en experiences
+            claires, sensibles et utiles.
+          </p>
+          <p class="hero-note">
+            Un profil hybride pour construire des produits qui mesurent, racontent,
+            experimentent et donnent envie d'agir.
+          </p>
+          <div class="hero-actions" aria-label="Actions principales">
+            <a class="button button-primary" href="#projets">Voir mes projets</a>
+            <a class="button" href="mailto:email@example.com">Me contacter</a>
+            <a class="button button-ghost" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
 
-      <!-- <p class="copy" style="margin-top: 10px;"><b>Title:</b> Description</p> -->
-      <!-- <p class="copy" style="margin-top: 5px;"><b>Title2:</b> Description2</p> -->
+        <aside class="hero-console reveal" aria-label="Tableau de bord personnel">
+          <div class="window-top">
+            <span>tableau_de_bord</span>
+            <span aria-hidden="true">- o x</span>
+          </div>
+          <div class="metrics-grid">
+            <article>
+              <span class="metric-value">06</span>
+              <span class="metric-label">projets</span>
+            </article>
+            <article>
+              <span class="metric-value">4</span>
+              <span class="metric-label">territoires</span>
+            </article>
+            <article>
+              <span class="metric-value">∞</span>
+              <span class="metric-label">idees</span>
+            </article>
+          </div>
+          <div class="signal-card">
+            <div class="signal-bars" aria-hidden="true">
+              <span style="--h: 42%"></span>
+              <span style="--h: 74%"></span>
+              <span style="--h: 56%"></span>
+              <span style="--h: 88%"></span>
+              <span style="--h: 38%"></span>
+              <span style="--h: 66%"></span>
+              <span style="--h: 51%"></span>
+              <span style="--h: 92%"></span>
+              <span style="--h: 44%"></span>
+              <span style="--h: 73%"></span>
+              <span style="--h: 60%"></span>
+              <span style="--h: 35%"></span>
+            </div>
+            <ul class="activity-feed">
+              <li>Analyse marketing en cours</li>
+              <li>Prototype UI en iteration</li>
+              <li>Texte publie dans le laboratoire</li>
+              <li>Nouvelle hypothese a tester</li>
+            </ul>
+          </div>
+          <pre class="ascii-map" aria-hidden="true">   .  . .     .  .
+  .:..:::.  .:..::
+ :::  ::::.:::  ::
+  ':..:'  ':..:'</pre>
+        </aside>
 
-    </div>
-  </div>
-</div>
+        <a class="scroll-cue" href="#a-propos" aria-label="Aller a la section a propos">↓</a>
+      </section>
 
+      <section id="a-propos" class="section-shell about-section" aria-labelledby="about-title">
+        <div class="section-label">01 / A propos</div>
+        <div class="about-grid">
+          <div class="section-heading reveal">
+            <h2 id="about-title">Je travaille a l'endroit ou les chiffres deviennent des histoires.</h2>
+          </div>
+          <div class="about-copy reveal">
+            <p>
+              Je navigue entre analyse marketing, design d'interface, code et culture
+              visuelle. Mon terrain de jeu : comprendre un probleme, structurer les
+              signaux, prototyper vite, puis donner une forme claire a ce qui etait flou.
+            </p>
+            <p>
+              Ce que je cherche a construire : des dashboards qui donnent envie de
+              decider, des interfaces qui respectent l'attention, des outils qui
+              simplifient le complexe et des projets creatifs qui gardent une trace.
+            </p>
+          </div>
+          <div class="principles reveal">
+            <article>
+              <span>Data + sens</span>
+              <p>Analyser sans perdre le contexte humain, culturel et business.</p>
+            </article>
+            <article>
+              <span>Design + experience</span>
+              <p>Composer des interfaces sobres, memorables et vraiment utilisables.</p>
+            </article>
+            <article>
+              <span>Code + impact</span>
+              <p>Construire des prototypes propres, rapides et faciles a faire evoluer.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-<div class="container-fluid">
-  <div class="col-md-1"></div>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <span class="section-hed" style="margin-top: 20px; margin-bottom:15px; margin-left: 1rem;" id="portfolio">Data visualization:</span>
-    </div>
+      <section id="projets" class="section-shell projects-section" aria-labelledby="projects-title">
+        <div class="section-label">02 / Projets</div>
+        <div class="split-heading reveal">
+          <h2 id="projects-title">Selection de projets fictifs, credibles et prets a remplacer.</h2>
+          <p>
+            Les cartes sont generees depuis <code>script.js</code>. Remplace les titres,
+            les liens et les descriptions sans toucher a la structure HTML.
+          </p>
+        </div>
+        <div class="project-grid" id="project-grid" aria-live="polite"></div>
+      </section>
 
-  <div class="row d-flex justify-content-center" style="margin-bottom: 10px; margin-top: 10px;">
-    <div class="col-md-4">
-      <a href="exemplepage.html" target="_blank"><img src="img/exemplephoto.png" style="width:100%; object-fit: cover; height: 200px; padding-bottom:10px; align:center;"></a><br>
-    </div>
-    <div class="col-md-8">
-      <a href="exemplepage.html" target="_blank" class="portfolio-head">Supporting ... through data viz</a>
-      <p class="subhead">
-        <span class="skill">Figma</span>
-        <span class="skill">user testing</span>
-        <span class="skill">Tableau</span>
-        <span class="skill">Python</span>
-      </p>
-      <p class="copy">I worked with a ... to help ... I designed and ... for ... to identify ...</p>
-      <p class="copy external-link">I also used ... and ... to create ... Read more about my ... <a href="exemplepage.html" target="_blank" style="border-bottom: 2px black solid;">here</a>.</p>
-    </div>
-  </div>
+      <section id="competences" class="section-shell skills-section" aria-labelledby="skills-title">
+        <div class="section-label">03 / Competences</div>
+        <div class="split-heading reveal">
+          <h2 id="skills-title">Une boite a outils hybride, entre analyse, produit et expression.</h2>
+          <p>
+            Des competences assez techniques pour produire, assez visuelles pour clarifier,
+            assez creatives pour sortir du format attendu.
+          </p>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
 
-  <hr style="width:100%;">
+      <section id="parcours" class="section-shell timeline-section" aria-labelledby="timeline-title">
+        <div class="section-label">04 / Parcours</div>
+        <div class="split-heading reveal">
+          <h2 id="timeline-title">Un parcours construit par accumulation de territoires.</h2>
+          <p>
+            Formation, alternance, projets personnels, apprentissages transverses :
+            chaque etape ajoute une couche au profil.
+          </p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
 
-  </div>
-</div>
-</div>
+      <section id="laboratoire" class="section-shell lab-section" aria-labelledby="lab-title">
+        <div class="section-label">05 / Laboratoire</div>
+        <div class="lab-layout">
+          <div class="section-heading reveal">
+            <h2 id="lab-title">Un espace pour les choses pas encore rangees.</h2>
+            <p>
+              Fragments, prototypes, visualisations, textes, essais graphiques et idees
+              d'applications. Le laboratoire assume le brouillon propre : assez libre
+              pour chercher, assez structure pour transmettre.
+            </p>
+          </div>
+          <div class="lab-grid" id="lab-grid"></div>
+        </div>
+      </section>
 
-<div class="container-fluid">
-  <div class="col-md-1"></div>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <span class="section-hed" style="margin-top: 20px; margin-bottom:15px; margin-left: 1rem;">Interactive stories:</span>
-    </div>
+      <section id="contact" class="section-shell contact-section" aria-labelledby="contact-title">
+        <div class="section-label">06 / Contact</div>
+        <div class="contact-panel reveal">
+          <div>
+            <h2 id="contact-title">Construisons quelque chose de precis, utile et un peu inattendu.</h2>
+            <p>
+              Disponible pour echanger autour de data marketing, dashboards, interfaces,
+              projets web, ecriture, experimentation visuelle ou idees d'outils.
+            </p>
+          </div>
+          <div class="contact-grid" id="contact-grid"></div>
+        </div>
+      </section>
+    </main>
 
-  <div class="row d-flex justify-content-center" style="margin-bottom: 10px; margin-top: 10px;">
-    <div class="col-md-4">
-      <a href="exemplepage.html" target="_blank"><img src="img/exemplephoto.png" style="width:100%; object-fit: cover; height: 200px; padding-bottom:10px; align:center;"></a><br>
-    </div>
-    <div class="col-md-8">
-      <a href="exemplepage.html" target="_blank" class="portfolio-head">Supporting ... through data viz</a>
-      <p class="subhead">
-        <span class="skill">Figma</span>
-        <span class="skill">user testing</span>
-        <span class="skill">Tableau</span>
-        <span class="skill">Python</span>
-      </p>
-      <p class="copy">I worked with a ... to help ... I designed and ... for ... to identify ...</p>
-      <p class="copy external-link">I also used ... and ... to create ... Read more about my ... <a href="exemplepage.html" target="_blank" style="border-bottom: 2px black solid;">here</a>.</p>
-    </div>
-  </div>
+    <footer class="site-footer">
+      <span>© 2026 NOM PRENOM</span>
+      <span>Donnees • Design • Code • Mots • Musique • Culture</span>
+      <a href="#accueil">Retour en haut ↑</a>
+    </footer>
 
-  <hr style="width:100%;">
-
-  <div class="row d-flex justify-content-center" style="margin-bottom: 10px; margin-top: 10px;">
-    <div class="col-md-4">
-      <a href="exemplepage.html" target="_blank"><img src="img/exemplephoto.png" style="width:100%; object-fit: cover; height: 200px; padding-bottom:10px; align:center;"></a><br>
-    </div>
-    <div class="col-md-8">
-      <a href="exemplepage.html" target="_blank" class="portfolio-head">Supporting ... through data viz</a>
-      <p class="subhead">
-        <span class="skill">Figma</span>
-        <span class="skill">user testing</span>
-        <span class="skill">Tableau</span>
-        <span class="skill">Python</span>
-      </p>
-      <p class="copy">I worked with a ... to help ... I designed and ... for ... to identify ...</p>
-      <p class="copy external-link">I also used ... and ... to create ... Read more about my ... <a href="exemplepage.html" target="_blank" style="border-bottom: 2px black solid;">here</a>.</p>
-    </div>
-  </div>
-
-  <hr style="width:100%;">
-
-<div class="container-fluid">
-  <div class="col-md-1"></div>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <span class="section-hed" style="margin-top: 20px; margin-bottom:15px; margin-left: 1rem;">Data science:</span>
-    </div>
-
-<div class="container-fluid">
-  <div class="col-md-1"></div>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <span class="section-hed" style="margin-top: 20px; margin-bottom:15px; margin-left: 1rem;">Data engineering:</span>
-    </div>
-
-  <div class="row d-flex justify-content-center" style="margin-bottom: 10px; margin-top: 10px;">
-    <div class="col-md-4">
-      <a href="exemplepage.html" target="_blank"><img src="img/exemplephoto.png" style="width:100%; object-fit: cover; height: 200px; padding-bottom:10px; align:center;"></a><br>
-    </div>
-    <div class="col-md-8">
-      <a href="exemplepage.html" target="_blank" class="portfolio-head">Supporting ... through data viz</a>
-      <p class="subhead">
-        <span class="skill">Figma</span>
-        <span class="skill">user testing</span>
-        <span class="skill">Tableau</span>
-        <span class="skill">Python</span>
-      </p>
-      <p class="copy">I worked with a ... to help ... I designed and ... for ... to identify ...</p>
-      <p class="copy external-link">I also used ... and ... to create ... Read more about my ... <a href="exemplepage.html" target="_blank" style="border-bottom: 2px black solid;">here</a>.</p>
-    </div>
-  </div>
-
-  <hr style="width:100%;">
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
-
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>
