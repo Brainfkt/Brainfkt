@@ -19,7 +19,7 @@
   <text x="108" y="234" fill="#71dce5" font-family="Menlo, Consolas, monospace" font-size="19" letter-spacing="5">DATA / DESIGN / CODE / ECRITURE</text>
   <text x="108" y="298" fill="#a7a29a" font-family="Inter, Arial, sans-serif" font-size="22">Portfolio editorial retro, dashboard minimaliste et laboratoire creatif.</text>
   <rect x="110" y="344" width="168" height="44" fill="none" stroke="#71dce5"/>
-  <text x="135" y="372" fill="#71dce5" font-family="Menlo, Consolas, monospace" font-size="13">VOIR LES PROJETS</text>
+  <text x="135" y="372" fill="#71dce5" font-family="Menlo, Consolas, monospace" font-size="13"> PROJETS</text>
   <rect x="850" y="110" width="324" height="214" fill="#0d1216" stroke="#f1eee7" stroke-opacity="0.2"/>
   <text x="874" y="145" fill="#a7a29a" font-family="Menlo, Consolas, monospace" font-size="12">TABLEAU_DE_BORD</text>
   <text x="874" y="205" fill="#f1eee7" font-family="Menlo, Consolas, monospace" font-size="44">06</text>

@@ -230,15 +230,25 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.72fr);
+  grid-template-areas:
+    "main portrait"
+    "actions portrait"
+    ". system";
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.48fr);
   min-height: calc(100vh - 46px);
-  align-items: center;
-  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: start;
+  gap: 1rem clamp(3rem, 6vw, 6rem);
   border-bottom: 1px solid var(--line);
 }
 
+.hero.section-shell {
+  padding-top: clamp(1.4rem, 3vw, 2.3rem);
+}
+
 .hero-main,
-.hero-aside,
+.hero-actions,
+.hero-portrait,
+.hero-system,
 .section-row,
 .about-layout,
 .github-layout,
@@ -260,7 +270,7 @@ a {
 }
 
 .identity-line {
-  margin: 0 0 1.2rem;
+  margin: 0 0 0.75rem;
   color: var(--orange);
 }
 
@@ -277,31 +287,39 @@ a {
 }
 
 .hero h1 {
-  max-width: 13ch;
-  font-size: clamp(3.7rem, 7.7vw, 7.9rem);
-  line-height: 0.87;
+  max-width: 16ch;
+  font-size: 3.65rem;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
-.hero-subline {
-  max-width: 700px;
-  margin: 1.35rem 0 0;
-  color: var(--ink);
-  font-size: clamp(1.18rem, 2vw, 1.55rem);
-  font-weight: 650;
+.hero-main {
+  position: relative;
+  grid-area: main;
+  align-self: start;
+}
+
+.hero-main .identity-line {
+  position: absolute;
+  top: -2rem;
+  left: 0;
 }
 
 .hero-copy {
-  max-width: 650px;
-  margin: 1.1rem 0 0;
+  max-width: 58ch;
+  margin: 1.35rem 0 0;
   color: var(--muted);
-  font-size: 1.06rem;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.68;
 }
 
 .hero-actions {
+  grid-area: actions;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 2rem;
+  align-self: start;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
 }
 
 .button {
@@ -321,11 +339,6 @@ a {
   transition: background 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
 }
 
-.button::after {
-  margin-left: 0.65rem;
-  content: "->";
-}
-
 .button:hover {
   border-color: var(--orange);
   background: rgba(255, 139, 74, 0.1);
@@ -342,12 +355,11 @@ a {
   color: var(--muted);
 }
 
-.hero-aside {
-  display: grid;
-  gap: 1rem;
+.hero-actions .button {
+  min-height: 50px;
+  padding: 0 1.12rem;
 }
 
-.portrait-card,
 .systems-card,
 .project-card,
 .experience-card,
@@ -361,42 +373,52 @@ a {
 }
 
 .portrait-card {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.58fr) 1fr;
-  gap: 1rem;
-  padding: 1rem;
+  grid-area: portrait;
+  display: flex;
+  width: min(100%, 300px);
+  justify-self: end;
+  min-height: 0;
+  padding: 0;
 }
 
-.portrait-placeholder {
-  display: grid;
-  min-height: 230px;
-  place-items: center;
-  border: 1px solid var(--line);
+.portrait-frame {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+  aspect-ratio: 815 / 1101;
+  background: transparent;
+}
+
+.portrait-frame::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
   background:
-    radial-gradient(circle, rgba(240, 237, 231, 0.23) 1px, transparent 1.6px),
-    linear-gradient(180deg, rgba(85, 203, 211, 0.06), transparent);
-  background-size: 8px 8px, auto;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-align: center;
-  text-transform: uppercase;
+    linear-gradient(90deg, rgba(7, 8, 8, 0.16) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(240, 237, 231, 0.06) 1px, transparent 1px);
+  background-size: 8px 8px;
+  mix-blend-mode: overlay;
 }
 
-.portrait-placeholder span {
+.portrait-image {
   display: block;
-}
-
-.portrait-card p {
-  margin: 0;
-  align-self: end;
-  color: var(--muted);
-  font-size: 0.92rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 34%;
 }
 
 .systems-card {
+  grid-area: system;
   padding: 1rem;
+}
+
+.hero-system {
+  border: 0;
+  background: transparent;
+  padding: 0;
 }
 
 .card-label {
@@ -407,7 +429,6 @@ a {
 .system-map,
 .skill-network {
   position: relative;
-  min-height: 320px;
   overflow: hidden;
   border: 1px solid var(--line);
   background:
@@ -417,7 +438,21 @@ a {
   background-size: 40px 40px;
 }
 
-.system-map svg,
+.system-map {
+  min-height: 310px;
+  padding: 1rem;
+}
+
+.hero-system .system-map {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.skill-network {
+  min-height: 320px;
+}
+
 .skill-network svg {
   position: absolute;
   inset: 0;
@@ -425,7 +460,6 @@ a {
   height: 100%;
 }
 
-.system-map line,
 .skill-network line {
   stroke: rgba(240, 237, 231, 0.34);
   stroke-width: 0.35;
@@ -452,9 +486,45 @@ a {
   transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
 }
 
+.system-node {
+  min-width: 84px;
+}
+
 .system-node.center,
 .skill-node.system {
   border-color: var(--orange);
+  color: var(--orange);
+}
+
+.system-node.center {
+  background: var(--panel);
+  box-shadow: inset 0 0 0 1px rgba(255, 139, 74, 0.08);
+}
+
+.system-node.north {
+  border-color: rgba(85, 203, 211, 0.72);
+  color: var(--cyan);
+}
+
+.system-node.side {
+  border-color: rgba(240, 237, 231, 0.38);
+  color: var(--ink);
+}
+
+.system-node.south {
+  border-color: rgba(255, 139, 74, 0.72);
+  color: var(--orange);
+}
+
+.system-node.path {
+  border-color: rgba(85, 203, 211, 0.76);
+  background: rgba(11, 13, 14, 0.94);
+  color: var(--cyan);
+}
+
+.system-node.decision {
+  border-color: rgba(255, 139, 74, 0.82);
+  background: rgba(255, 139, 74, 0.08);
   color: var(--orange);
 }
 
@@ -468,6 +538,115 @@ a {
 .skill-node.design {
   border-color: rgba(185, 140, 255, 0.64);
   color: var(--violet);
+}
+
+.tension-module {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tension-title {
+  margin: 0;
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.tension-subtitle {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.62;
+}
+
+.tension-rows {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.15rem;
+}
+
+.tension-row {
+  display: grid;
+  grid-template-columns: minmax(92px, 0.78fr) minmax(70px, 1fr) minmax(92px, 0.78fr);
+  min-width: 0;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.52rem 0;
+  border-top: 1px solid rgba(240, 237, 231, 0.13);
+}
+
+.tension-concept {
+  min-width: 0;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.tension-concept.right {
+  color: var(--muted);
+  text-align: right;
+}
+
+.tension-track {
+  position: relative;
+  display: block;
+  height: 1px;
+  min-width: 0;
+  background: linear-gradient(90deg, rgba(85, 203, 211, 0.3), rgba(255, 139, 74, 0.62));
+}
+
+.tension-track::before,
+.tension-track::after {
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  content: "";
+  border: 1px solid rgba(240, 237, 231, 0.26);
+  background: var(--panel);
+  transform: translateY(-50%);
+}
+
+.tension-track::before {
+  left: 0;
+}
+
+.tension-track::after {
+  right: 0;
+}
+
+.tension-cursor {
+  position: absolute;
+  top: 50%;
+  left: var(--from);
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--orange);
+  background: var(--panel);
+  box-shadow: 0 0 0 2px rgba(255, 139, 74, 0.08);
+  transform: translate(-50%, -50%);
+  animation: tension-calibration var(--duration) ease-in-out var(--delay) infinite alternate;
+}
+
+@keyframes tension-calibration {
+  from {
+    left: var(--from);
+  }
+
+  to {
+    left: var(--to);
+  }
 }
 
 .skill-node.marketing {
@@ -685,7 +864,7 @@ a {
 }
 
 .project-links a::after {
-  content: " ->";
+  content: none;
 }
 
 .experience-grid {
@@ -905,8 +1084,15 @@ a {
 }
 
 .github-notes li::before {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+  background: var(--cyan);
   color: var(--cyan);
-  content: "-> ";
+  content: "";
+  vertical-align: 0.12em;
 }
 
 .contact-layout {
@@ -994,7 +1180,6 @@ a {
     display: none;
   }
 
-  .hero,
   .about-layout,
   .section-row,
   .skills-system,
@@ -1013,6 +1198,24 @@ a {
 
   .github-layout {
     align-items: start;
+  }
+
+  .hero {
+    grid-template-areas:
+      "main"
+      "portrait"
+      "actions"
+      "system";
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-main {
+    max-width: 760px;
+  }
+
+  .hero-main .identity-line {
+    position: static;
   }
 }
 
@@ -1051,7 +1254,6 @@ a {
   }
 
   .hero-main,
-  .hero-aside,
   .portrait-card,
   .systems-card {
     width: 100%;
@@ -1060,15 +1262,11 @@ a {
 
   .hero h1 {
     width: 100%;
-    max-width: calc(100vw - 28px);
+    max-width: 11.5ch;
     overflow-wrap: break-word;
-    font-size: clamp(2.05rem, 8.8vw, 2.55rem);
-    letter-spacing: -0.06em;
-    line-height: 0.98;
-  }
-
-  .hero-subline {
-    font-size: 1.12rem;
+    font-size: 2.35rem;
+    letter-spacing: 0;
+    line-height: 1;
   }
 
   .identity-line {
@@ -1085,7 +1283,6 @@ a {
   }
 
   .hero-actions,
-  .portrait-card,
   .about-facts,
   .project-grid,
   .contact-grid {
@@ -1101,14 +1298,18 @@ a {
   }
 
   .portrait-card {
-    display: grid;
+    width: min(100%, 240px);
+    justify-self: start;
   }
 
-  .portrait-placeholder {
-    min-height: 250px;
+  .portrait-frame {
+    min-height: 0;
   }
 
-  .system-map,
+  .system-map {
+    min-height: auto;
+  }
+
   .skill-network,
   .repo-map {
     min-height: 410px;
@@ -1120,6 +1321,20 @@ a {
     min-height: 32px;
     padding: 0.35rem 0.45rem;
     font-size: 0.58rem;
+  }
+
+  .tension-row {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .tension-track {
+    order: 2;
+  }
+
+  .tension-concept.right {
+    order: 3;
+    text-align: left;
   }
 
   .section-heading h2,

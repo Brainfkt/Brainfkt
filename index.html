@@ -13,7 +13,7 @@
 
     <title>Enzo de Matos - Portfolio data / interface / systemes</title>
     <link rel="icon" href="assets/preview-placeholder.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260530-2130">
   </head>
   <body>
     <div class="site-noise" aria-hidden="true"></div>
@@ -40,36 +40,30 @@
       <section class="hero section-shell" aria-labelledby="hero-title">
         <div class="hero-main reveal">
           <p class="identity-line">Enzo de Matos - data analyst, interface design, marketing systems</p>
-          <h1 id="hero-title">Je transforme les donnees en interfaces qui racontent quelque chose.</h1>
-          <p class="hero-subline">Je cherche la zone bizarre entre analyse, produit et expression.</p>
+          <h1 id="hero-title">Je cherche la zone bizarre entre analyse, produit et expression.</h1>
           <p class="hero-copy">
-            J'aime construire des outils qui rendent les donnees plus lisibles,
+            J'aime construire des outils qui rendent les données plus lisibles,
             plus utiles et plus actionnables. Pour moi, une bonne analyse ne
-            s'arrete pas a un resultat : elle doit devenir une interface, une
-            decision ou un systeme plus clair.
+            s'arrête pas à un résultat : elle doit devenir une interface, une
+            décision ou un système plus clair.
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projets">Voir les projets</a>
-            <a class="button" href="#github">Explorer GitHub</a>
-            <a class="button button-muted" href="mailto:email@example.com">Me contacter</a>
-          </div>
         </div>
 
-        <aside class="hero-aside reveal" aria-label="Portrait et systeme de competences">
-          <div class="portrait-card">
-            <div class="portrait-placeholder" aria-label="Placeholder pour futur portrait dithered">
-              <span>Portrait futur</span>
-              <span>image dithered</span>
-            </div>
-            <p>
-              Placeholder pense pour un portrait noir et blanc avec traitement Bayer
-              dithering. L'image reste secondaire : le positionnement passe avant le nom.
-            </p>
+        <article class="portrait-card hero-portrait reveal" aria-label="Portrait dithered d'Enzo de Matos">
+          <div class="portrait-frame">
+            <img src="profile.png" alt="Portrait dithered d'Enzo de Matos" class="portrait-image">
           </div>
-          <div class="systems-card">
-            <div class="card-label">Carte systeme</div>
-            <div class="system-map" id="hero-system-map" aria-label="Carte des liens entre data, design, code et marketing"></div>
-          </div>
+        </article>
+
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="#projets"> projets</a>
+          <a class="button" href="#github">Explorer GitHub</a>
+          <a class="button button-muted" href="mailto:email@example.com">Me contacter</a>
+        </div>
+
+        <aside class="systems-card hero-system reveal" aria-labelledby="system-card-title">
+          <div class="card-label" id="system-card-title">Logique de travail</div>
+          <div class="system-map" id="hero-system-map" aria-label="Module de logique de travail"></div>
         </aside>
       </section>
 
@@ -205,6 +199,6 @@
       <a href="#accueil">Retour en haut</a>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="script.js?v=20260530-2130" defer></script>
   </body>
 </html>

@@ -6,26 +6,15 @@ const profile = {
   cv: "#"
 };
 
-const systemNodes = [
-  { label: "Data", x: 18, y: 42, type: "core" },
-  { label: "Design", x: 50, y: 22, type: "core" },
-  { label: "Code", x: 78, y: 44, type: "core" },
-  { label: "Marketing", x: 48, y: 66, type: "core" },
-  { label: "IA workflows", x: 78, y: 76, type: "support" },
-  { label: "Documentation", x: 22, y: 78, type: "support" },
-  { label: "Decision", x: 50, y: 46, type: "center" }
-];
+const tensionSubtitle =
+  "Mon travail ne consiste pas seulement à utiliser des outils, mais à équilibrer des contraintes : rendre les données précises mais lisibles, automatisées mais contrôlées, pensées par le design mais utiles, rapides mais robustes, intuitives mais mesurables.";
 
-const systemLinks = [
-  ["Data", "Decision"],
-  ["Design", "Decision"],
-  ["Code", "Decision"],
-  ["Marketing", "Decision"],
-  ["IA workflows", "Code"],
-  ["Documentation", "Data"],
-  ["Documentation", "Marketing"],
-  ["Design", "Code"],
-  ["Data", "Marketing"]
+const activeTensions = [
+  { left: "Précision", right: "Clarté", duration: "7.8s", delay: "-1.2s", from: "22%", to: "70%" },
+  { left: "Automatisation", right: "Contrôle", duration: "9.4s", delay: "-3.4s", from: "28%", to: "78%" },
+  { left: "Design", right: "Utilité", duration: "8.6s", delay: "-0.8s", from: "16%", to: "62%" },
+  { left: "Vitesse", right: "Robustesse", duration: "10.2s", delay: "-5.1s", from: "34%", to: "84%" },
+  { left: "Intuition", right: "Mesure", duration: "8.9s", delay: "-2.2s", from: "24%", to: "66%" }
 ];
 
 const projects = [
@@ -314,7 +303,22 @@ function renderNetwork(container, nodes, links, className) {
   svg.setAttribute("viewBox", "0 0 100 100");
   svg.setAttribute("aria-hidden", "true");
 
-  links.forEach(([from, to]) => {
+  const markerId = `${className}-arrow`;
+  const defs = document.createElementNS(svgNS, "defs");
+  const marker = document.createElementNS(svgNS, "marker");
+  const arrow = document.createElementNS(svgNS, "path");
+  marker.setAttribute("id", markerId);
+  marker.setAttribute("markerWidth", "6");
+  marker.setAttribute("markerHeight", "6");
+  marker.setAttribute("refX", "5");
+  marker.setAttribute("refY", "3");
+  marker.setAttribute("orient", "auto");
+  arrow.setAttribute("d", "M0,0 L6,3 L0,6 Z");
+  marker.appendChild(arrow);
+  defs.appendChild(marker);
+  svg.appendChild(defs);
+
+  links.forEach(([from, to, type]) => {
     const source = findNode(nodes, from);
     const target = findNode(nodes, to);
     if (!source || !target) return;
@@ -323,6 +327,13 @@ function renderNetwork(container, nodes, links, className) {
     line.setAttribute("y1", source.y);
     line.setAttribute("x2", target.x);
     line.setAttribute("y2", target.y);
+    if (type) line.classList.add(type);
+    if (type === "path") line.setAttribute("marker-end", `url(#${markerId})`);
+    if (type === "bidirectional") {
+      line.setAttribute("marker-start", `url(#${markerId})`);
+      line.setAttribute("marker-end", `url(#${markerId})`);
+    }
+    if (type === "vertical") line.setAttribute("marker-end", `url(#${markerId})`);
     svg.appendChild(line);
   });
 
@@ -334,6 +345,35 @@ function renderNetwork(container, nodes, links, className) {
     item.style.top = `${node.y}%`;
     container.appendChild(item);
   });
+}
+
+function renderActiveTensions(container) {
+  if (!container) return;
+
+  const module = createElement("div", "tension-module");
+  const subtitle = createElement("p", "tension-subtitle", tensionSubtitle);
+  const rows = createElement("div", "tension-rows");
+
+  activeTensions.forEach(({ left, right, duration, delay, from, to }) => {
+    const row = createElement("div", "tension-row");
+    row.style.setProperty("--duration", duration);
+    row.style.setProperty("--delay", delay);
+    row.style.setProperty("--from", from);
+    row.style.setProperty("--to", to);
+
+    const track = createElement("span", "tension-track");
+    track.appendChild(createElement("span", "tension-cursor"));
+
+    appendChildren(row, [
+      createElement("span", "tension-concept", left),
+      track,
+      createElement("span", "tension-concept right", right)
+    ]);
+    rows.appendChild(row);
+  });
+
+  appendChildren(module, [subtitle, rows]);
+  container.appendChild(module);
 }
 
 function renderProjects() {
@@ -555,7 +595,7 @@ async function fetchGithubRepos(username) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderNetwork(document.querySelector("#hero-system-map"), systemNodes, systemLinks, "system-node");
+  renderActiveTensions(document.querySelector("#hero-system-map"));
   renderProjects();
   renderExperiences();
   renderSkills();
