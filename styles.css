@@ -251,7 +251,6 @@ a {
 .hero-system,
 .section-row,
 .about-layout,
-.github-layout,
 .contact-layout,
 .skills-system {
   min-width: 0;
@@ -277,7 +276,6 @@ a {
 .hero h1,
 .section-heading h2,
 .section-row h2,
-.github-layout h2,
 .contact-layout h2 {
   margin: 0;
   color: var(--ink);
@@ -363,7 +361,6 @@ a {
 .systems-card,
 .project-card,
 .experience-card,
-.github-notes,
 .contact-card,
 .matrix-row {
   border: 1px solid var(--line);
@@ -672,7 +669,6 @@ a {
 
 .section-heading h2,
 .section-row h2,
-.github-layout h2,
 .contact-layout h2 {
   max-width: 12ch;
   font-size: clamp(2.5rem, 5.2vw, 5.8rem);
@@ -729,7 +725,6 @@ a {
 }
 
 .section-row p,
-.github-layout p,
 .contact-layout p {
   margin: 0;
   color: var(--muted);
@@ -960,141 +955,6 @@ a {
   color: var(--muted);
 }
 
-.github-layout {
-  display: grid;
-  grid-template-columns: minmax(270px, 0.48fr) minmax(420px, 1fr) minmax(250px, 0.42fr);
-  gap: 1rem;
-  align-items: stretch;
-}
-
-.github-layout > div:first-child,
-.github-notes {
-  padding: 1.2rem;
-  border: 1px solid var(--line);
-  background: rgba(11, 13, 14, 0.72);
-}
-
-.github-layout h2,
-.contact-layout h2 {
-  max-width: 9ch;
-}
-
-.github-layout .button {
-  margin-top: 1.4rem;
-}
-
-.repo-map {
-  position: relative;
-  min-height: 520px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background:
-    linear-gradient(rgba(240, 237, 231, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(240, 237, 231, 0.04) 1px, transparent 1px),
-    rgba(255, 255, 255, 0.015);
-  background-size: 52px 52px;
-}
-
-.repo-bubble {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 150ms ease, filter 150ms ease;
-}
-
-.repo-bubble:hover {
-  filter: brightness(1.16);
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-.repo-bubble-inner {
-  display: grid;
-  width: calc(100% - 14px);
-  height: calc(100% - 14px);
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(7, 8, 8, 0.9);
-  color: var(--ink);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  text-align: center;
-}
-
-.repo-bubble-inner strong {
-  max-width: 10ch;
-  overflow-wrap: anywhere;
-  font-size: 0.74rem;
-  line-height: 1.15;
-}
-
-.repo-bubble-inner span {
-  color: var(--muted);
-}
-
-.repo-legend {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  left: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--line);
-}
-
-.repo-legend span {
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-}
-
-.repo-legend span::before {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-right: 0.4rem;
-  border-radius: 50%;
-  background: var(--color);
-  content: "";
-}
-
-.github-notes strong {
-  color: var(--orange);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.github-notes p {
-  margin-top: 0.85rem;
-}
-
-.github-notes ul {
-  display: grid;
-  gap: 0.45rem;
-  margin: 1rem 0 0;
-  padding: 0;
-  color: var(--muted);
-  list-style: none;
-}
-
-.github-notes li::before {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  margin-right: 0.55rem;
-  border-radius: 50%;
-  background: var(--cyan);
-  color: var(--cyan);
-  content: "";
-  vertical-align: 0.12em;
-}
-
 .contact-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1fr);
@@ -1183,7 +1043,6 @@ a {
   .about-layout,
   .section-row,
   .skills-system,
-  .github-layout,
   .contact-layout {
     grid-template-columns: 1fr;
   }
@@ -1194,10 +1053,6 @@ a {
 
   .experience-grid {
     grid-template-columns: 1fr;
-  }
-
-  .github-layout {
-    align-items: start;
   }
 
   .hero {
@@ -1277,7 +1132,6 @@ a {
   .hero-copy,
   .section-row p,
   .about-copy,
-  .github-layout p,
   .contact-layout p {
     max-width: 34ch;
   }
@@ -1310,8 +1164,7 @@ a {
     min-height: auto;
   }
 
-  .skill-network,
-  .repo-map {
+  .skill-network {
     min-height: 410px;
   }
 
@@ -1339,7 +1192,6 @@ a {
 
   .section-heading h2,
   .section-row h2,
-  .github-layout h2,
   .contact-layout h2 {
     max-width: 10.5ch;
     font-size: clamp(2.25rem, 10.5vw, 3.25rem);
@@ -1360,41 +1212,6 @@ a {
 
   .matrix-row {
     grid-template-columns: 1fr;
-  }
-
-  .repo-bubble:nth-child(1) {
-    left: 44% !important;
-    top: 24% !important;
-  }
-
-  .repo-bubble:nth-child(2) {
-    left: 34% !important;
-    top: 48% !important;
-  }
-
-  .repo-bubble:nth-child(3) {
-    left: 66% !important;
-    top: 48% !important;
-  }
-
-  .repo-bubble:nth-child(4) {
-    left: 48% !important;
-    top: 68% !important;
-  }
-
-  .repo-bubble:nth-child(5) {
-    left: 70% !important;
-    top: 25% !important;
-  }
-
-  .repo-bubble:nth-child(6) {
-    left: 24% !important;
-    top: 70% !important;
-  }
-
-  .repo-legend {
-    position: static;
-    margin: 1rem;
   }
 
   .site-footer {

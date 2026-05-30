@@ -1,7 +1,6 @@
 const profile = {
   name: "Enzo de Matos",
   email: "email@example.com",
-  github: "https://github.com/Brainfkt",
   linkedin: "https://linkedin.com/in/votre-profil",
   cv: "#"
 };
@@ -45,7 +44,7 @@ const projects = [
     stack: ["JavaScript", "GitHub API", "SVG", "D3 plus tard"],
     tags: ["github", "visualisation", "portfolio"],
     github: "https://github.com/Brainfkt/github-repository-map",
-    live: "#github",
+    live: "#",
     accent: "#55cbd3"
   },
   {
@@ -86,7 +85,7 @@ const projects = [
     method: "Architecture de contenu, design system, composants modulaires, QA responsive.",
     result: "Site statique rapide, deployable sur GitHub Pages et simple a modifier.",
     limit: "Les preuves reelles doivent encore remplacer les placeholders.",
-    nextStep: "Ajouter des pages de cas projet et brancher la section GitHub.",
+    nextStep: "Ajouter des pages de cas projet et clarifier les preuves disponibles.",
     stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
     tags: ["portfolio", "systeme", "interface"],
     github: "https://github.com/Brainfkt/Brainfkt",
@@ -199,72 +198,8 @@ const skillMatrix = [
   ["Decider", "marketing analytics, produit, impact"]
 ];
 
-const githubRepos = [
-  {
-    name: "portfolio-system",
-    size: 12.4,
-    url: "https://github.com/Brainfkt/Brainfkt",
-    languages: [
-      ["CSS", 44, "#55cbd3"],
-      ["HTML", 28, "#ff8b4a"],
-      ["JavaScript", 28, "#f4d35e"]
-    ]
-  },
-  {
-    name: "bank-churners",
-    size: 8.7,
-    url: "#",
-    languages: [
-      ["Python", 72, "#55cbd3"],
-      ["Jupyter", 20, "#ff8b4a"],
-      ["Markdown", 8, "#e8e2d8"]
-    ]
-  },
-  {
-    name: "github-map",
-    size: 6.1,
-    url: "#",
-    languages: [
-      ["JavaScript", 52, "#f4d35e"],
-      ["CSS", 31, "#55cbd3"],
-      ["HTML", 17, "#ff8b4a"]
-    ]
-  },
-  {
-    name: "dithering-studio",
-    size: 5.4,
-    url: "#",
-    languages: [
-      ["TypeScript", 61, "#55cbd3"],
-      ["Canvas", 24, "#b98cff"],
-      ["CSS", 15, "#ff8b4a"]
-    ]
-  },
-  {
-    name: "marketing-dashboard",
-    size: 8.1,
-    url: "#",
-    languages: [
-      ["Power BI", 48, "#f4d35e"],
-      ["SQL", 32, "#9ed08b"],
-      ["Docs", 20, "#e8e2d8"]
-    ]
-  },
-  {
-    name: "ai-workflow-audit",
-    size: 4.8,
-    url: "#",
-    languages: [
-      ["Markdown", 46, "#e8e2d8"],
-      ["Python", 31, "#55cbd3"],
-      ["JSON", 23, "#ff8b4a"]
-    ]
-  }
-];
-
 const contacts = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-  { label: "GitHub", value: "github.com/Brainfkt", href: profile.github },
   { label: "LinkedIn", value: "linkedin.com/in/votre-profil", href: profile.linkedin },
   { label: "CV", value: "placeholder PDF", href: profile.cv }
 ];
@@ -464,49 +399,6 @@ function renderSkills() {
   });
 }
 
-function languageSegments(repo) {
-  return repo.languages
-    .map(([language, percent, color]) => `${color} 0 ${percent}%`)
-    .join(", ");
-}
-
-function renderRepos() {
-  const map = document.querySelector("#repo-map");
-  if (!map) return;
-
-  githubRepos.forEach((repo, index) => {
-    const bubble = createLink(repo.url, "", "repo-bubble");
-    const size = Math.max(72, Math.min(170, repo.size * 11));
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.style.left = `${10 + (index * 18) % 72}%`;
-    bubble.style.top = `${18 + (index * 29) % 58}%`;
-    bubble.style.background = `conic-gradient(${languageSegments(repo)})`;
-    bubble.setAttribute("aria-label", `${repo.name}, ${repo.size} Mo`);
-
-    const inner = createElement("span", "repo-bubble-inner");
-    appendChildren(inner, [
-      createElement("strong", "", repo.name),
-      createElement("span", "", `${repo.size} Mo`)
-    ]);
-    bubble.appendChild(inner);
-    map.appendChild(bubble);
-  });
-
-  const legend = createElement("div", "repo-legend");
-  const seen = new Map();
-  githubRepos.flatMap((repo) => repo.languages).forEach(([language, , color]) => {
-    if (!seen.has(language)) seen.set(language, color);
-  });
-  seen.forEach((color, language) => {
-    const item = createElement("span");
-    item.style.setProperty("--color", color);
-    item.textContent = language;
-    legend.appendChild(item);
-  });
-  map.appendChild(legend);
-}
-
 function renderContacts() {
   const grid = document.querySelector("#contact-grid");
   if (!grid) return;
@@ -584,23 +476,11 @@ function setupActiveNavigation() {
   sections.forEach((section) => observer.observe(section));
 }
 
-function getGithubRepos() {
-  return githubRepos;
-}
-
-async function fetchGithubRepos(username) {
-  const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
-  if (!response.ok) throw new Error("Impossible de charger les repositories GitHub.");
-  return response.json();
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   renderActiveTensions(document.querySelector("#hero-system-map"));
   renderProjects();
   renderExperiences();
   renderSkills();
-  getGithubRepos();
-  renderRepos();
   renderContacts();
   setupReveal();
   setupCursor();
