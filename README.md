@@ -5,7 +5,7 @@
   </picture>
 </a>
 
-<p align="right">
+<p align="center">
   <a href="https://raw.githubusercontent.com/Brainfkt/Brainfkt/main/cv-enzo-de-matos.pdf?download=1"><code>[ Download CV ]</code></a>
   <a href="https://brainfkt.github.io/Brainfkt/"><code>[ Open Website ]</code></a>
 </p>
