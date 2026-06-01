@@ -53,16 +53,27 @@ class LanguageAggregationTests(unittest.TestCase):
         self.assertEqual(segments[0]['color'], today.LANGUAGE_BAR_FALLBACK_COLOR)
         self.assertEqual(today.build_language_segments([repository()]), [])
 
-    def test_language_bar_rectangles_fill_available_width_exactly(self):
+    def test_language_block_segments_fill_available_block_count_exactly(self):
         segments = [
             {'name': 'Python', 'color': '#3572A5', 'bytes': 2, 'percentage': 66.666666},
             {'name': 'Other', 'color': '#8b949e', 'bytes': 1, 'percentage': 33.333334},
         ]
 
-        rectangles = today.language_bar_rectangles(segments)
+        block_segments = today.language_block_segments(segments)
 
-        self.assertAlmostEqual(sum(rectangle['width'] for rectangle in rectangles), today.LANGUAGE_BAR_WIDTH)
-        self.assertAlmostEqual(rectangles[-1]['x'] + rectangles[-1]['width'], today.LANGUAGE_BAR_X + today.LANGUAGE_BAR_WIDTH)
+        self.assertEqual(sum(segment['blocks'] for segment in block_segments), today.LANGUAGE_BAR_BLOCKS)
+        self.assertEqual([segment['blocks'] for segment in block_segments], [64, 32])
+
+    def test_language_block_segments_keeps_tiny_languages_visible(self):
+        segments = [
+            {'name': 'Python', 'color': '#3572A5', 'bytes': 999, 'percentage': 99.9},
+            {'name': 'Other', 'color': '#8b949e', 'bytes': 1, 'percentage': 0.1},
+        ]
+
+        block_segments = today.language_block_segments(segments)
+
+        self.assertEqual(sum(segment['blocks'] for segment in block_segments), today.LANGUAGE_BAR_BLOCKS)
+        self.assertEqual(block_segments[-1]['blocks'], 1)
 
     @patch('today.simple_request')
     def test_languages_getter_follows_repository_pagination(self, simple_request):
@@ -93,7 +104,7 @@ class LanguageSvgTests(unittest.TestCase):
         for filename in ('dark_mode.svg', 'light_mode.svg'):
             root = etree.parse(filename).getroot()
 
-            self.assertEqual(root.get('height'), '560px')
+            self.assertEqual(root.get('height'), '590px')
             self.assertIsNotNone(root.find(".//svg:g[@id='language_bar']", namespace))
 
     def test_render_language_bar_adds_tooltips_and_replaces_previous_segments(self):
@@ -104,10 +115,16 @@ class LanguageSvgTests(unittest.TestCase):
             {'name': 'Other', 'color': '#8b949e', 'bytes': 40, 'percentage': 40.0},
         ])
         language_bar = root.find(".//svg:g[@id='language_bar']", namespace)
-        first_render = language_bar.findall("svg:rect[@data-language-segment='true']", namespace)
+        block_line = language_bar.find("svg:text[@id='language_bar_blocks']", namespace)
+        legend = language_bar.find("svg:text[@id='language_bar_legend']", namespace)
+        first_render = block_line.findall("svg:tspan[@data-language-segment='true']", namespace)
+        legend_items = legend.findall("svg:tspan[@data-language-legend='true']", namespace)
 
         self.assertEqual(len(first_render), 2)
         self.assertEqual(first_render[0].find('svg:title', namespace).text, 'Python: 60.0%')
+        self.assertEqual(sum(len(segment.text) for segment in first_render), today.LANGUAGE_BAR_BLOCKS)
+        self.assertEqual(len(legend_items), 2)
+        self.assertEqual(legend_items[0].tail, 'Python 60.0%')
 
         preserved = deepcopy(language_bar)
         self.assertEqual(
@@ -117,7 +134,8 @@ class LanguageSvgTests(unittest.TestCase):
         )
 
         today.render_language_bar(root, [])
-        self.assertEqual(language_bar.findall("svg:rect[@data-language-segment='true']", namespace), [])
+        self.assertEqual(block_line.findall("svg:tspan[@data-language-segment='true']", namespace), [])
+        self.assertEqual(legend.findall("svg:tspan[@data-language-legend='true']", namespace), [])
 
 
 if __name__ == '__main__':

@@ -11,8 +11,7 @@ HEADERS = {'authorization': 'token ' + os.environ['ACCESS_TOKEN']}
 USER_NAME = os.environ.get('USER_NAME', 'Brainfkt')
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'loc_query': 0, 'languages_getter': 0}
 
-LANGUAGE_BAR_X = 15
-LANGUAGE_BAR_WIDTH = 955
+LANGUAGE_BAR_BLOCKS = 96
 LANGUAGE_BAR_FALLBACK_COLOR = '#8b949e'
 
 
@@ -123,14 +122,22 @@ def build_language_segments(repositories, limit=5):
     return ranked
 
 
-def language_bar_rectangles(languages, x=LANGUAGE_BAR_X, width=LANGUAGE_BAR_WIDTH):
-    rectangles = []
-    offset = x
-    for index, language in enumerate(languages):
-        segment_width = x + width - offset if index == len(languages) - 1 else width * language['percentage'] / 100
-        rectangles.append({**language, 'x': offset, 'width': segment_width})
-        offset += segment_width
-    return rectangles
+def language_block_segments(languages, block_count=LANGUAGE_BAR_BLOCKS):
+    if not languages:
+        return []
+    raw_counts = [language['percentage'] * block_count / 100 for language in languages]
+    counts = [int(raw_count) for raw_count in raw_counts]
+    remaining = block_count - sum(counts)
+    ranked_remainders = sorted(range(len(languages)), key=lambda index: (raw_counts[index] - counts[index], languages[index]['bytes']), reverse=True)
+    for index in ranked_remainders[:remaining]:
+        counts[index] += 1
+    for index, count in enumerate(counts):
+        if count == 0 and languages[index]['bytes'] > 0:
+            donor = max(range(len(counts)), key=counts.__getitem__)
+            if counts[donor] > 1:
+                counts[donor] -= 1
+                counts[index] += 1
+    return [{**language, 'blocks': counts[index]} for index, language in enumerate(languages)]
 
 
 def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
@@ -317,24 +324,29 @@ def render_language_bar(root, languages):
     language_bar = root.find(f".//{prefix}g[@id='language_bar']", namespace)
     if language_bar is None:
         return
-    for rectangle in language_bar.findall(f"{prefix}rect[@data-language-segment='true']", namespace):
-        language_bar.remove(rectangle)
     svg_namespace = f"{{{root.nsmap[None]}}}" if root.nsmap.get(None) else ''
-    for rectangle in language_bar_rectangles(languages):
-        element = etree.SubElement(language_bar, f'{svg_namespace}rect', {
+    blocks = language_bar.find(f"{prefix}text[@id='language_bar_blocks']", namespace)
+    legend = language_bar.find(f"{prefix}text[@id='language_bar_legend']", namespace)
+    if blocks is None or legend is None:
+        return
+    for element in (blocks, legend):
+        element.text = None
+        for child in list(element):
+            element.remove(child)
+    for language in language_block_segments(languages):
+        segment = etree.SubElement(blocks, f'{svg_namespace}tspan', {
             'data-language-segment': 'true',
-            'x': format_svg_number(rectangle['x']),
-            'y': '540',
-            'width': format_svg_number(rectangle['width']),
-            'height': '8',
-            'fill': rectangle['color'],
+            'fill': language['color'],
         })
-        title = etree.SubElement(element, f'{svg_namespace}title')
-        title.text = f"{rectangle['name']}: {rectangle['percentage']:.1f}%"
-
-
-def format_svg_number(number):
-    return f'{number:.6f}'.rstrip('0').rstrip('.')
+        segment.text = '█' * language['blocks']
+        title = etree.SubElement(segment, f'{svg_namespace}title')
+        title.text = f"{language['name']}: {language['percentage']:.1f}%"
+        marker = etree.SubElement(legend, f'{svg_namespace}tspan', {
+            'data-language-legend': 'true',
+            'fill': language['color'],
+        })
+        marker.text = ('  ' if len(legend) > 1 else '') + '█ '
+        marker.tail = f"{language['name']} {language['percentage']:.1f}%"
 
 
 def compact_loc_values(loc_data, suffix_width=24):
