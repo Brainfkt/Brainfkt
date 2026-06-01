@@ -9,7 +9,11 @@ from lxml import etree
 
 HEADERS = {'authorization': 'token ' + os.environ['ACCESS_TOKEN']}
 USER_NAME = os.environ.get('USER_NAME', 'Brainfkt')
-QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'loc_query': 0}
+QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'loc_query': 0, 'languages_getter': 0}
+
+LANGUAGE_BAR_X = 15
+LANGUAGE_BAR_WIDTH = 955
+LANGUAGE_BAR_FALLBACK_COLOR = '#8b949e'
 
 
 def daily_readme(birthday):
@@ -59,6 +63,74 @@ def graph_repos_stars(count_type, owner_affiliation, cursor=None):
             return request.json()['data']['user']['repositories']['totalCount']
         elif count_type == 'stars':
             return stars_counter(request.json()['data']['user']['repositories']['edges'])
+
+
+def languages_getter(cursor=None, edges=None):
+    if edges is None:
+        edges = []
+    query_count('languages_getter')
+    query = '''
+    query ($login: String!, $cursor: String) {
+        user(login: $login) {
+            repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER]) {
+                edges {
+                    node {
+                        languages(first: 100, orderBy: {field: SIZE, direction: DESC}) {
+                            edges {
+                                size
+                                node {
+                                    color
+                                    name
+                                }
+                            }
+                        }
+                    }
+                }
+                pageInfo {
+                    endCursor
+                    hasNextPage
+                }
+            }
+        }
+    }'''
+    variables = {'login': USER_NAME, 'cursor': cursor}
+    request = simple_request(languages_getter.__name__, query, variables)
+    repositories = request.json()['data']['user']['repositories']
+    edges += repositories['edges']
+    if repositories['pageInfo']['hasNextPage']:
+        return languages_getter(repositories['pageInfo']['endCursor'], edges)
+    return build_language_segments(edges)
+
+
+def build_language_segments(repositories, limit=5):
+    languages = {}
+    for repository in repositories:
+        for edge in repository['node']['languages']['edges']:
+            name = edge['node']['name']
+            language = languages.setdefault(name, {'name': name, 'color': edge['node']['color'] or LANGUAGE_BAR_FALLBACK_COLOR, 'bytes': 0})
+            language['bytes'] += edge['size']
+
+    ranked = sorted(languages.values(), key=lambda language: (-language['bytes'], language['name']))
+    if len(ranked) > limit:
+        other_bytes = sum(language['bytes'] for language in ranked[limit:])
+        ranked = ranked[:limit] + [{'name': 'Other', 'color': LANGUAGE_BAR_FALLBACK_COLOR, 'bytes': other_bytes}]
+
+    total_bytes = sum(language['bytes'] for language in ranked)
+    if total_bytes == 0:
+        return []
+    for language in ranked:
+        language['percentage'] = language['bytes'] * 100 / total_bytes
+    return ranked
+
+
+def language_bar_rectangles(languages, x=LANGUAGE_BAR_X, width=LANGUAGE_BAR_WIDTH):
+    rectangles = []
+    offset = x
+    for index, language in enumerate(languages):
+        segment_width = x + width - offset if index == len(languages) - 1 else width * language['percentage'] / 100
+        rectangles.append({**language, 'x': offset, 'width': segment_width})
+        offset += segment_width
+    return rectangles
 
 
 def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
@@ -215,7 +287,7 @@ def stars_counter(data):
     return total_stars
 
 
-def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
+def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data, languages=None):
     loc_data = compact_loc_values(loc_data)
     tree = etree.parse(filename)
     root = tree.getroot()
@@ -234,7 +306,35 @@ def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib
     justify_line_end(root, 'star_data_dots')
     justify_line_end(root, 'follower_data_dots')
     justify_line_end(root, 'loc_del_dots')
+    if languages is not None:
+        render_language_bar(root, languages)
     tree.write(filename, encoding='utf-8', xml_declaration=True)
+
+
+def render_language_bar(root, languages):
+    namespace = {'svg': root.nsmap.get(None)} if root.nsmap.get(None) else {}
+    prefix = 'svg:' if namespace else ''
+    language_bar = root.find(f".//{prefix}g[@id='language_bar']", namespace)
+    if language_bar is None:
+        return
+    for rectangle in language_bar.findall(f"{prefix}rect[@data-language-segment='true']", namespace):
+        language_bar.remove(rectangle)
+    svg_namespace = f"{{{root.nsmap[None]}}}" if root.nsmap.get(None) else ''
+    for rectangle in language_bar_rectangles(languages):
+        element = etree.SubElement(language_bar, f'{svg_namespace}rect', {
+            'data-language-segment': 'true',
+            'x': format_svg_number(rectangle['x']),
+            'y': '540',
+            'width': format_svg_number(rectangle['width']),
+            'height': '8',
+            'fill': rectangle['color'],
+        })
+        title = etree.SubElement(element, f'{svg_namespace}title')
+        title.text = f"{rectangle['name']}: {rectangle['percentage']:.1f}%"
+
+
+def format_svg_number(number):
+    return f'{number:.6f}'.rstrip('0').rstrip('.')
 
 
 def compact_loc_values(loc_data, suffix_width=24):
@@ -387,15 +487,22 @@ if __name__ == '__main__':
     repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
     contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
     follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
+    languages = None
+    language_time = 0
+    try:
+        languages, language_time = perf_counter(languages_getter)
+        formatter('languages', language_time)
+    except Exception as error:
+        print('   languages: preserving previous SVG bar after API error:', error)
 
     for index in range(len(total_loc)-1): total_loc[index] = '{:,}'.format(total_loc[index])
 
-    svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-    svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
+    svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1], languages)
+    svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1], languages)
 
     # Rewrite the timing header in place.
     print('\033[F\033[F\033[F\033[F\033[F\033[F\033[F\033[F',
-        '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % (user_time + age_time + loc_time + commit_time + star_time + repo_time + contrib_time)),
+        '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % (user_time + age_time + loc_time + commit_time + star_time + repo_time + contrib_time + language_time)),
         ' s \033[E\033[E\033[E\033[E\033[E\033[E\033[E\033[E', sep='')
 
     print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
