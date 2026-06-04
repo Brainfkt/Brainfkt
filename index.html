@@ -7,11 +7,11 @@
     <meta name="theme-color" content="#070808">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Enzo de Matos - Data, interfaces, systemes">
+    <meta property="og:title" content="EDM / BRAINFKT">
     <meta property="og:description" content="Je transforme les donnees en interfaces qui racontent quelque chose.">
     <meta property="og:image" content="assets/preview-placeholder.svg">
 
-    <title>Enzo de Matos - Portfolio data / interface / systemes</title>
+    <title>EDM / BRAINFKT</title>
     <link rel="icon" href="assets/preview-placeholder.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css?v=20260530-2150">
   </head>
@@ -36,13 +36,7 @@
     </header>
 
     <main id="accueil">
-      <section class="hero section-shell" aria-labelledby="hero-title" data-hero-style="studio">
-        <div class="hero-style-switcher reveal" aria-label="Styles de mise en page du Hero">
-          <button class="style-option is-active" type="button" data-hero-style="studio" aria-label="Style 01" aria-pressed="true">01</button>
-          <button class="style-option" type="button" data-hero-style="editorial" aria-label="Style 02" aria-pressed="false">02</button>
-          <button class="style-option" type="button" data-hero-style="console" aria-label="Style 03" aria-pressed="false">03</button>
-        </div>
-
+      <section class="hero section-shell" aria-labelledby="hero-title">
         <div class="hero-main reveal">
           <p class="identity-line">ENZO DE MATOS - DATA, DESIGN, MARKETING</p>
           <h1 id="hero-title">Je relie l’analyse à l’usage : comprendre, concevoir, rendre la décision possible.</h1>
@@ -54,19 +48,39 @@
         </div>
 
         <article class="portrait-card hero-portrait reveal" aria-label="Portrait dithered d'Enzo de Matos">
+          <div class="portrait-axis" aria-hidden="true">
+            <span>DATA</span>
+            <span>DESIGN</span>
+            <span>MARKETING</span>
+          </div>
           <div class="portrait-frame">
             <img src="profile.png" alt="Portrait dithered d'Enzo de Matos" class="portrait-image">
           </div>
         </article>
 
         <div class="hero-actions reveal">
-          <a class="button button-primary" href="#projets">PROJETS</a>
+          <a class="button button-primary" href="#projets">
+            <span>PROJETS</span>
+            <svg viewBox="0 0 32 12" aria-hidden="true" focusable="false">
+              <path d="M0 6H28M22 1L28 6L22 11" />
+            </svg>
+          </a>
           <a class="button button-muted" href="mailto:enzo.de_matos@icloud.com">CONTACT</a>
         </div>
 
         <aside class="systems-card hero-system reveal" aria-labelledby="system-card-title">
           <div class="card-label" id="system-card-title">Logique de travail</div>
-          <div class="system-map" id="hero-system-map" aria-label="Module de logique de travail"></div>
+          <div class="work-logic" aria-label="Principes de logique de travail">
+            <span>PRÉCISION<br>CLARTÉ</span>
+            <i aria-hidden="true"></i>
+            <span>AUTOMATISATION<br>CONTRÔLE</span>
+            <i aria-hidden="true"></i>
+            <span>DESIGN<br>UTILITÉ</span>
+            <i aria-hidden="true"></i>
+            <span>VITESSE<br>ROBUSTESSE</span>
+            <i aria-hidden="true"></i>
+            <span>INTUITION<br>MESURE</span>
+          </div>
         </aside>
       </section>
 

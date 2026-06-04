@@ -6,17 +6,6 @@ const profile = {
   cv: "cv-enzo-de-matos.pdf"
 };
 
-const tensionSubtitle =
-  "Mon travail ne consiste pas seulement à utiliser des outils, mais à équilibrer des contraintes : rendre les données précises mais lisibles, automatisées mais contrôlées, pensées par le design mais utiles, rapides mais robustes, intuitives mais mesurables.";
-
-const activeTensions = [
-  { left: "Précision", right: "Clarté", duration: "7.8s", delay: "-1.2s", from: "22%", to: "70%" },
-  { left: "Automatisation", right: "Contrôle", duration: "9.4s", delay: "-3.4s", from: "28%", to: "78%" },
-  { left: "Design", right: "Utilité", duration: "8.6s", delay: "-0.8s", from: "16%", to: "62%" },
-  { left: "Vitesse", right: "Robustesse", duration: "10.2s", delay: "-5.1s", from: "34%", to: "84%" },
-  { left: "Intuition", right: "Mesure", duration: "8.9s", delay: "-2.2s", from: "24%", to: "66%" }
-];
-
 const projects = [
   {
     title: "Bank Churners Analysis",
@@ -284,35 +273,6 @@ function renderNetwork(container, nodes, links, className) {
   });
 }
 
-function renderActiveTensions(container) {
-  if (!container) return;
-
-  const module = createElement("div", "tension-module");
-  const subtitle = createElement("p", "tension-subtitle", tensionSubtitle);
-  const rows = createElement("div", "tension-rows");
-
-  activeTensions.forEach(({ left, right, duration, delay, from, to }) => {
-    const row = createElement("div", "tension-row");
-    row.style.setProperty("--duration", duration);
-    row.style.setProperty("--delay", delay);
-    row.style.setProperty("--from", from);
-    row.style.setProperty("--to", to);
-
-    const track = createElement("span", "tension-track");
-    track.appendChild(createElement("span", "tension-cursor"));
-
-    appendChildren(row, [
-      createElement("span", "tension-concept", left),
-      track,
-      createElement("span", "tension-concept right", right)
-    ]);
-    rows.appendChild(row);
-  });
-
-  appendChildren(module, [subtitle, rows]);
-  container.appendChild(module);
-}
-
 function renderProjects() {
   const grid = document.querySelector("#project-grid");
   if (!grid) return;
@@ -416,42 +376,6 @@ function renderContacts() {
   });
 }
 
-function setupHeroStyles() {
-  const hero = document.querySelector(".hero");
-  const options = Array.from(document.querySelectorAll(".style-option"));
-  if (!hero || !options.length) return;
-
-  const storageKey = "brainfkt.heroStyle";
-  const availableStyles = options.map((option) => option.dataset.heroStyle);
-
-  const setStyle = (style) => {
-    if (!availableStyles.includes(style)) return;
-    hero.dataset.heroStyle = style;
-    options.forEach((option) => {
-      const isActive = option.dataset.heroStyle === style;
-      option.classList.toggle("is-active", isActive);
-      option.setAttribute("aria-pressed", String(isActive));
-    });
-
-    try {
-      window.localStorage.setItem(storageKey, style);
-    } catch {
-      // localStorage can be unavailable in restricted browser contexts.
-    }
-  };
-
-  try {
-    const savedStyle = window.localStorage.getItem(storageKey);
-    if (savedStyle) setStyle(savedStyle);
-  } catch {
-    // Keep the default style from the markup.
-  }
-
-  options.forEach((option) => {
-    option.addEventListener("click", () => setStyle(option.dataset.heroStyle));
-  });
-}
-
 function setupReveal() {
   const elements = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
@@ -515,12 +439,10 @@ function setupActiveNavigation() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderActiveTensions(document.querySelector("#hero-system-map"));
   renderProjects();
   renderExperiences();
   renderSkills();
   renderContacts();
-  setupHeroStyles();
   setupReveal();
   setupCursor();
   setupActiveNavigation();
