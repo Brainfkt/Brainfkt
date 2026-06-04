@@ -1,8 +1,9 @@
 const profile = {
   name: "Enzo de Matos",
-  email: "email@example.com",
-  linkedin: "https://linkedin.com/in/votre-profil",
-  cv: "#"
+  email: "enzo.de_matos@icloud.com",
+  linkedin: "https://linkedin.com/in/e-d-m",
+  github: "https://github.com/Brainfkt",
+  cv: "cv-enzo-de-matos.pdf"
 };
 
 const tensionSubtitle =
@@ -199,9 +200,10 @@ const skillMatrix = [
 ];
 
 const contacts = [
-  { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-  { label: "LinkedIn", value: "linkedin.com/in/votre-profil", href: profile.linkedin },
-  { label: "CV", value: "placeholder PDF", href: profile.cv }
+  { label: "EMAIL", value: profile.email, href: `mailto:${profile.email}` },
+  { label: "LINKEDIN", value: "linkedin.com/in/e-d-m", href: profile.linkedin },
+  { label: "GITHUB", value: "github.com/Brainfkt", href: profile.github },
+  { label: "CV", value: "cv-enzo-de-matos.pdf", href: profile.cv }
 ];
 
 const createElement = (tag, className, text) => {
