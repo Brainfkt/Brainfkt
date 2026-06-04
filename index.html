@@ -1,184 +1,471 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio d'Enzo de Matos, data analyst oriente design d'interface, marketing analytics, code et systemes.">
-    <meta name="theme-color" content="#070808">
-
+    <meta name="description" content="Interactive CV portfolio for Enzo de Matos, Marketing Data Analyst in Lyon, France.">
+    <meta name="theme-color" content="#E0E5EC">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="EDM / BRAINFKT">
-    <meta property="og:description" content="Je transforme les donnees en interfaces qui racontent quelque chose.">
-    <meta property="og:image" content="assets/preview-placeholder.svg">
-
-    <title>EDM / BRAINFKT</title>
-    <link rel="icon" href="assets/preview-placeholder.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=20260530-2150">
+    <meta property="og:title" content="Enzo de Matos - CV Portfolio">
+    <meta property="og:description" content="A tactile Soft UI CV for data analysis, marketing strategy, dashboarding and interface design.">
+    <meta property="og:image" content="dark_mode.svg">
+    <title>Enzo de Matos - CV Portfolio</title>
+    <link rel="icon" href="dark_mode.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=menu-drop-2">
   </head>
   <body>
-    <div class="site-noise" aria-hidden="true"></div>
-    <div class="cursor" aria-hidden="true"></div>
+    <a class="skip-link" href="#profile">Skip to content</a>
 
-    <header class="site-header">
-      <a class="brand" href="#accueil" aria-label="Retour a l'accueil">
-        <span class="brand-mark">EDM</span>
-        <span class="brand-slash">/</span>
-        <span>Brainfkt</span>
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="#a-propos">A propos</a>
-        <a href="#projets">Projets</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#competences">Competences</a>
+    <header class="site-header" data-header>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Open navigation</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#profile">Profile</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="header-link" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer">GitHub</a>
     </header>
 
-    <main id="accueil">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-main reveal">
-          <p class="identity-line">ENZO DE MATOS - DATA, DESIGN, MARKETING</p>
-          <h1 id="hero-title">Je relie l’analyse à l’usage : comprendre, concevoir, rendre la décision possible.</h1>
-          <p class="hero-copy">
-            Je travaille sur la forme que prend la décision : les indicateurs qu’on choisit,
-            la manière dont on les présente, les systèmes qui permettent de passer de
-            l’observation à l’action.
-          </p>
-        </div>
-
-        <article class="portrait-card hero-portrait reveal" aria-label="Portrait dithered d'Enzo de Matos">
-          <div class="portrait-axis" aria-hidden="true">
-            <span>DATA</span>
-            <span>DESIGN</span>
-            <span>MARKETING</span>
-          </div>
-          <div class="portrait-frame">
-            <img src="profile.png" alt="Portrait dithered d'Enzo de Matos" class="portrait-image">
-          </div>
-        </article>
-
-        <div class="hero-actions reveal">
-          <a class="button button-primary" href="#projets">
-            <span>PROJETS</span>
-            <svg viewBox="0 0 32 12" aria-hidden="true" focusable="false">
-              <path d="M0 6H28M22 1L28 6L22 11" />
-            </svg>
-          </a>
-          <a class="button button-muted" href="mailto:enzo.de_matos@icloud.com">CONTACT</a>
-        </div>
-
-        <aside class="systems-card hero-system reveal" aria-labelledby="system-card-title">
-          <div class="card-label" id="system-card-title">Logique de travail</div>
-          <div class="work-logic" aria-label="Principes de logique de travail">
-            <span>PRÉCISION<br>CLARTÉ</span>
-            <i aria-hidden="true"></i>
-            <span>AUTOMATISATION<br>CONTRÔLE</span>
-            <i aria-hidden="true"></i>
-            <span>DESIGN<br>UTILITÉ</span>
-            <i aria-hidden="true"></i>
-            <span>VITESSE<br>ROBUSTESSE</span>
-            <i aria-hidden="true"></i>
-            <span>INTUITION<br>MESURE</span>
-          </div>
-        </aside>
-      </section>
-
-      <section id="a-propos" class="section-shell about-section" aria-labelledby="about-title">
-        <div class="section-index">01 / À PROPOS</div>
-        <div class="about-layout">
+    <main>
+      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+        <div class="section-shell">
           <div class="section-heading reveal">
-            <h2 id="about-title">Je travaille a l'intersection de la data, du design et du marketing.</h2>
+            <div>
+              <h2 id="profile-title">Profile</h2>
+              <p>A CV-first profile built around the overlap between data analysis, marketing strategy, dashboarding and interface clarity.</p>
+            </div>
           </div>
-          <div class="about-copy reveal">
-            <p>
-              Mon expertise consiste à transformer des problématiques métier en systèmes
-              de décision clairs : modèles de données, dashboards, interfaces, workflows
-              et outils automatisés.
-            </p>
-            <p>
-              J’interviens sur toute la chaîne : cadrage du besoin, structuration des
-              données, analyse des irritants, conception de l’interface et mise en forme
-              des indicateurs pour faciliter la compréhension, le pilotage et l’action.
-            </p>
-          </div>
-          <div class="about-facts reveal" aria-label="Principes de travail">
-            <article>
-              <span>01</span>
-              <strong>ANALYSER AVEC PRÉCISION</strong>
-              <p>Comprendre les données, leurs limites, leurs biais, leurs règles métier et ce qu’elles permettent réellement de dire.</p>
+
+          <div class="strength-grid">
+            <article class="strength-card soft-card reveal">
+              <h3>Data analysis</h3>
+              <p>Explore, segment and structure data into readable indicators and useful business questions.</p>
             </article>
-            <article>
-              <span>02</span>
-              <strong>CONCEVOIR AVEC ATTENTION</strong>
-              <p>Penser la forme autant que le fond : hiérarchie visuelle, lisibilité, parcours utilisateur et clarté des indicateurs.</p>
+            <article class="strength-card soft-card reveal">
+              <h3>Marketing strategy</h3>
+              <p>Connect performance, audience behavior, acquisition logic and operational constraints.</p>
             </article>
-            <article>
-              <span>03</span>
-              <strong>AUTOMATISER AVEC DISCERNEMENT</strong>
-              <p>Utiliser le code, les workflows et l’IA pour gagner en fiabilité et en vitesse, sans créer une couche technique inutile.</p>
+            <article class="strength-card soft-card reveal">
+              <h3>Dashboarding</h3>
+              <p>Design reporting systems that prioritize hierarchy, reliability, adoption and decision flow.</p>
+            </article>
+            <article class="strength-card soft-card reveal">
+              <h3>UX/UI sensitivity</h3>
+              <p>Turn complex information into calm interfaces, clean narratives and scannable layouts.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="projets" class="section-shell projects-section" aria-labelledby="projects-title">
-        <div class="section-index">02 / PROJETS</div>
-        <div class="section-row reveal">
-          <h2 id="projects-title">Des projets qui relient donnees, interface, marketing et systemes.</h2>
-        </div>
-        <div class="project-grid" id="project-grid" aria-live="polite"></div>
-      </section>
-
-      <section id="experiences" class="section-shell experience-section" aria-labelledby="experiences-title">
-        <div class="section-index">03 / Experiences</div>
-        <div class="section-row reveal">
-          <h2 id="experiences-title">Un parcours oriente outils, adoption et clarification.</h2>
-          <p>
-            Une lecture proche du CV, mais pensee comme une archive de problemes
-            traites : contexte, missions, outils et apprentissages.
-          </p>
-        </div>
-        <div class="experience-grid" id="experience-grid"></div>
-      </section>
-
-      <section id="competences" class="section-shell skills-section" aria-labelledby="skills-title">
-        <div class="section-index">04 / Competences</div>
-        <div class="section-row reveal">
-          <h2 id="skills-title">Mes competences fonctionnent mieux quand elles sont connectees.</h2>
-          <p>
-            Je ne veux pas seulement afficher des outils. Je veux montrer comment
-            data analysis, SQL, Python, Power BI, UI/UX, frontend, documentation
-            et workflows IA se combinent pour produire un systeme plus clair.
-          </p>
-        </div>
-        <div class="skills-system reveal">
-          <div class="skill-network" id="skill-network" aria-label="Reseau de competences"></div>
-          <div class="skill-matrix" id="skill-matrix" aria-label="Matrice de competences"></div>
-        </div>
-      </section>
-
-      <section id="contact" class="section-shell contact-section" aria-labelledby="contact-title">
-        <div class="section-index">05 / CONTACT</div>
-        <div class="contact-layout reveal">
-          <div>
-            <h2 id="contact-title">Discutons d'un projet, d'une mission ou d'un systeme a clarifier.</h2>
-            <p>
-              Si le sujet touche aux données, aux interfaces, au marketing ou aux
-              workflows IA, je suis curieux de savoir en quoi je peux vous être utile.
-            </p>
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 id="experience-title">Professional experience</h2>
+              <p>Timeline view of roles, missions, tools and decision-oriented outcomes.</p>
+            </div>
           </div>
-          <div class="contact-grid" id="contact-grid"></div>
+
+          <div class="timeline">
+            <article class="timeline-row reveal">
+              <div class="date-badge">2024 - now</div>
+              <div class="experience-card soft-card">
+                <div class="item-top">
+                  <div>
+                    <h3>Marketing Data Analyst</h3>
+                    <p>Banque Populaire AURA</p>
+                  </div>
+                  <span>Lyon, France</span>
+                </div>
+                <div class="contract-row">
+                  <span class="soft-pill">Apprenticeship / marketing analytics</span>
+                  <span class="soft-pill">Banking context</span>
+                </div>
+                <p class="item-copy">Campaign analysis, customer segmentation and KPI structuring for business teams.</p>
+                <div class="missions inset-panel">
+                  <ul>
+                    <li>Follow and optimize marketing campaign performance.</li>
+                    <li>Translate business needs into reporting and analysis scopes.</li>
+                    <li>Clarify indicators for operational and decision-making use.</li>
+                  </ul>
+                </div>
+                <div class="tag-list">
+                  <span>SQL</span>
+                  <span>Power BI</span>
+                  <span>Python</span>
+                  <span>Excel</span>
+                  <span>CRM</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-row reveal">
+              <div class="date-badge">Nov 2023 - 2024</div>
+              <div class="experience-card soft-card">
+                <div class="item-top">
+                  <div>
+                    <h3>ETI Management Assistant</h3>
+                    <p>DCS Easyware</p>
+                  </div>
+                  <span>Lyon 3e</span>
+                </div>
+                <div class="contract-row">
+                  <span class="soft-pill">Operational reporting</span>
+                  <span class="soft-pill">Process support</span>
+                </div>
+                <p class="item-copy">Administration of the Everwin tool, onboarding support and ad hoc reporting for commercial units.</p>
+                <div class="missions inset-panel">
+                  <ul>
+                    <li>Process sales and production data for internal tracking.</li>
+                    <li>Train new users and document recurring procedures.</li>
+                    <li>Build portfolio monitoring and analysis exports in Excel and Power BI.</li>
+                  </ul>
+                </div>
+                <div class="tag-list">
+                  <span>Everwin</span>
+                  <span>Excel</span>
+                  <span>Power BI</span>
+                  <span>Reporting</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-row reveal">
+              <div class="date-badge">Sep 2022 - Sep 2023</div>
+              <div class="experience-card soft-card">
+                <div class="item-top">
+                  <div>
+                    <h3>TPE Management Assistant</h3>
+                    <p>My Serigraphy</p>
+                  </div>
+                  <span>Lyon 1er</span>
+                </div>
+                <div class="contract-row">
+                  <span class="soft-pill">Work-study</span>
+                  <span class="soft-pill">Business operations</span>
+                </div>
+                <p class="item-copy">Operational collaboration with leadership to improve business processes and online presence.</p>
+                <div class="missions inset-panel">
+                  <ul>
+                    <li>Contribute to hyper-growth decisions with operational support.</li>
+                    <li>Improve the company website, SEO quality and commercial documentation.</li>
+                    <li>Follow treasury, unpaid invoices and online catalogue updates.</li>
+                  </ul>
+                </div>
+                <div class="tag-list">
+                  <span>SEO</span>
+                  <span>WordPress</span>
+                  <span>Business admin</span>
+                  <span>Web scraping</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-row reveal">
+              <div class="date-badge">2020 - 2022</div>
+              <div class="experience-card soft-card">
+                <div class="item-top">
+                  <div>
+                    <h3>Communication and Web Projects</h3>
+                    <p>My Serigraphy / freelance activity</p>
+                  </div>
+                  <span>Lyon and remote</span>
+                </div>
+                <div class="contract-row">
+                  <span class="soft-pill">Communication</span>
+                  <span class="soft-pill">Web design</span>
+                </div>
+                <p class="item-copy">LinkedIn communication, weekly reporting, editorial calendars and responsive website creation.</p>
+                <div class="missions inset-panel">
+                  <ul>
+                    <li>Create performance indicators and communication reporting.</li>
+                    <li>Design a merchant website with responsive front-end integration.</li>
+                    <li>Plan content, SEO checks, quality control and publication workflows.</li>
+                  </ul>
+                </div>
+                <div class="tag-list">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>SEO</span>
+                  <span>LinkedIn</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education" aria-labelledby="education-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 id="education-title">Education</h2>
+              <p>Business, management, marketing and data education connected to work-study practice.</p>
+            </div>
+          </div>
+
+          <div class="education-grid">
+            <article class="education-card soft-card reveal">
+              <div class="item-top">
+                <div>
+                  <h3>MSc Data Analytics &amp; Manager Marketing</h3>
+                  <p>INSEEC Lyon</p>
+                </div>
+                <span>2024 - 2026</span>
+              </div>
+              <p>Data analytics, marketing management, business intelligence, dashboarding and performance analysis.</p>
+              <div class="tag-list">
+                <span>Data analytics</span>
+                <span>Marketing</span>
+                <span>BI</span>
+              </div>
+            </article>
+            <article class="education-card soft-card reveal">
+              <div class="item-top">
+                <div>
+                  <h3>BUT GEA - GEMA track</h3>
+                  <p>IUT Lumiere Lyon 2</p>
+                </div>
+                <span>2021 - 2024</span>
+              </div>
+              <p>Business administration with entrepreneurship, management of activities, organization and operational finance.</p>
+              <div class="tag-list">
+                <span>Management</span>
+                <span>Organizations</span>
+                <span>Business admin</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 id="skills-title">Skills</h2>
+              <p>Grouped capabilities with tactile cards and inset progress indicators.</p>
+            </div>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card soft-card reveal">
+              <div class="skill-title"><div class="icon-well">DT</div><h3>Data</h3></div>
+              <div class="pill-list"><span>SQL</span><span>DAX</span><span>Python</span><span>R</span><span>Segmentation</span></div>
+              <div class="skill-meter" data-level="88" aria-label="Data skill level"><span></span></div>
+            </article>
+            <article class="skill-card soft-card reveal">
+              <div class="skill-title"><div class="icon-well">MK</div><h3>Marketing</h3></div>
+              <div class="pill-list"><span>Campaign analysis</span><span>CRM</span><span>KPI framing</span><span>Performance</span></div>
+              <div class="skill-meter" data-level="84" aria-label="Marketing skill level"><span></span></div>
+            </article>
+            <article class="skill-card soft-card reveal">
+              <div class="skill-title"><div class="icon-well">DS</div><h3>Design</h3></div>
+              <div class="pill-list"><span>UX/UI</span><span>Hierarchy</span><span>Figma</span><span>Dashboard layout</span></div>
+              <div class="skill-meter" data-level="80" aria-label="Design skill level"><span></span></div>
+            </article>
+            <article class="skill-card soft-card reveal">
+              <div class="skill-title"><div class="icon-well">DV</div><h3>Development</h3></div>
+              <div class="pill-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Git</span></div>
+              <div class="skill-meter" data-level="76" aria-label="Development skill level"><span></span></div>
+            </article>
+            <article class="skill-card soft-card reveal">
+              <div class="skill-title"><div class="icon-well">TL</div><h3>Tools</h3></div>
+              <div class="pill-list"><span>Power BI</span><span>Excel</span><span>Dataiku</span><span>Teradata</span><span>Notion</span></div>
+              <div class="skill-meter" data-level="86" aria-label="Tools skill level"><span></span></div>
+            </article>
+            <article class="skill-card soft-card reveal">
+              <div class="skill-title"><div class="icon-well">SS</div><h3>Soft skills</h3></div>
+              <div class="pill-list"><span>Creative</span><span>Rigorous</span><span>Team spirit</span><span>Agile</span></div>
+              <div class="skill-meter" data-level="82" aria-label="Soft skills level"><span></span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tools-section" aria-labelledby="tools-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 id="tools-title">Tools and technologies</h2>
+              <p>Raised tiles for main tools, pressed tiles for secondary technologies.</p>
+            </div>
+          </div>
+
+          <div class="tools-grid">
+            <span class="tool-tile main">Python<small>Data</small></span>
+            <span class="tool-tile main">SQL<small>Data</small></span>
+            <span class="tool-tile main">Power BI<small>BI</small></span>
+            <span class="tool-tile main">Excel<small>Analysis</small></span>
+            <span class="tool-tile main">Figma<small>Design</small></span>
+            <span class="tool-tile main">JavaScript<small>Web</small></span>
+            <span class="tool-tile">HTML<small>Web</small></span>
+            <span class="tool-tile">CSS<small>Web</small></span>
+            <span class="tool-tile">React<small>Web</small></span>
+            <span class="tool-tile">TypeScript<small>Web</small></span>
+            <span class="tool-tile">Git<small>Workflow</small></span>
+            <span class="tool-tile">Teradata SQL Assistant<small>Data</small></span>
+            <span class="tool-tile">Dataiku DSS<small>Data</small></span>
+            <span class="tool-tile">DAX<small>BI</small></span>
+            <span class="tool-tile">Tableau<small>BI</small></span>
+            <span class="tool-tile">Notion<small>Docs</small></span>
+            <span class="tool-tile">Miro<small>Workshop</small></span>
+            <span class="tool-tile">Photoshop<small>Visual</small></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 id="projects-title">Projects</h2>
+              <p>Portfolio proof inside the CV: context, role, stack and outcome.</p>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card soft-card reveal">
+              <div class="project-visual inset-panel dashboard-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="project-content">
+                <h3>Bank Churners Analysis</h3>
+                <p>Analysis and prediction of customer churn in a banking context.</p>
+                <dl>
+                  <div><dt>Context</dt><dd>Public banking dataset with retention questions.</dd></div>
+                  <div><dt>Role</dt><dd>Data exploration, feature engineering, interpretable model, dashboard thinking.</dd></div>
+                  <div><dt>Outcome</dt><dd>Analytical notebook and decision-oriented Power BI mockup.</dd></div>
+                </dl>
+                <div class="tag-list"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Power BI</span></div>
+                <div class="project-actions">
+                  <a class="button button-secondary" href="https://github.com/Brainfkt/bank-churners-analysis" target="_blank" rel="noreferrer">View project</a>
+                  <a href="https://github.com/Brainfkt/bank-churners-analysis" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="#contact">Case study</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card soft-card reveal">
+              <div class="project-visual inset-panel repo-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div class="project-content">
+                <h3>GitHub Repository Map</h3>
+                <p>Interactive repository visualization by size, stack and portfolio role.</p>
+                <dl>
+                  <div><dt>Context</dt><dd>Technical portfolio readability beyond a linear repository list.</dd></div>
+                  <div><dt>Role</dt><dd>API reading, data mapping, bubble layout and hover detail logic.</dd></div>
+                  <div><dt>Outcome</dt><dd>Concept for a GitHub-native portfolio exploration layer.</dd></div>
+                </dl>
+                <div class="tag-list"><span>JavaScript</span><span>GitHub API</span><span>SVG</span><span>Data viz</span></div>
+                <div class="project-actions">
+                  <a class="button button-secondary" href="https://github.com/Brainfkt/github-repository-map" target="_blank" rel="noreferrer">View project</a>
+                  <a href="https://github.com/Brainfkt/github-repository-map" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="#contact">Case study</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card soft-card reveal">
+              <div class="project-visual inset-panel campaign-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="project-content">
+                <h3>Marketing Campaign Dashboard</h3>
+                <p>Multichannel performance cockpit for acquisition, conversion and lead quality.</p>
+                <dl>
+                  <div><dt>Context</dt><dd>Need to compare channels and isolate anomalies in one view.</dd></div>
+                  <div><dt>Role</dt><dd>Data modeling, KPI hierarchy, wireframe and Power BI dashboard structure.</dd></div>
+                  <div><dt>Outcome</dt><dd>Decision dashboard for campaign monitoring and channel comparison.</dd></div>
+                </dl>
+                <div class="tag-list"><span>Power BI</span><span>SQL</span><span>DAX</span><span>Data model</span></div>
+                <div class="project-actions">
+                  <a class="button button-secondary" href="https://github.com/Brainfkt/marketing-campaign-dashboard" target="_blank" rel="noreferrer">View project</a>
+                  <a href="https://github.com/Brainfkt/marketing-campaign-dashboard" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="#contact">Case study</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section achievements-section" aria-labelledby="achievements-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 id="achievements-title">Certifications and achievements</h2>
+              <p>Compact proof points and public-facing work.</p>
+            </div>
+          </div>
+
+          <div class="achievement-panel inset-panel reveal">
+            <article><span>01</span><h3>GitHub profile system</h3><p>25 repositories, 25 contributed projects and more than 2M tracked lines of code.</p></article>
+            <article><span>02</span><h3>Web CV and portfolio</h3><p>Static GitHub Pages portfolio designed as a readable professional system.</p></article>
+            <article><span>03</span><h3>Business intelligence practice</h3><p>Dashboards, data models, KPI hierarchy and reporting workflows across school, work and personal projects.</p></article>
+            <article><span>04</span><h3>AI workflow documentation</h3><p>Mapping, prompts, controls and quality checks for practical AI-assisted production chains.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section languages-section" aria-labelledby="languages-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 id="languages-title">Languages</h2>
+              <p>Simple language cards for quick CV scanning.</p>
+            </div>
+          </div>
+
+          <div class="language-grid">
+            <article class="language-card soft-card reveal">
+              <h3>French</h3>
+              <p>Native</p>
+              <span class="soft-pill">Professional and academic use</span>
+            </article>
+            <article class="language-card soft-card reveal">
+              <h3>English</h3>
+              <p>Professional / B1</p>
+              <span class="soft-pill">Technical reading and work context</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-shell">
+          <article class="contact-card soft-card reveal">
+            <div>
+              <h2 id="contact-title">Contact</h2>
+              <p>Open to data, dashboarding, marketing analytics, interface design and workflow clarification projects.</p>
+            </div>
+
+            <div class="contact-rows">
+              <a class="contact-row inset-panel" href="mailto:enzo.de_matos@icloud.com"><span>Email</span><strong>enzo.de_matos@icloud.com</strong></a>
+              <a class="contact-row inset-panel" href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/e-d-m</strong></a>
+              <a class="contact-row inset-panel" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer"><span>GitHub</span><strong>github.com/Brainfkt</strong></a>
+              <a class="contact-row inset-panel" href="https://brainfkt.github.io/Brainfkt/" target="_blank" rel="noreferrer"><span>Portfolio</span><strong>brainfkt.github.io/Brainfkt</strong></a>
+            </div>
+
+            <div class="contact-actions">
+              <a class="button button-primary" href="cv-enzo-de-matos.pdf" download>Download CV</a>
+              <button class="button button-secondary copy-email" type="button" data-copy="enzo.de_matos@icloud.com">Copy email</button>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>© 2026 Enzo de Matos</span>
-      <span>DATA / DESIGN / MARKETING</span>
-      <a href="#accueil">Retour en haut</a>
+      <div class="section-shell footer-shell">
+        <span>&copy; <span id="year">2026</span> Enzo de Matos</span>
+        <a href="#profile">Back to top</a>
+      </div>
     </footer>
 
-    <script src="script.js?v=20260604-1108" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
