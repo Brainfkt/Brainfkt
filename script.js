@@ -416,6 +416,42 @@ function renderContacts() {
   });
 }
 
+function setupHeroStyles() {
+  const hero = document.querySelector(".hero");
+  const options = Array.from(document.querySelectorAll(".style-option"));
+  if (!hero || !options.length) return;
+
+  const storageKey = "brainfkt.heroStyle";
+  const availableStyles = options.map((option) => option.dataset.heroStyle);
+
+  const setStyle = (style) => {
+    if (!availableStyles.includes(style)) return;
+    hero.dataset.heroStyle = style;
+    options.forEach((option) => {
+      const isActive = option.dataset.heroStyle === style;
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", String(isActive));
+    });
+
+    try {
+      window.localStorage.setItem(storageKey, style);
+    } catch {
+      // localStorage can be unavailable in restricted browser contexts.
+    }
+  };
+
+  try {
+    const savedStyle = window.localStorage.getItem(storageKey);
+    if (savedStyle) setStyle(savedStyle);
+  } catch {
+    // Keep the default style from the markup.
+  }
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => setStyle(option.dataset.heroStyle));
+  });
+}
+
 function setupReveal() {
   const elements = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
@@ -449,7 +485,7 @@ function setupCursor() {
     cursor.style.top = `${event.clientY}px`;
   });
 
-  document.querySelectorAll("a, .project-card, .experience-card, .skill-node").forEach((element) => {
+  document.querySelectorAll("a, button, .project-card, .experience-card, .skill-node").forEach((element) => {
     element.addEventListener("pointerenter", () => cursor.classList.add("is-hovering"));
     element.addEventListener("pointerleave", () => cursor.classList.remove("is-hovering"));
   });
@@ -484,6 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderExperiences();
   renderSkills();
   renderContacts();
+  setupHeroStyles();
   setupReveal();
   setupCursor();
   setupActiveNavigation();

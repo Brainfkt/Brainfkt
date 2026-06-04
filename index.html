@@ -36,7 +36,13 @@
     </header>
 
     <main id="accueil">
-      <section class="hero section-shell" aria-labelledby="hero-title">
+      <section class="hero section-shell" aria-labelledby="hero-title" data-hero-style="studio">
+        <div class="hero-style-switcher reveal" aria-label="Styles de mise en page du Hero">
+          <button class="style-option is-active" type="button" data-hero-style="studio" aria-label="Style 01" aria-pressed="true">01</button>
+          <button class="style-option" type="button" data-hero-style="editorial" aria-label="Style 02" aria-pressed="false">02</button>
+          <button class="style-option" type="button" data-hero-style="console" aria-label="Style 03" aria-pressed="false">03</button>
+        </div>
+
         <div class="hero-main reveal">
           <p class="identity-line">ENZO DE MATOS - DATA, DESIGN, MARKETING</p>
           <h1 id="hero-title">Je relie l’analyse à l’usage : comprendre, concevoir, rendre la décision possible.</h1>
