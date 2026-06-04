@@ -5,9 +5,9 @@
   </picture>
 </a><br><br>
 <p align="center">
-  <a href="https://brainfkt.github.io/Brainfkt/cv-enzo-de-matos.pdf" target="_blank" rel="noreferrer"><code>[CV:WEB]</code></a>
+  <a href="https://brainfkt.github.io/Brainfkt/cv-enzo-de-matos.pdf"><code>[CV:WEB]</code></a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://raw.githubusercontent.com/Brainfkt/Brainfkt/main/cv-enzo-de-matos.pdf?download=1"><code>[CV:PDF]</code></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://brainfkt.github.io/Brainfkt/" target="_blank" rel="noreferrer"><code>[SITE:WEB]</code></a>
+  <a href="https://brainfkt.github.io/Brainfkt/"><code>[SITE:WEB]</code></a>
 </p>
