@@ -2,7 +2,6 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
 const header = document.querySelector("[data-header]");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a[href^='#']"));
-const meters = Array.from(document.querySelectorAll(".skill-meter"));
 const revealItems = Array.from(document.querySelectorAll(".reveal"));
 const year = document.querySelector("#year");
 
@@ -77,51 +76,129 @@ function setupReveal() {
   revealItems.forEach((item) => observer.observe(item));
 }
 
-function setupMeters() {
-  if (!meters.length) return;
+function setupToolCarousels() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const fillMeter = (meter) => {
-    const level = Math.max(0, Math.min(100, Number(meter.dataset.level) || 0));
-    meter.style.setProperty("--progress", `${level}%`);
-  };
+  document.querySelectorAll(".tool-carousel").forEach((carousel) => {
+    const track = carousel.querySelector(".tool-carousel-track");
+    if (!track || carousel.dataset.ready === "true") return;
 
-  if (!("IntersectionObserver" in window)) {
-    meters.forEach(fillMeter);
-    return;
-  }
+    if (track.dataset.cloned === "true") return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        fillMeter(entry.target);
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.4 }
-  );
+    Array.from(track.children).forEach((item) => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+    });
 
-  meters.forEach((meter) => observer.observe(meter));
-}
+    track.dataset.cloned = "true";
+    carousel.dataset.ready = "true";
 
-function setupCopyEmail() {
-  const button = document.querySelector(".copy-email");
-  if (!button) return;
+    const state = {
+      baseSpeed: 0,
+      currentSpeed: 0,
+      direction: carousel.classList.contains("is-reverse") ? -1 : 1,
+      dragging: false,
+      hoverSpeed: 0,
+      lastFrame: performance.now(),
+      lastPointerX: 0,
+      loopWidth: 0,
+      offset: 0,
+      targetSpeed: 0
+    };
 
-  button.addEventListener("click", async () => {
-    const value = button.dataset.copy;
-    if (!value) return;
+    const readSeconds = (name, fallback) => {
+      const value = getComputedStyle(carousel).getPropertyValue(name).trim();
+      const parsed = Number.parseFloat(value);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+    };
 
-    try {
-      await navigator.clipboard.writeText(value);
-      const previous = button.textContent;
-      button.textContent = "Email copied";
-      window.setTimeout(() => {
-        button.textContent = previous;
-      }, 1600);
-    } catch {
-      window.location.href = `mailto:${value}`;
-    }
+    const normalize = () => {
+      if (!state.loopWidth) return;
+
+      while (state.offset < -state.loopWidth) state.offset += state.loopWidth;
+      while (state.offset >= 0) state.offset -= state.loopWidth;
+    };
+
+    const render = () => {
+      track.style.transform = `translate3d(${state.offset}px, 0, 0)`;
+    };
+
+    const setTargetSpeed = (speed) => {
+      state.targetSpeed = reduceMotion ? 0 : speed;
+    };
+
+    const measure = () => {
+      state.loopWidth = track.scrollWidth / 2;
+      state.baseSpeed = reduceMotion ? 0 : state.loopWidth / readSeconds("--duration", 32);
+      state.hoverSpeed = reduceMotion ? 0 : state.loopWidth / readSeconds("--hover-duration", 160);
+      state.currentSpeed = state.currentSpeed || state.baseSpeed;
+      setTargetSpeed(carousel.matches(":hover") ? state.hoverSpeed : state.baseSpeed);
+
+      if (state.offset === 0) state.offset = -state.loopWidth;
+      normalize();
+      render();
+    };
+
+    const animate = (timestamp) => {
+      const delta = Math.min((timestamp - state.lastFrame) / 1000, 0.05);
+      state.lastFrame = timestamp;
+      state.currentSpeed += (state.targetSpeed - state.currentSpeed) * Math.min(delta * 8, 1);
+      state.offset += state.direction * state.currentSpeed * delta;
+      normalize();
+      render();
+      window.requestAnimationFrame(animate);
+    };
+
+    carousel.addEventListener("pointerenter", () => setTargetSpeed(state.hoverSpeed));
+    carousel.addEventListener("pointerleave", () => {
+      state.dragging = false;
+      carousel.classList.remove("is-dragging");
+      setTargetSpeed(state.baseSpeed);
+    });
+
+    carousel.addEventListener(
+      "wheel",
+      (event) => {
+        event.preventDefault();
+        const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+        state.offset -= delta;
+        normalize();
+        render();
+      },
+      { passive: false }
+    );
+
+    carousel.addEventListener("pointerdown", (event) => {
+      state.dragging = true;
+      state.lastPointerX = event.clientX;
+      carousel.classList.add("is-dragging");
+      carousel.setPointerCapture(event.pointerId);
+    });
+
+    carousel.addEventListener("pointermove", (event) => {
+      if (!state.dragging) return;
+      const delta = event.clientX - state.lastPointerX;
+      state.lastPointerX = event.clientX;
+      state.offset += delta;
+      normalize();
+      render();
+    });
+
+    const stopDragging = (event) => {
+      state.dragging = false;
+      carousel.classList.remove("is-dragging");
+      if (carousel.hasPointerCapture(event.pointerId)) carousel.releasePointerCapture(event.pointerId);
+    };
+
+    carousel.addEventListener("pointerup", stopDragging);
+    carousel.addEventListener("pointercancel", stopDragging);
+
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(track);
+
+    measure();
+    window.requestAnimationFrame(animate);
   });
 }
 
@@ -134,7 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupHeaderState();
   setupActiveNav();
   setupReveal();
-  setupMeters();
-  setupCopyEmail();
+  setupToolCarousels();
   setupYear();
 });

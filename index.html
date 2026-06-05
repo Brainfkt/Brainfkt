@@ -11,7 +11,7 @@
     <meta property="og:image" content="dark_mode.svg">
     <title>Enzo de Matos - CV Portfolio</title>
     <link rel="icon" href="dark_mode.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=menu-drop-2">
+    <link rel="stylesheet" href="styles.css?v=languages-radar">
   </head>
   <body>
     <a class="skip-link" href="#profile">Skip to content</a>
@@ -252,42 +252,36 @@
           <div class="section-heading reveal">
             <div>
               <h2 id="skills-title">Skills</h2>
-              <p>Grouped capabilities with tactile cards and inset progress indicators.</p>
+              <p>Grouped capabilities organized by category for quick CV scanning.</p>
             </div>
           </div>
 
-          <div class="skills-grid">
-            <article class="skill-card soft-card reveal">
-              <div class="skill-title"><div class="icon-well">DT</div><h3>Data</h3></div>
+          <article class="skills-card soft-card reveal">
+            <section class="skills-group" aria-labelledby="skills-data">
+              <h3 id="skills-data">Data</h3>
               <div class="pill-list"><span>SQL</span><span>DAX</span><span>Python</span><span>R</span><span>Segmentation</span></div>
-              <div class="skill-meter" data-level="88" aria-label="Data skill level"><span></span></div>
-            </article>
-            <article class="skill-card soft-card reveal">
-              <div class="skill-title"><div class="icon-well">MK</div><h3>Marketing</h3></div>
+            </section>
+            <section class="skills-group" aria-labelledby="skills-marketing">
+              <h3 id="skills-marketing">Marketing</h3>
               <div class="pill-list"><span>Campaign analysis</span><span>CRM</span><span>KPI framing</span><span>Performance</span></div>
-              <div class="skill-meter" data-level="84" aria-label="Marketing skill level"><span></span></div>
-            </article>
-            <article class="skill-card soft-card reveal">
-              <div class="skill-title"><div class="icon-well">DS</div><h3>Design</h3></div>
+            </section>
+            <section class="skills-group" aria-labelledby="skills-design">
+              <h3 id="skills-design">Design</h3>
               <div class="pill-list"><span>UX/UI</span><span>Hierarchy</span><span>Figma</span><span>Dashboard layout</span></div>
-              <div class="skill-meter" data-level="80" aria-label="Design skill level"><span></span></div>
-            </article>
-            <article class="skill-card soft-card reveal">
-              <div class="skill-title"><div class="icon-well">DV</div><h3>Development</h3></div>
+            </section>
+            <section class="skills-group" aria-labelledby="skills-development">
+              <h3 id="skills-development">Development</h3>
               <div class="pill-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Git</span></div>
-              <div class="skill-meter" data-level="76" aria-label="Development skill level"><span></span></div>
-            </article>
-            <article class="skill-card soft-card reveal">
-              <div class="skill-title"><div class="icon-well">TL</div><h3>Tools</h3></div>
+            </section>
+            <section class="skills-group" aria-labelledby="skills-tools">
+              <h3 id="skills-tools">Tools</h3>
               <div class="pill-list"><span>Power BI</span><span>Excel</span><span>Dataiku</span><span>Teradata</span><span>Notion</span></div>
-              <div class="skill-meter" data-level="86" aria-label="Tools skill level"><span></span></div>
-            </article>
-            <article class="skill-card soft-card reveal">
-              <div class="skill-title"><div class="icon-well">SS</div><h3>Soft skills</h3></div>
+            </section>
+            <section class="skills-group" aria-labelledby="skills-soft">
+              <h3 id="skills-soft">Soft skills</h3>
               <div class="pill-list"><span>Creative</span><span>Rigorous</span><span>Team spirit</span><span>Agile</span></div>
-              <div class="skill-meter" data-level="82" aria-label="Soft skills level"><span></span></div>
-            </article>
-          </div>
+            </section>
+          </article>
         </div>
       </section>
 
@@ -296,29 +290,142 @@
           <div class="section-heading reveal">
             <div>
               <h2 id="tools-title">Tools and technologies</h2>
-              <p>Raised tiles for main tools, pressed tiles for secondary technologies.</p>
+              <p>Core analytics, design and web tools used across portfolio projects.</p>
             </div>
           </div>
 
-          <div class="tools-grid">
-            <span class="tool-tile main">Python<small>Data</small></span>
-            <span class="tool-tile main">SQL<small>Data</small></span>
-            <span class="tool-tile main">Power BI<small>BI</small></span>
-            <span class="tool-tile main">Excel<small>Analysis</small></span>
-            <span class="tool-tile main">Figma<small>Design</small></span>
-            <span class="tool-tile main">JavaScript<small>Web</small></span>
-            <span class="tool-tile">HTML<small>Web</small></span>
-            <span class="tool-tile">CSS<small>Web</small></span>
-            <span class="tool-tile">React<small>Web</small></span>
-            <span class="tool-tile">TypeScript<small>Web</small></span>
-            <span class="tool-tile">Git<small>Workflow</small></span>
-            <span class="tool-tile">Teradata SQL Assistant<small>Data</small></span>
-            <span class="tool-tile">Dataiku DSS<small>Data</small></span>
-            <span class="tool-tile">DAX<small>BI</small></span>
-            <span class="tool-tile">Tableau<small>BI</small></span>
-            <span class="tool-tile">Notion<small>Docs</small></span>
-            <span class="tool-tile">Miro<small>Workshop</small></span>
-            <span class="tool-tile">Photoshop<small>Visual</small></span>
+          <div class="tool-carousel-stack reveal" aria-label="Tools and technologies">
+            <div class="tool-carousel" style="--duration: 34s; --hover-duration: 170s;" aria-label="Data and business intelligence tools">
+              <div class="tool-carousel-track">
+                <span class="tool-logo-card python" aria-label="Python">
+                  <img src="assets/logos/python.svg" alt="" decoding="async">
+                  <span>Python</span>
+                </span>
+                <span class="tool-logo-card sql" aria-label="SQL">
+                  <img src="assets/logos/sql.svg" alt="" decoding="async">
+                  <span>SQL</span>
+                </span>
+                <span class="tool-logo-card powerbi" aria-label="Power BI">
+                  <img src="assets/logos/power-bi.svg" alt="" decoding="async">
+                  <span>Power BI</span>
+                </span>
+                <span class="tool-logo-card excel" aria-label="Excel">
+                  <img src="assets/logos/excel.svg" alt="" decoding="async">
+                  <span>Excel</span>
+                </span>
+                <span class="tool-logo-card dax" aria-label="DAX">
+                  <img src="assets/logos/power-pivot-cropped.png" alt="" decoding="async">
+                  <span>DAX</span>
+                </span>
+                <span class="tool-logo-card teradata" aria-label="Teradata SQL Assistant">
+                  <img src="assets/logos/teradata.svg" alt="" decoding="async">
+                  <span>Teradata</span>
+                </span>
+                <span class="tool-logo-card dataiku" aria-label="Dataiku DSS">
+                  <img src="assets/logos/dataiku.svg" alt="" decoding="async">
+                  <span>Dataiku</span>
+                </span>
+                <span class="tool-logo-card tableau" aria-label="Tableau">
+                  <img src="assets/logos/tableau.svg" alt="" decoding="async">
+                  <span>Tableau</span>
+                </span>
+                <span class="tool-logo-card rstudio" aria-label="R and RStudio">
+                  <img src="assets/logos/rstudio.svg" alt="" decoding="async">
+                  <span>R / RStudio</span>
+                </span>
+                <span class="tool-logo-card minitab" aria-label="Minitab">
+                  <img src="assets/logos/minitab.svg" alt="" decoding="async">
+                  <span>Minitab</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="tool-carousel is-reverse" style="--duration: 30s; --hover-duration: 150s;" aria-label="Web development and database tools">
+              <div class="tool-carousel-track">
+                <span class="tool-logo-card javascript" aria-label="JavaScript">
+                  <img src="assets/logos/javascript.svg" alt="" decoding="async">
+                  <span>JavaScript</span>
+                </span>
+                <span class="tool-logo-card typescript" aria-label="TypeScript">
+                  <img src="assets/logos/typescript.svg" alt="" decoding="async">
+                  <span>TypeScript</span>
+                </span>
+                <span class="tool-logo-card react" aria-label="React">
+                  <img src="assets/logos/react.svg" alt="" decoding="async">
+                  <span>React</span>
+                </span>
+                <span class="tool-logo-card html" aria-label="HTML">
+                  <img src="assets/logos/html5.svg" alt="" decoding="async">
+                  <span>HTML</span>
+                </span>
+                <span class="tool-logo-card css" aria-label="CSS">
+                  <img src="assets/logos/css.svg" alt="" decoding="async">
+                  <span>CSS</span>
+                </span>
+                <span class="tool-logo-card git" aria-label="Git">
+                  <img src="assets/logos/git.svg" alt="" decoding="async">
+                  <span>Git</span>
+                </span>
+                <span class="tool-logo-card sqlite" aria-label="SQLite">
+                  <img src="assets/logos/sqlite.svg" alt="" decoding="async">
+                  <span>SQLite</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="tool-carousel" style="--duration: 26s; --hover-duration: 130s;" aria-label="Design and workspace tools">
+              <div class="tool-carousel-track">
+                <span class="tool-logo-card figma" aria-label="Figma">
+                  <img src="assets/logos/figma.svg" alt="" decoding="async">
+                  <span>Figma</span>
+                </span>
+                <span class="tool-logo-card notion" aria-label="Notion">
+                  <img src="assets/logos/notion.svg" alt="" decoding="async">
+                  <span>Notion</span>
+                </span>
+                <span class="tool-logo-card miro" aria-label="Miro">
+                  <img src="assets/logos/miro.svg" alt="" decoding="async">
+                  <span>Miro</span>
+                </span>
+                <span class="tool-logo-card photoshop" aria-label="Photoshop">
+                  <img src="assets/logos/photoshop.svg" alt="" decoding="async">
+                  <span>Photoshop</span>
+                </span>
+                <span class="tool-logo-card airtable" aria-label="Airtable">
+                  <img src="assets/logos/airtable.svg" alt="" decoding="async">
+                  <span>Airtable</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="tool-carousel is-reverse" style="--duration: 32s; --hover-duration: 160s;" aria-label="API and automation tools">
+              <div class="tool-carousel-track">
+                <span class="tool-logo-card mcp" aria-label="Model Context Protocol">
+                  <img src="assets/logos/mcp.svg" alt="" decoding="async">
+                  <span>MCP</span>
+                </span>
+                <span class="tool-logo-card fastapi" aria-label="FastAPI">
+                  <img src="assets/logos/fastapi.svg" alt="" decoding="async">
+                  <span>FastAPI</span>
+                </span>
+                <span class="tool-logo-card php" aria-label="PHP">
+                  <img src="assets/logos/php.svg" alt="" decoding="async">
+                  <span>PHP</span>
+                </span>
+                <span class="tool-logo-card mermaid" aria-label="Mermaid">
+                  <img src="assets/logos/mermaid.svg" alt="" decoding="async">
+                  <span>Mermaid</span>
+                </span>
+                <span class="tool-logo-card zapier" aria-label="Zapier">
+                  <img src="assets/logos/zapier.svg" alt="" decoding="async">
+                  <span>Zapier</span>
+                </span>
+                <span class="tool-logo-card n8n" aria-label="n8n">
+                  <img src="assets/logos/n8n.svg" alt="" decoding="async">
+                  <span>n8n</span>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -416,22 +523,57 @@
           <div class="section-heading reveal">
             <div>
               <h2 id="languages-title">Languages</h2>
-              <p>Simple language cards for quick CV scanning.</p>
+              <p>Compact language comparison on practical CV dimensions.</p>
             </div>
           </div>
 
-          <div class="language-grid">
-            <article class="language-card soft-card reveal">
-              <h3>French</h3>
-              <p>Native</p>
-              <span class="soft-pill">Professional and academic use</span>
-            </article>
-            <article class="language-card soft-card reveal">
-              <h3>English</h3>
-              <p>Professional / B1</p>
-              <span class="soft-pill">Technical reading and work context</span>
-            </article>
-          </div>
+          <article class="language-radar-panel inset-panel reveal" aria-labelledby="language-radar-title">
+            <div class="language-radar-head">
+              <h3 id="language-radar-title">Language radar</h3>
+              <div class="language-legend" aria-label="Radar legend">
+                <span><i class="legend-dot french"></i>French</span>
+                <span><i class="legend-dot english"></i>English</span>
+              </div>
+            </div>
+            <svg class="language-radar" viewBox="0 0 300 270" role="img" aria-labelledby="language-radar-title language-radar-desc">
+              <desc id="language-radar-desc">French scores 5 out of 5 on speaking, writing, reading, listening and vocabulary. English scores 3.5 in speaking, 4 in writing, 4.5 in reading, 4 in listening and 4 in vocabulary.</desc>
+              <g class="radar-grid" aria-hidden="true">
+                <polygon points="150,117.6 163.7,127.6 158.5,143.7 141.5,143.7 136.3,127.6"></polygon>
+                <polygon points="150,103.2 177.4,123.1 166.9,155.3 133.1,155.3 122.6,123.1"></polygon>
+                <polygon points="150,88.8 191.1,118.7 175.4,167.0 124.6,167.0 108.9,118.7"></polygon>
+                <polygon points="150,74.4 204.8,114.2 183.9,178.6 116.1,178.6 95.2,114.2"></polygon>
+                <polygon points="150,60 218.5,109.8 192.3,190.2 107.7,190.2 81.5,109.8"></polygon>
+              </g>
+              <g class="radar-axes" aria-hidden="true">
+                <line x1="150" y1="132" x2="150" y2="60"></line>
+                <line x1="150" y1="132" x2="218.5" y2="109.8"></line>
+                <line x1="150" y1="132" x2="192.3" y2="190.2"></line>
+                <line x1="150" y1="132" x2="107.7" y2="190.2"></line>
+                <line x1="150" y1="132" x2="81.5" y2="109.8"></line>
+              </g>
+              <polygon class="radar-area french" points="150,60 218.5,109.8 192.3,190.2 107.7,190.2 81.5,109.8"></polygon>
+              <polygon class="radar-area english" points="150,81.6 204.8,114.2 188.1,184.4 116.1,178.6 95.2,114.2"></polygon>
+              <g class="radar-points" aria-hidden="true">
+                <circle class="french" cx="150" cy="60" r="2.6"></circle>
+                <circle class="french" cx="218.5" cy="109.8" r="2.6"></circle>
+                <circle class="french" cx="192.3" cy="190.2" r="2.6"></circle>
+                <circle class="french" cx="107.7" cy="190.2" r="2.6"></circle>
+                <circle class="french" cx="81.5" cy="109.8" r="2.6"></circle>
+                <circle class="english" cx="150" cy="81.6" r="2.6"></circle>
+                <circle class="english" cx="204.8" cy="114.2" r="2.6"></circle>
+                <circle class="english" cx="188.1" cy="184.4" r="2.6"></circle>
+                <circle class="english" cx="116.1" cy="178.6" r="2.6"></circle>
+                <circle class="english" cx="95.2" cy="114.2" r="2.6"></circle>
+              </g>
+              <g class="radar-labels">
+                <text x="150" y="34" text-anchor="middle">Speaking</text>
+                <text x="240" y="109" text-anchor="middle">Writing</text>
+                <text x="198" y="222" text-anchor="middle">Reading</text>
+                <text x="102" y="222" text-anchor="middle">Listening</text>
+                <text x="55" y="109" text-anchor="middle">Vocabulary</text>
+              </g>
+            </svg>
+          </article>
         </div>
       </section>
 
@@ -443,16 +585,39 @@
               <p>Open to data, dashboarding, marketing analytics, interface design and workflow clarification projects.</p>
             </div>
 
-            <div class="contact-rows">
-              <a class="contact-row inset-panel" href="mailto:enzo.de_matos@icloud.com"><span>Email</span><strong>enzo.de_matos@icloud.com</strong></a>
-              <a class="contact-row inset-panel" href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/e-d-m</strong></a>
-              <a class="contact-row inset-panel" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer"><span>GitHub</span><strong>github.com/Brainfkt</strong></a>
-              <a class="contact-row inset-panel" href="https://brainfkt.github.io/Brainfkt/" target="_blank" rel="noreferrer"><span>Portfolio</span><strong>brainfkt.github.io/Brainfkt</strong></a>
-            </div>
-
-            <div class="contact-actions">
-              <a class="button button-primary" href="cv-enzo-de-matos.pdf" download>Download CV</a>
-              <button class="button button-secondary copy-email" type="button" data-copy="enzo.de_matos@icloud.com">Copy email</button>
+            <div class="contact-options" aria-label="Contact options">
+              <a class="contact-option" href="mailto:enzo.de_matos@icloud.com" aria-label="Email Enzo de Matos">
+                <span class="contact-option-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M4.75 6.5h14.5a1.75 1.75 0 0 1 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75H4.75A1.75 1.75 0 0 1 3 15.75v-7.5A1.75 1.75 0 0 1 4.75 6.5Zm.9 1.5 6.35 5 6.35-5H5.65Zm-.15 1.9v5.75h13V9.9l-7.5 5.9-7.5-5.9Z"/>
+                  </svg>
+                </span>
+                <span>Email</span>
+              </a>
+              <a class="contact-option" href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+                <span class="contact-option-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M5.36 7.85a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM3.72 20.2h3.28V9.22H3.72V20.2Zm5.54 0h3.28v-5.88c0-1.58.8-2.52 2.1-2.52 1.16 0 1.76.8 1.76 2.34v6.06h3.28v-6.5c0-3.08-1.54-4.74-4.08-4.74-1.46 0-2.54.58-3.16 1.66h-.04V9.22H9.26V20.2Z"/>
+                  </svg>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+              <a class="contact-option" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+                <span class="contact-option-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 2.9a9.35 9.35 0 0 0-2.96 18.22c.46.08.62-.2.62-.44v-1.72c-2.54.55-3.08-1.08-3.08-1.08-.42-1.06-1.02-1.34-1.02-1.34-.84-.58.06-.56.06-.56.92.06 1.4.94 1.4.94.82 1.4 2.14 1 2.66.76.08-.6.32-1 .58-1.24-2.02-.22-4.14-1-4.14-4.5 0-1 .36-1.8.94-2.44-.1-.24-.4-1.16.1-2.42 0 0 .76-.24 2.52.94a8.7 8.7 0 0 1 4.6 0c1.76-1.18 2.52-.94 2.52-.94.5 1.26.2 2.18.1 2.42.58.64.94 1.44.94 2.44 0 3.5-2.14 4.28-4.16 4.5.32.28.62.84.62 1.7v2.52c0 .24.16.52.62.44A9.35 9.35 0 0 0 12 2.9Z"/>
+                  </svg>
+                </span>
+                <span>GitHub</span>
+              </a>
+              <a class="contact-option" href="cv-enzo-de-matos.pdf" aria-label="Curriculum PDF">
+                <span class="contact-option-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.25 3.75h6.62c.46 0 .91.18 1.24.51l3.13 3.13c.33.33.51.78.51 1.24v9.12c0 .96-.79 1.75-1.75 1.75H7.25a1.75 1.75 0 0 1-1.75-1.75V5.5c0-.96.79-1.75 1.75-1.75Zm6.25 1.5V8c0 .41.34.75.75.75H17l-3.5-3.5ZM8.75 12a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5Z"/>
+                  </svg>
+                </span>
+                <span>Curriculum</span>
+              </a>
             </div>
           </article>
         </div>
