@@ -516,6 +516,56 @@ button {
   padding: 1.1rem;
 }
 
+.experience-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.experience-card .item-top,
+.experience-card .contract-row,
+.experience-card .item-copy,
+.experience-card .missions {
+  margin-bottom: 0;
+}
+
+.experience-card .missions {
+  margin-top: 0;
+}
+
+.experience-card h3,
+.experience-card .item-top p,
+.experience-card .item-top > span,
+.experience-card .soft-pill,
+.experience-card .tag-list span,
+.date-badge {
+  font-weight: 400;
+}
+
+.experience-card > .item-copy,
+.experience-card .missions li {
+  font-weight: 200;
+}
+
+.education-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.education-card .item-top {
+  margin-bottom: 0;
+}
+
+.education-card h3,
+.education-card .item-top p,
+.education-card .item-top > span,
+.education-card .tag-list span {
+  font-weight: 400;
+}
+
+.education-card > p {
+  font-weight: 200;
+}
+
 .item-top {
   display: grid;
   gap: 0.5rem;
@@ -706,11 +756,23 @@ button {
   box-shadow: -10px -10px 22px var(--shadow-light), 10px 10px 22px rgba(108, 99, 255, 0.12), 10px 10px 24px var(--shadow-dark);
 }
 
+.project-card h3 {
+  font-weight: 400;
+}
+
+.project-card p {
+  font-weight: 200;
+}
+
 .project-summary {
   display: grid;
   gap: 0.8rem;
   cursor: pointer;
   outline: none;
+}
+
+.project-summary .tag-list span {
+  font-weight: 400;
 }
 
 .project-summary:focus-visible {
@@ -769,7 +831,7 @@ button {
   display: grid;
   max-height: 0;
   overflow: hidden;
-  gap: 0.65rem;
+  gap: 0;
   opacity: 0;
   transition:
     max-height 520ms var(--button-ease),
@@ -782,13 +844,19 @@ button {
 }
 
 .project-detail {
-  overflow: hidden;
   display: grid;
-  gap: 0.18rem;
-  padding: 0.72rem 0.85rem;
-  border-radius: var(--radius-md);
-  background: var(--surface-pressed);
-  box-shadow: var(--shadow-pressed-sm);
+  gap: 0.2rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(61, 72, 82, 0.1);
+}
+
+.project-detail:first-child {
+  padding-top: 0.2rem;
+}
+
+.project-detail:last-child {
+  padding-bottom: 0.2rem;
+  border-bottom: 0;
 }
 
 .project-detail h4 {
@@ -802,11 +870,16 @@ button {
 
 .project-detail p {
   color: var(--muted);
+  font-weight: 200;
 }
 
 .project-actions {
   justify-content: flex-end;
   margin-top: auto;
+}
+
+.project-actions .button {
+  font-weight: 400;
 }
 
 .achievement-panel {
