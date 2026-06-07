@@ -250,25 +250,30 @@ function setupProjectAccordions() {
       card.classList.toggle("is-open", isOpen);
       summary.setAttribute("aria-expanded", String(isOpen));
       details.setAttribute("aria-hidden", String(!isOpen));
-      details.inert = !isOpen;
-      details.toggleAttribute("inert", !isOpen);
     };
 
     const toggleProject = () => {
-      setProjectOpen(!card.classList.contains("is-open"));
+      setProjectOpen(summary.getAttribute("aria-expanded") !== "true");
     };
 
-    details.inert = true;
-    details.setAttribute("inert", "");
+    setProjectOpen(false);
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleProject();
+    });
 
     card.addEventListener("click", (event) => {
-      if (event.target.closest("a, button, .project-details")) return;
+      const target = event.target instanceof Element ? event.target : event.target.parentElement;
+      if (target?.closest("a, button")) return;
       toggleProject();
     });
 
     summary.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
+      event.stopPropagation();
       toggleProject();
     });
   });
