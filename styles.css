@@ -744,7 +744,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  min-height: 100%;
   transition:
     border-color 380ms var(--button-ease),
     box-shadow 380ms var(--button-ease),
@@ -829,17 +828,16 @@ button {
 
 .project-details {
   display: grid;
-  max-height: 0;
+  height: 0;
   overflow: hidden;
   gap: 0;
   opacity: 0;
   transition:
-    max-height 520ms var(--button-ease),
+    height 520ms var(--button-ease),
     opacity 360ms ease;
 }
 
 .project-card.is-open .project-details {
-  max-height: 520px;
   opacity: 1;
 }
 
@@ -875,7 +873,7 @@ button {
 
 .project-actions {
   justify-content: flex-end;
-  margin-top: auto;
+  margin-top: 0.2rem;
 }
 
 .project-actions .button {

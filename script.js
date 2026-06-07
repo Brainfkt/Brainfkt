@@ -250,6 +250,7 @@ function setupProjectAccordions() {
       card.classList.toggle("is-open", isOpen);
       summary.setAttribute("aria-expanded", String(isOpen));
       details.setAttribute("aria-hidden", String(!isOpen));
+      details.style.height = isOpen ? `${details.scrollHeight}px` : "0px";
     };
 
     const toggleProject = () => {
@@ -275,6 +276,11 @@ function setupProjectAccordions() {
       event.preventDefault();
       event.stopPropagation();
       toggleProject();
+    });
+
+    window.addEventListener("resize", () => {
+      if (summary.getAttribute("aria-expanded") !== "true") return;
+      details.style.height = `${details.scrollHeight}px`;
     });
   });
 }
