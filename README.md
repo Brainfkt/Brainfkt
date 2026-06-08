@@ -9,5 +9,5 @@
   &nbsp;&nbsp;&nbsp;
   <a href="https://raw.githubusercontent.com/Brainfkt/Brainfkt/main/cv-enzo-de-matos.pdf?download=1"><code>[CV:PDF]</code></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://gh.human---think.ing/"><code>[SITE:WEB]</code></a>
+  <a href="https://git.human---think.ing/"><code>[SITE:WEB]</code></a>
 </p>
