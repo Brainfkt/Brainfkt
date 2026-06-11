@@ -138,5 +138,17 @@ class LanguageSvgTests(unittest.TestCase):
         self.assertEqual(legend.findall("svg:tspan[@data-language-legend='true']", namespace), [])
 
 
+class LocFormatTests(unittest.TestCase):
+    def test_compact_number_keeps_two_decimal_places(self):
+        self.assertEqual(today.compact_number('2,300,000'), '2.30M')
+        self.assertEqual(today.compact_number('82,400'), '82.40K')
+
+    def test_compact_loc_values_preserves_raw_total(self):
+        self.assertEqual(
+            today.compact_loc_values(['2,375,109', '82,439', '2,292,670']),
+            ['2.38M', '82.44K', '2,292,670'],
+        )
+
+
 if __name__ == '__main__':
     unittest.main()

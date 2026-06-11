@@ -353,14 +353,14 @@ def compact_loc_values(loc_data, suffix_width=24):
     loc_data = [str(value) for value in loc_data]
     if len(f"( {loc_data[0]}++, {loc_data[1]}-- )") <= suffix_width:
         return loc_data
-    return [compact_number(value) for value in loc_data]
+    return [compact_number(loc_data[0]), compact_number(loc_data[1]), loc_data[2]]
 
 
 def compact_number(value):
     number = int(str(value).replace(',', ''))
     for divisor, suffix in ((1_000_000_000, 'B'), (1_000_000, 'M'), (1_000, 'K')):
         if abs(number) >= divisor:
-            return f'{number / divisor:.1f}'.rstrip('0').rstrip('.') + suffix
+            return f'{number / divisor:.2f}' + suffix
     return str(number)
 
 
