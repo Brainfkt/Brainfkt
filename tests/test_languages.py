@@ -24,7 +24,7 @@ def repository(*languages):
 
 
 class LanguageAggregationTests(unittest.TestCase):
-    def test_build_language_segments_groups_languages_after_top_five(self):
+    def test_build_language_segments_keeps_top_six_and_groups_remaining_as_other(self):
         repositories = [
             repository(
                 ('Python', '#3572A5', 600),
@@ -42,9 +42,10 @@ class LanguageAggregationTests(unittest.TestCase):
 
         self.assertEqual(
             [segment['name'] for segment in segments],
-            ['Python', 'CSS', 'JavaScript', 'HTML', 'Shell', 'Other'],
+            ['Python', 'CSS', 'JavaScript', 'HTML', 'Shell', 'Dockerfile', 'Other'],
         )
-        self.assertEqual(segments[-1]['bytes'], 15)
+        self.assertEqual(segments[-2]['bytes'], 10)
+        self.assertEqual(segments[-1]['bytes'], 5)
         self.assertAlmostEqual(sum(segment['percentage'] for segment in segments), 100)
 
     def test_build_language_segments_uses_fallback_color_and_handles_empty_data(self):
@@ -56,7 +57,7 @@ class LanguageAggregationTests(unittest.TestCase):
     def test_language_block_segments_fill_available_block_count_exactly(self):
         segments = [
             {'name': 'Python', 'color': '#3572A5', 'bytes': 2, 'percentage': 66.666666},
-            {'name': 'Other', 'color': '#8b949e', 'bytes': 1, 'percentage': 33.333334},
+            {'name': 'CSS', 'color': '#663399', 'bytes': 1, 'percentage': 33.333334},
         ]
 
         block_segments = today.language_block_segments(segments)
@@ -67,7 +68,7 @@ class LanguageAggregationTests(unittest.TestCase):
     def test_language_block_segments_keeps_tiny_languages_visible(self):
         segments = [
             {'name': 'Python', 'color': '#3572A5', 'bytes': 999, 'percentage': 99.9},
-            {'name': 'Other', 'color': '#8b949e', 'bytes': 1, 'percentage': 0.1},
+            {'name': 'CSS', 'color': '#663399', 'bytes': 1, 'percentage': 0.1},
         ]
 
         block_segments = today.language_block_segments(segments)
@@ -107,12 +108,22 @@ class LanguageSvgTests(unittest.TestCase):
             self.assertEqual(root.get('height'), '590px')
             self.assertIsNotNone(root.find(".//svg:g[@id='language_bar']", namespace))
 
+    def test_svg_templates_show_top_six_plus_other(self):
+        namespace = {'svg': 'http://www.w3.org/2000/svg'}
+        for filename in ('dark_mode.svg', 'light_mode.svg'):
+            root = etree.parse(filename).getroot()
+            titles = root.findall(".//svg:text[@id='language_bar_blocks']/svg:tspan/svg:title", namespace)
+            names = [title.text.split(':', 1)[0] for title in titles]
+
+            self.assertEqual(len(titles), today.LANGUAGE_BAR_LANGUAGE_LIMIT + 1)
+            self.assertEqual(names[-1], 'Other')
+
     def test_render_language_bar_adds_tooltips_and_replaces_previous_segments(self):
         namespace = {'svg': 'http://www.w3.org/2000/svg'}
         root = etree.parse('dark_mode.svg').getroot()
         today.render_language_bar(root, [
             {'name': 'Python', 'color': '#3572A5', 'bytes': 60, 'percentage': 60.0},
-            {'name': 'Other', 'color': '#8b949e', 'bytes': 40, 'percentage': 40.0},
+            {'name': 'CSS', 'color': '#663399', 'bytes': 40, 'percentage': 40.0},
         ])
         language_bar = root.find(".//svg:g[@id='language_bar']", namespace)
         block_line = language_bar.find("svg:text[@id='language_bar_blocks']", namespace)

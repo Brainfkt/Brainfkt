@@ -12,6 +12,7 @@ USER_NAME = os.environ.get('USER_NAME', 'Brainfkt')
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'loc_query': 0, 'languages_getter': 0}
 
 LANGUAGE_BAR_BLOCKS = 96
+LANGUAGE_BAR_LANGUAGE_LIMIT = 6
 LANGUAGE_BAR_FALLBACK_COLOR = '#8b949e'
 
 
@@ -101,7 +102,7 @@ def languages_getter(cursor=None, edges=None):
     return build_language_segments(edges)
 
 
-def build_language_segments(repositories, limit=5):
+def build_language_segments(repositories, limit=LANGUAGE_BAR_LANGUAGE_LIMIT):
     languages = {}
     for repository in repositories:
         for edge in repository['node']['languages']['edges']:
