@@ -410,7 +410,6 @@ button {
   line-height: 1.05;
 }
 
-.contract-row,
 .tag-list,
 .pill-list,
 .project-actions {
@@ -419,7 +418,6 @@ button {
   gap: 0.65rem;
 }
 
-.soft-pill,
 .tag-list span,
 .pill-list span {
   display: inline-flex;
@@ -505,17 +503,6 @@ button {
   gap: 0.8rem;
 }
 
-.date-badge {
-  justify-self: start;
-  padding: 0.65rem 0.9rem;
-  border-radius: 999px;
-  color: var(--accent);
-  font-size: 0.86rem;
-  font-weight: 900;
-  background: var(--surface);
-  box-shadow: var(--shadow-raised-sm);
-}
-
 .experience-card,
 .education-card,
 .project-card {
@@ -528,7 +515,6 @@ button {
 }
 
 .experience-card .item-top,
-.experience-card .contract-row,
 .experience-card .item-copy,
 .experience-card .missions {
   margin-bottom: 0;
@@ -540,10 +526,8 @@ button {
 
 .experience-card h3,
 .experience-card .item-top p,
-.experience-card .item-top > span,
-.experience-card .soft-pill,
-.experience-card .tag-list span,
-.date-badge {
+.experience-card .experience-meta span,
+.experience-card .tag-list span {
   font-weight: 400;
 }
 
@@ -590,8 +574,17 @@ button {
   font-weight: 800;
 }
 
-.contract-row {
-  margin-bottom: 1rem;
+.experience-meta {
+  display: grid;
+  gap: 0.25rem;
+  justify-items: start;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.experience-meta span:last-child {
+  color: var(--accent);
 }
 
 .item-copy {
@@ -599,8 +592,8 @@ button {
 }
 
 .missions {
-  margin: 1rem 0;
-  padding: 1rem;
+  margin: 0.25rem 0 0;
+  padding: 0;
 }
 
 .missions ul {
@@ -1193,6 +1186,11 @@ button {
     align-items: start;
   }
 
+  .experience-meta {
+    justify-items: end;
+    text-align: right;
+  }
+
   .contact-card {
     padding: 1.5rem;
   }
@@ -1236,18 +1234,6 @@ button {
 
   .timeline {
     gap: 1.2rem;
-  }
-
-  .timeline-row {
-    grid-template-columns: 180px minmax(0, 1fr);
-    align-items: start;
-  }
-
-  .date-badge {
-    position: sticky;
-    top: 112px;
-    justify-self: stretch;
-    text-align: center;
   }
 
   .experience-card,
