@@ -181,7 +181,7 @@ def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my
     if request.status_code == 200:
         if request.json()['data']['repository']['defaultBranchRef'] is not None:
             return loc_counter_one_repo(owner, repo_name, data, request.json()['data']['repository']['defaultBranchRef']['target']['history'], addition_total, deletion_total, my_commits)
-        else: return 0
+        else: return 0, 0, 0
     force_close_file(data)
     if request.status_code == 403:
         raise Exception('Too many requests in a short amount of time!\nYou\'ve hit the non-documented anti-abuse limit!')
