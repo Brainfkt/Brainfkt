@@ -11,10 +11,31 @@
     <meta property="og:image" content="dark_mode.svg">
     <title>Enzo de Matos - CV Portfolio</title>
     <link rel="icon" href="dark_mode.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=project-height-toggle">
+    <link rel="stylesheet" href="styles.css?v=language-switcher">
   </head>
   <body>
     <header class="site-header" data-header>
+      <div class="language-switcher" data-language-switcher>
+        <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-menu" aria-label="Change language" data-language-toggle>
+          <span class="language-flag" data-language-current aria-hidden="true">🇬🇧</span>
+          <span class="sr-only">Change language</span>
+        </button>
+        <div class="language-menu" id="language-menu" role="menu" aria-label="Language selection">
+          <button type="button" role="menuitemradio" aria-checked="true" data-language-option="en">
+            <span class="language-flag" aria-hidden="true">🇬🇧</span>
+            <span class="sr-only">English</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-language-option="fr">
+            <span class="language-flag" aria-hidden="true">🇫🇷</span>
+            <span class="sr-only">French</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-language-option="es">
+            <span class="language-flag" aria-hidden="true">🇪🇸</span>
+            <span class="sr-only">Spanish</span>
+          </button>
+        </div>
+      </div>
+
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span>
         <span></span>
@@ -889,6 +910,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=project-height-toggle" defer></script>
+    <script src="script.js?v=language-switcher" defer></script>
   </body>
 </html>
