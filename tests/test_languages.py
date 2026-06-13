@@ -5,7 +5,7 @@ from unittest.mock import Mock, patch
 
 os.environ.setdefault('ACCESS_TOKEN', 'test-token')
 
-from lxml import etree
+import lxml.etree as etree
 
 import today
 

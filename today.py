@@ -5,7 +5,7 @@ import time
 
 import requests
 from dateutil import relativedelta
-from lxml import etree
+import lxml.etree as etree
 
 HEADERS = {'authorization': 'token ' + os.environ['ACCESS_TOKEN']}
 USER_NAME = os.environ.get('USER_NAME', 'Brainfkt')
