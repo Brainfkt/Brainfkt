@@ -13,10 +13,10 @@ const year = document.querySelector("#year");
 const sectionScrollOffset = 35;
 const languageStorageKey = "portfolio-language";
 const supportedLanguages = ["en", "fr", "es"];
-const languageFlags = {
-  en: "🇬🇧",
-  fr: "🇫🇷",
-  es: "🇪🇸"
+const languageIconPaths = {
+  en: "assets/languages/en.svg",
+  fr: "assets/languages/fr.svg",
+  es: "assets/languages/es.svg"
 };
 const textNodeSourceMap = new WeakMap();
 const attributeSourceMap = new WeakMap();
@@ -488,7 +488,9 @@ function refreshOpenProjectDetails() {
 }
 
 function updateLanguageControls(language) {
-  if (languageCurrent) languageCurrent.textContent = languageFlags[language] || languageFlags.en;
+  if (languageCurrent) {
+    languageCurrent.setAttribute("src", languageIconPaths[language] || languageIconPaths.en);
+  }
 
   languageOptions.forEach((option) => {
     const isActive = option.dataset.languageOption === language;
