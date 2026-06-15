@@ -24,22 +24,22 @@ const translatedAttributes = ["aria-label", "title", "alt", "data-label"];
 
 const documentTranslations = {
   en: {
-    title: "Enzo de Matos - CV Portfolio",
-    description: "Interactive CV portfolio for Enzo de Matos, Marketing Data Analyst in Lyon, France.",
-    ogTitle: "Enzo de Matos - CV Portfolio",
-    ogDescription: "A tactile Soft UI CV for data analysis, marketing strategy, dashboarding and interface design."
+    title: "Enzo de Matos - CV",
+    description: "Interactive CV for Enzo de Matos, Marketing Data Analyst in Lyon, France.",
+    ogTitle: "Enzo de Matos - CV",
+    ogDescription: "Interactive CV for Enzo de Matos, Marketing Data Analyst in Lyon, France."
   },
   fr: {
-    title: "Enzo de Matos - Portfolio CV",
-    description: "Portfolio CV interactif d'Enzo de Matos, Marketing Data Analyst a Lyon, France.",
-    ogTitle: "Enzo de Matos - Portfolio CV",
-    ogDescription: "Un CV tactile en Soft UI pour l'analyse de donnees, la strategie marketing, le reporting BI et le design d'interface."
+    title: "Enzo de Matos - CV",
+    description: "CV interactif d'Enzo de Matos, Marketing Data Analyst a Lyon, France.",
+    ogTitle: "Enzo de Matos - CV",
+    ogDescription: "CV interactif d'Enzo de Matos, Marketing Data Analyst a Lyon, France."
   },
   es: {
-    title: "Enzo de Matos - Portfolio CV",
-    description: "Portfolio CV interactivo de Enzo de Matos, Marketing Data Analyst en Lyon, Francia.",
-    ogTitle: "Enzo de Matos - Portfolio CV",
-    ogDescription: "Un CV tactil en Soft UI para analisis de datos, estrategia de marketing, reporting BI y diseno de interfaces."
+    title: "Enzo de Matos - CV",
+    description: "CV interactivo de Enzo de Matos, Marketing Data Analyst en Lyon, Francia.",
+    ogTitle: "Enzo de Matos - CV",
+    ogDescription: "CV interactivo de Enzo de Matos, Marketing Data Analyst en Lyon, Francia."
   }
 };
 
@@ -403,9 +403,9 @@ function closeLanguageMenu() {
 function getSavedLanguage() {
   try {
     const savedLanguage = window.localStorage.getItem(languageStorageKey);
-    return supportedLanguages.includes(savedLanguage) ? savedLanguage : "en";
+    return supportedLanguages.includes(savedLanguage) ? savedLanguage : "fr";
   } catch {
-    return "en";
+    return "fr";
   }
 }
 
