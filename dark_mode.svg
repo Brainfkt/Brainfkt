@@ -46,7 +46,7 @@ text, tspan {white-space: pre;}
 <text x="390" y="30" fill="#c9d1d9">
 		<tspan x="390" y="30">brainfkt@github</tspan> -————————————————————————————————————————-—-
 		<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">macOS, VM Linux, Windows 10</tspan>
-		<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Age</tspan>:<tspan class="cc" id="age_data_dots"> ............................ </tspan><tspan class="value" id="age_data">23 ans, 6 mois, 22 jours</tspan>
+		<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Age</tspan>:<tspan class="cc" id="age_data_dots"> ............................ </tspan><tspan class="value" id="age_data">23 ans, 6 mois, 23 jours</tspan>
 		<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Company</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Banque Populaire AURA, Lyon, France</tspan>
 		<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Role</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Marketing Data Analyst</tspan>
 		<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">Work</tspan>.<tspan class="key">Style</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">Precise, visual, business-oriented</tspan>
