@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 .venv/
 .playwright-cli
+output/playwright/
+docs/design/
 old
 .DS_Store
 new-cv
