@@ -2775,6 +2775,17 @@ function terminalSetupProjectRepositoryLoaders() {
 
     let busy = false;
 
+    const resetRepositoryLoader = () => {
+      busy = false;
+      fill.style.width = "0%";
+      progress.setAttribute("aria-valuenow", "0");
+      progress.setAttribute("aria-hidden", "true");
+      progress.hidden = true;
+      link.removeAttribute("aria-busy");
+    };
+
+    window.addEventListener("pageshow", resetRepositoryLoader);
+
     link.addEventListener("click", (event) => {
       event.preventDefault();
       if (busy) return;
@@ -2794,25 +2805,8 @@ function terminalSetupProjectRepositoryLoaders() {
         progress.setAttribute("aria-valuenow", String(Math.round(currentProgress)));
       };
 
-      const reset = () => {
-        busy = false;
-        setProgress(0);
-        progress.setAttribute("aria-hidden", "true");
-        progress.hidden = true;
-        link.removeAttribute("aria-busy");
-      };
-
       const openRepository = () => {
-        const destinationLink = document.createElement("a");
-        destinationLink.href = destination;
-        destinationLink.target = "_blank";
-        destinationLink.rel = "noopener noreferrer";
-        destinationLink.hidden = true;
-        document.body.append(destinationLink);
-        destinationLink.click();
-        destinationLink.remove();
-
-        window.setTimeout(reset, 500);
+        window.location.assign(destination);
       };
 
       const startFastProgress = () => {

@@ -1,8 +1,8 @@
 /* Terminal-style portfolio surface. */
 
 @font-face {
-  font-family: "SFMonoSquare-Regular";
-  src: url("https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/d94a73b5-d1c5-4a97-9b2d-18e5941833f6.woff") format("woff");
+  font-family: "SFMono Square";
+  src: url("assets/fonts/sfmono-square-regular.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -61,7 +61,7 @@
   --color-gray-23-border-alpha: rgba(58, 58, 58, 0.3);
   --color-brand-alpha-50: rgba(228, 242, 33, 0.5);
 
-  --font-family-mono: "SFMonoSquare-Regular", "SFMono-Regular", Consolas, Monaco, "Courier New", monospace;
+  --font-family-mono: "SFMono Square", "SFMono-Regular", Consolas, Monaco, "Courier New", monospace;
   --font-size: 16px;
   --theme-line-height-base: 1.25;
   --line: calc(var(--font-size) * var(--theme-line-height-base));
