@@ -31,7 +31,7 @@
         document.documentElement.dataset.tint = tint;
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=brainfkt-20260729-1900">
+    <link rel="stylesheet" href="styles.css?v=brainfkt-20260730-current-accent">
   </head>
   <body>
     <div class="command-bar" data-command-bar role="toolbar" aria-label="Portfolio commands">
@@ -188,34 +188,41 @@
           <article class="terminal-card education-card" aria-label="Education">
             <header class="terminal-card-header terminal-card-header-left"><span aria-hidden="true"></span><h2>Education</h2><span aria-hidden="true"></span></header>
             <div class="terminal-card-body">
-              <p class="education-intro">Business, management, marketing and data education connected to applied analytics projects and work-study practice.</p>
-              <details class="education-disclosure">
-                <summary>
-                  <span class="education-disclosure-icon" aria-hidden="true">⊹</span>
-                  <span>Master of Science Manager in Data Marketing, Bac+5</span>
-                  <span class="status-ok" data-no-translate>2024—2026</span>
-                </summary>
-                <div class="education-disclosure-content">
-                  <div class="status-row"><span>INSEEC MSc · Lyon</span><span class="status-ok">ACTIVE</span></div>
-                  <p>Data management, marketing analytics, CRM, business intelligence, data-driven decision making, Python, Dataiku and applied data projects.</p>
-                  <p class="tag-row">Data marketing · CRM · Business intelligence</p>
+              <section class="education-entry" aria-labelledby="education-msc-title">
+                <div class="education-entry-heading">
+                  <h3 id="education-msc-title">Master of Science Manager in Data Marketing, Bac+5</h3>
+                  <span class="badge education-status status-current">CURRENT</span>
                 </div>
-              </details>
+                <div class="education-entry-meta">
+                  <p class="education-school">INSEEC MSc · Lyon</p>
+                  <span class="education-period" data-no-translate>2024—2026</span>
+                </div>
+                <p class="education-description">Data management, marketing analytics, CRM, business intelligence, data-driven decision making, Python, Dataiku and applied data projects.</p>
+                <div class="education-badges">
+                  <span class="badge">Data marketing</span>
+                  <span class="badge" data-no-translate>CRM</span>
+                  <span class="badge">Business intelligence</span>
+                </div>
+              </section>
 
               <div class="terminal-divider-gradient education-divider" role="separator" aria-hidden="true"></div>
 
-              <details class="education-disclosure">
-                <summary>
-                  <span class="education-disclosure-icon" aria-hidden="true">⊹</span>
-                  <span>BUT Business and Administration Management, GEMA track, Bac+3</span>
-                  <span class="status-off" data-no-translate>2021—2024</span>
-                </summary>
-                <div class="education-disclosure-content">
-                  <div class="status-row"><span>IUT Lumiere Lyon 2</span><span class="status-off">CLOSED</span></div>
-                  <p>Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.</p>
-                  <p class="tag-row">Management · Activity steering · Business processes</p>
+              <section class="education-entry" aria-labelledby="education-but-title">
+                <div class="education-entry-heading">
+                  <h3 id="education-but-title">BUT Business and Administration Management, GEMA track</h3>
+                  <span class="badge education-status status-ended">ENDED</span>
                 </div>
-              </details>
+                <div class="education-entry-meta">
+                  <p class="education-school">IUT Lumiere Lyon 2</p>
+                  <span class="education-period" data-no-translate>2021—2024</span>
+                </div>
+                <p class="education-description">Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.</p>
+                <div class="education-badges">
+                  <span class="badge">Management</span>
+                  <span class="badge">Activity steering</span>
+                  <span class="badge">Business processes</span>
+                </div>
+              </section>
             </div>
           </article>
         </section>
@@ -575,6 +582,6 @@
       </footer>
     </div>
 
-    <script src="script.js?v=brainfkt-20260729-1930" defer></script>
+    <script src="script.js?v=brainfkt-20260730-education-title" defer></script>
   </body>
 </html>

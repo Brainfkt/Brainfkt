@@ -62,6 +62,8 @@ const textTranslations = {
     "Profile": "Profil",
     "About": "À propos",
     "Experience": "Expérience",
+    "CURRENT": "ACTUEL",
+    "ENDED": "TERMINÉ",
     "Education": "Formation",
     "Skills": "Compétences",
     "Projects": "Projets",
@@ -122,12 +124,11 @@ const textTranslations = {
     "Emailing": "Emailing",
     "Marketing support": "Support marketing",
     "Web design": "Web design",
-    "Business, management, marketing and data education connected to applied analytics projects and work-study practice.": "Formation en business, management, marketing et data, associée à des projets d’analyse appliquée et à une pratique en alternance.",
     "Master of Science Manager in Data Marketing, Bac+5": "Master of Science Manager en Data Marketing, Bac+5",
     "Data management, marketing analytics, CRM, business intelligence, data-driven decision making, Python, Dataiku and applied data projects.": "Data management, marketing analytics, CRM, business intelligence, prise de décision guidée par les données, Python, Dataiku et projets data appliqués.",
     "Data marketing": "Data marketing",
     "Business intelligence": "Business intelligence",
-    "BUT Business and Administration Management, GEMA track, Bac+3": "BUT Gestion des Entreprises et des Administrations, parcours GEMA, Bac+3",
+    "BUT Business and Administration Management, GEMA track": "BUT Gestion des Entreprises et des Administrations, GEMA",
     "Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.": "Gestion des organisations, pilotage d’activité, analyse financière, entrepreneuriat et compréhension des processus business.",
     "Management": "Management",
     "Activity steering": "Pilotage d’activité",
@@ -242,6 +243,8 @@ const textTranslations = {
     "Profile": "Perfil",
     "About": "Acerca de",
     "Experience": "Experiencia",
+    "CURRENT": "ACTUAL",
+    "ENDED": "FINALIZADO",
     "Education": "Formacion",
     "Skills": "Competencias",
     "Projects": "Proyectos",
@@ -302,12 +305,11 @@ const textTranslations = {
     "Emailing": "Emailing",
     "Marketing support": "Soporte marketing",
     "Web design": "Web design",
-    "Business, management, marketing and data education connected to applied analytics projects and work-study practice.": "Formacion en negocio, gestion, marketing y data conectada con proyectos analiticos aplicados y practica en alternancia.",
     "Master of Science Manager in Data Marketing, Bac+5": "Master of Science Manager en Data Marketing, Bac+5",
     "Data management, marketing analytics, CRM, business intelligence, data-driven decision making, Python, Dataiku and applied data projects.": "Data management, marketing analytics, CRM, business intelligence, toma de decisiones data-driven, Python, Dataiku y proyectos data aplicados.",
     "Data marketing": "Data marketing",
     "Business intelligence": "Business intelligence",
-    "BUT Business and Administration Management, GEMA track, Bac+3": "BUT Gestion de Empresas y Administracion, itinerario GEMA, Bac+3",
+    "BUT Business and Administration Management, GEMA track": "BUT Gestion de Empresas y Administracion, itinerario GEMA",
     "Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.": "Gestion de organizaciones, direccion de actividad, analisis financiero, emprendimiento y comprension de procesos de negocio.",
     "Management": "Gestion",
     "Activity steering": "Direccion de actividad",
@@ -1519,7 +1521,7 @@ const terminalExperienceCatalog = [
     company: "Banque Populaire Auvergne Rhone Alpes",
     tablePeriod: "09/24 -->",
     period: "Sep 2024—Present",
-    status: "ACTIVE",
+    status: "CURRENT",
     location: "Lyon, France",
     summary: "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.",
     responsibilities: [
@@ -1547,7 +1549,7 @@ const terminalExperienceCatalog = [
     company: "DCS EASYWARE",
     tablePeriod: "11/23—09/24",
     period: "Nov 2023—Sep 2024",
-    status: "CLOSED",
+    status: "ENDED",
     location: "Lyon, France",
     summary: "Everwin administration, portfolio reporting and user support for commercial and operational units.",
     responsibilities: [
@@ -1573,7 +1575,7 @@ const terminalExperienceCatalog = [
     company: "MY SERIGRAPHY",
     tablePeriod: "05/22—09/23",
     period: "May 2022—Sep 2023",
-    status: "CLOSED",
+    status: "ENDED",
     location: "Lyon, France",
     summary: "CRM, order tracking, sales KPIs and internal process structuring in a fast-growing small business.",
     responsibilities: [
@@ -1598,7 +1600,7 @@ const terminalExperienceCatalog = [
     company: "My Serigraphy / freelance web design",
     tablePeriod: "2020—2022",
     period: "2020—2022",
-    status: "CLOSED",
+    status: "ENDED",
     location: "Lyon and remote",
     summary: "Complementary CRM, marketing communication, SEO and website delivery experience.",
     responsibilities: [
@@ -2090,12 +2092,12 @@ function terminalRenderExperience(index = terminalExperienceIndex) {
       getTranslatedValue(experience.tableRole, activeLanguage),
       getTranslatedValue(experience.tableCompany, activeLanguage),
       terminalGetExperienceTablePeriod(experience),
-      experience.status
+      getTranslatedValue(experience.status, activeLanguage)
     ].forEach((value, cellIndex) => {
       const cell = document.createElement("td");
       cell.textContent = value;
       if (cellIndex === 3) {
-        cell.className = experience.status === "ACTIVE" ? "status-ok" : "status-off";
+        cell.className = experience.status === "CURRENT" ? "status-current" : "status-ended";
       }
       row.append(cell);
     });
