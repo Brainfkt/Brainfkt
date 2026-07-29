@@ -1,915 +1,579 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en" data-theme="light" data-appearance="system" data-tint="none">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Interactive CV for Enzo de Matos, Marketing Data Analyst in Lyon, France.">
-    <meta name="theme-color" content="#E0E5EC">
+    <meta name="theme-color" content="#ffffff">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Enzo de Matos - CV">
     <meta property="og:description" content="Interactive CV for Enzo de Matos, Marketing Data Analyst in Lyon, France.">
-    <meta property="og:image" content="dark_mode.svg">
     <title>Enzo de Matos - CV</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=language-icons">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" data-dynamic-favicon>
+    <script>
+      (() => {
+        let appearance = "system";
+        let tint = "none";
+
+        try {
+          appearance = localStorage.getItem("brainfkt-portfolio-appearance") || "system";
+          tint = localStorage.getItem("brainfkt-portfolio-tint") || "none";
+        } catch {
+          // Storage is optional.
+        }
+
+        const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.appearance = appearance;
+        document.documentElement.dataset.theme = appearance === "system"
+          ? (prefersDark ? "dark" : "light")
+          : appearance;
+        document.documentElement.dataset.tint = tint;
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=brainfkt-20260729-1830">
   </head>
   <body>
-    <header class="site-header" data-header>
-      <div class="language-switcher" data-language-switcher>
-        <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-menu" aria-label="Change language" data-language-toggle>
-          <img class="language-icon" src="assets/languages/fr.svg" alt="" width="24" height="24" data-language-current aria-hidden="true">
-          <span class="sr-only">Change language</span>
+    <div class="command-bar" data-command-bar role="toolbar" aria-label="Portfolio commands">
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="language-command-menu" data-command-button="language">
+          <span class="action-hotkey" data-no-translate>⌃+L</span>
+          <span class="action-label">Language</span>
         </button>
-        <div class="language-menu" id="language-menu" role="menu" aria-label="Language selection">
-          <button type="button" role="menuitemradio" aria-checked="false" data-language-option="en">
-            <img class="language-icon" src="assets/languages/en.svg" alt="" width="24" height="24" aria-hidden="true">
-            <span class="sr-only">English</span>
+        <div class="command-menu" id="language-command-menu" role="menu" aria-label="Language selection" data-command-menu="language" hidden>
+          <button type="button" role="menuitemradio" aria-checked="true" data-menu-item data-language-choice="en">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>English</span>
           </button>
-          <button type="button" role="menuitemradio" aria-checked="true" data-language-option="fr">
-            <img class="language-icon" src="assets/languages/fr.svg" alt="" width="24" height="24" aria-hidden="true">
-            <span class="sr-only">French</span>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-language-choice="fr">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>Français</span>
           </button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-language-option="es">
-            <img class="language-icon" src="assets/languages/es.svg" alt="" width="24" height="24" aria-hidden="true">
-            <span class="sr-only">Spanish</span>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-language-choice="es">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>Español</span>
           </button>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Close</span></div>
         </div>
       </div>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="sr-only">Open navigation</span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#profile">Profile</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="profile-title">Enzo de Matos</h2>
-              <p>CRM-focused Data Analyst combining customer analytics, campaign performance, BI reporting and business recommendations.</p>
-            </div>
-          </div>
-
-          <div class="strength-grid">
-            <article class="strength-card soft-card reveal">
-              <h3>CRM analytics</h3>
-              <p>Analyze customer behavior, segmentation, targeting, appetite and equipment indicators for commercial activation.</p>
-            </article>
-            <article class="strength-card soft-card reveal">
-              <h3>Campaign performance</h3>
-              <p>Track and optimize hundreds of campaigns across CRM tools, audience scopes and operational constraints.</p>
-            </article>
-            <article class="strength-card soft-card reveal">
-              <h3>BI and reporting</h3>
-              <p>Build Power BI dashboards and automated reports for commercial steering, campaign follow-up and daily monitoring.</p>
-            </article>
-            <article class="strength-card soft-card reveal">
-              <h3>Business recommendations</h3>
-              <p>Turn large customer datasets into clear insights, reliable KPIs and actions that business teams can use.</p>
-            </article>
-          </div>
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="appearance-command-menu" data-command-button="appearance">
+          <span class="action-hotkey" data-no-translate>⌃+A</span>
+          <span class="action-label">Appearance</span>
+        </button>
+        <div class="command-menu" id="appearance-command-menu" role="menu" aria-label="Appearance selection" data-command-menu="appearance" hidden>
+          <button type="button" role="menuitemradio" aria-checked="true" data-menu-item data-appearance-choice="system">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>System</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-appearance-choice="light">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Light</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-appearance-choice="dark">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Dark</span>
+          </button>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Close</span></div>
         </div>
-      </section>
-
-      <section class="section" id="experience" aria-labelledby="experience-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="experience-title">Professional experience</h2>
-              <p>CRM, BI and operational reporting experience across banking, IT services and growing small-business environments.</p>
-            </div>
-          </div>
-
-          <div class="timeline">
-            <article class="timeline-row reveal">
-              <div class="experience-card soft-card">
-                <div class="item-top">
-                  <div>
-                    <h3>Marketing Analyst / Marketing Data Research Analyst</h3>
-                    <p>Banque Populaire Auvergne Rhone Alpes</p>
-                  </div>
-                  <div class="experience-meta">
-                    <span>Lyon, France</span>
-                    <span>Sep 2024 - Present</span>
-                  </div>
-                </div>
-                <p class="item-copy">Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.</p>
-                <div class="missions">
-                  <ul>
-                    <li>Set up, monitor and optimize commercial campaigns in Adobe Campaign.</li>
-                    <li>Analyze customer populations ranging from thousands to several million records depending on the study scope.</li>
-                    <li>Create around ten Power BI dashboards for commercial steering, customer follow-up, campaigns and equipment.</li>
-                    <li>Automate recurring reporting, including daily monitoring when required by business teams.</li>
-                  </ul>
-                </div>
-                <div class="tag-list">
-                  <span>SQL</span>
-                  <span>Teradata</span>
-                  <span>SAS</span>
-                  <span>Alteryx</span>
-                  <span>Adobe Campaign</span>
-                  <span>Power BI</span>
-                  <span>Excel</span>
-                  <span>Apprenticeship / CRM analytics</span>
-                  <span>Banking campaigns</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-row reveal">
-              <div class="experience-card soft-card">
-                <div class="item-top">
-                  <div>
-                    <h3>ETI Management Assistant</h3>
-                    <p>DCS Easyware</p>
-                  </div>
-                  <div class="experience-meta">
-                    <span>Lyon, France</span>
-                    <span>Nov 2023 - Sep 2024</span>
-                  </div>
-                </div>
-                <p class="item-copy">Everwin administration, portfolio reporting and user support for commercial and operational units.</p>
-                <div class="missions">
-                  <ul>
-                    <li>Maintained and improved the reliability of Everwin data used for business and operational tracking.</li>
-                    <li>Produced ad hoc reports and analyses in Excel and Power BI for portfolio monitoring.</li>
-                    <li>Improved existing BI reports through UI/UX adjustments, new indicators and more useful features.</li>
-                    <li>Trained new users and increased average BI report usage frequency by 50%.</li>
-                  </ul>
-                </div>
-                <div class="tag-list">
-                  <span>Everwin</span>
-                  <span>Excel</span>
-                  <span>Power BI</span>
-                  <span>Reporting</span>
-                  <span>User training</span>
-                  <span>Functional administration</span>
-                  <span>BI adoption</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-row reveal">
-              <div class="experience-card soft-card">
-                <div class="item-top">
-                  <div>
-                    <h3>TPE Management Assistant</h3>
-                    <p>My Serigraphy</p>
-                  </div>
-                  <div class="experience-meta">
-                    <span>Lyon, France</span>
-                    <span>May 2022 - Sep 2023</span>
-                  </div>
-                </div>
-                <p class="item-copy">CRM, order tracking, sales KPIs and internal process structuring in a fast-growing small business.</p>
-                <div class="missions">
-                  <ul>
-                    <li>Tracked customers, orders, quotes, invoices, unpaid items and sales indicators through the CRM.</li>
-                    <li>Structured internal processes around commercial coordination, invoicing and product catalogue updates.</li>
-                    <li>Automated CRM tasks to streamline order processing, customer follow-up and invoice management.</li>
-                    <li>Divided invoice processing time by three through CRM workflow automation.</li>
-                  </ul>
-                </div>
-                <div class="tag-list">
-                  <span>CRM</span>
-                  <span>Sales KPIs</span>
-                  <span>Automation</span>
-                  <span>Invoicing</span>
-                  <span>CRM operations</span>
-                  <span>Process automation</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-row reveal">
-              <div class="experience-card soft-card">
-                <div class="item-top">
-                  <div>
-                    <h3>Communication and Web Projects</h3>
-                    <p>My Serigraphy / freelance web design</p>
-                  </div>
-                  <div class="experience-meta">
-                    <span>Lyon and remote</span>
-                    <span>2020 - 2022</span>
-                  </div>
-                </div>
-                <p class="item-copy">Complementary CRM, marketing communication, SEO and website delivery experience.</p>
-                <div class="missions">
-                  <ul>
-                    <li>Managed CRM follow-up, weekly marketing KPIs, emailing campaigns and LinkedIn editorial planning.</li>
-                    <li>Handled prospecting support, SEO audit work and competitive monitoring for My Serigraphy.</li>
-                    <li>Scoped, designed and delivered a showcase/e-commerce website as a freelance web designer.</li>
-                  </ul>
-                </div>
-                <div class="tag-list">
-                  <span>CRM</span>
-                  <span>Emailing</span>
-                  <span>SEO</span>
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>Marketing support</span>
-                  <span>Web design</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="education" aria-labelledby="education-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="education-title">Education</h2>
-              <p>Business, management, marketing and data education connected to applied analytics projects and work-study practice.</p>
-            </div>
-          </div>
-
-          <div class="education-grid">
-            <article class="education-card soft-card reveal">
-              <div class="item-top">
-                <div>
-                  <h3>Master of Science Manager in Data Marketing, Bac+5</h3>
-                  <p>INSEEC MSc, Lyon</p>
-                </div>
-                <span>2024 - 2026</span>
-              </div>
-              <p>Data management, marketing analytics, CRM, business intelligence, data-driven decision making, Python, Dataiku and applied data projects.</p>
-              <div class="tag-list">
-                <span>Data marketing</span>
-                <span>CRM</span>
-                <span>Business intelligence</span>
-              </div>
-            </article>
-            <article class="education-card soft-card reveal">
-              <div class="item-top">
-                <div>
-                  <h3>BUT Business and Administration Management, GEMA track, Bac+3</h3>
-                  <p>IUT Lumiere Lyon 2</p>
-                </div>
-                <span>2021 - 2024</span>
-              </div>
-              <p>Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.</p>
-              <div class="tag-list">
-                <span>Management</span>
-                <span>Activity steering</span>
-                <span>Business processes</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="skills" aria-labelledby="skills-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="skills-title">Skills</h2>
-              <p>Grouped capabilities organized by category for quick CV scanning.</p>
-            </div>
-          </div>
-
-          <article class="skills-card soft-card reveal">
-            <section class="skills-group" aria-labelledby="skills-data">
-              <h3 id="skills-data">Data</h3>
-              <div class="pill-list"><span>SQL</span><span>DAX</span><span>Python</span><span>R</span><span>Segmentation</span></div>
-            </section>
-            <section class="skills-group" aria-labelledby="skills-marketing">
-              <h3 id="skills-marketing">Marketing</h3>
-              <div class="pill-list"><span>Campaign analysis</span><span>CRM</span><span>KPI framing</span><span>Performance</span></div>
-            </section>
-            <section class="skills-group" aria-labelledby="skills-design">
-              <h3 id="skills-design">Design</h3>
-              <div class="pill-list"><span>UX/UI</span><span>Hierarchy</span><span>Figma</span><span>Dashboard layout</span></div>
-            </section>
-            <section class="skills-group" aria-labelledby="skills-development">
-              <h3 id="skills-development">Development</h3>
-              <div class="pill-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Git</span></div>
-            </section>
-            <section class="skills-group" aria-labelledby="skills-tools">
-              <h3 id="skills-tools">Tools</h3>
-              <div class="pill-list"><span>Power BI</span><span>Excel</span><span>Dataiku</span><span>Teradata</span><span>Notion</span></div>
-            </section>
-            <section class="skills-group" aria-labelledby="skills-soft">
-              <h3 id="skills-soft">Soft skills</h3>
-              <div class="pill-list"><span>Creative</span><span>Rigorous</span><span>Team spirit</span><span>Agile</span></div>
-            </section>
-          </article>
-        </div>
-      </section>
-
-      <section class="section tools-section" aria-labelledby="tools-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="tools-title">Tools and technologies</h2>
-              <p>Core analytics, design and web tools used across portfolio projects.</p>
-            </div>
-          </div>
-
-          <div class="tool-carousel-stack reveal" aria-label="Tools and technologies">
-            <div class="tool-carousel" style="--duration: 34s; --hover-duration: 170s;" aria-label="Data and business intelligence tools">
-              <div class="tool-carousel-track">
-                <span class="tool-logo-card python" aria-label="Python">
-                  <img src="assets/logos/python.svg" alt="" decoding="async">
-                  <span>Python</span>
-                </span>
-                <span class="tool-logo-card sql" aria-label="SQL">
-                  <img src="assets/logos/sql.svg" alt="" decoding="async">
-                  <span>SQL</span>
-                </span>
-                <span class="tool-logo-card powerbi" aria-label="Power BI">
-                  <img src="assets/logos/power-bi.svg" alt="" decoding="async">
-                  <span>Power BI</span>
-                </span>
-                <span class="tool-logo-card excel" aria-label="Excel">
-                  <img src="assets/logos/excel.svg" alt="" decoding="async">
-                  <span>Excel</span>
-                </span>
-                <span class="tool-logo-card dax" aria-label="DAX">
-                  <img src="assets/logos/power-pivot-cropped.png" alt="" decoding="async">
-                  <span>DAX</span>
-                </span>
-                <span class="tool-logo-card teradata" aria-label="Teradata SQL Assistant">
-                  <img src="assets/logos/teradata.svg" alt="" decoding="async">
-                  <span>Teradata</span>
-                </span>
-                <span class="tool-logo-card dataiku" aria-label="Dataiku DSS">
-                  <img src="assets/logos/dataiku.svg" alt="" decoding="async">
-                  <span>Dataiku</span>
-                </span>
-                <span class="tool-logo-card tableau" aria-label="Tableau">
-                  <img src="assets/logos/tableau.svg" alt="" decoding="async">
-                  <span>Tableau</span>
-                </span>
-                <span class="tool-logo-card rstudio" aria-label="R and RStudio">
-                  <img src="assets/logos/rstudio.svg" alt="" decoding="async">
-                  <span>R / RStudio</span>
-                </span>
-                <span class="tool-logo-card minitab" aria-label="Minitab">
-                  <img src="assets/logos/minitab.svg" alt="" decoding="async">
-                  <span>Minitab</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="tool-carousel is-reverse" style="--duration: 30s; --hover-duration: 150s;" aria-label="Web development and database tools">
-              <div class="tool-carousel-track">
-                <span class="tool-logo-card javascript" aria-label="JavaScript">
-                  <img src="assets/logos/javascript.svg" alt="" decoding="async">
-                  <span>JavaScript</span>
-                </span>
-                <span class="tool-logo-card typescript" aria-label="TypeScript">
-                  <img src="assets/logos/typescript.svg" alt="" decoding="async">
-                  <span>TypeScript</span>
-                </span>
-                <span class="tool-logo-card react" aria-label="React">
-                  <img src="assets/logos/react.svg" alt="" decoding="async">
-                  <span>React</span>
-                </span>
-                <span class="tool-logo-card html" aria-label="HTML">
-                  <img src="assets/logos/html5.svg" alt="" decoding="async">
-                  <span>HTML</span>
-                </span>
-                <span class="tool-logo-card css" aria-label="CSS">
-                  <img src="assets/logos/css.svg" alt="" decoding="async">
-                  <span>CSS</span>
-                </span>
-                <span class="tool-logo-card git" aria-label="Git">
-                  <img src="assets/logos/git.svg" alt="" decoding="async">
-                  <span>Git</span>
-                </span>
-                <span class="tool-logo-card sqlite" aria-label="SQLite">
-                  <img src="assets/logos/sqlite.svg" alt="" decoding="async">
-                  <span>SQLite</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="tool-carousel" style="--duration: 26s; --hover-duration: 130s;" aria-label="Design and workspace tools">
-              <div class="tool-carousel-track">
-                <span class="tool-logo-card figma" aria-label="Figma">
-                  <img src="assets/logos/figma.svg" alt="" decoding="async">
-                  <span>Figma</span>
-                </span>
-                <span class="tool-logo-card notion" aria-label="Notion">
-                  <img src="assets/logos/notion.svg" alt="" decoding="async">
-                  <span>Notion</span>
-                </span>
-                <span class="tool-logo-card miro" aria-label="Miro">
-                  <img src="assets/logos/miro.svg" alt="" decoding="async">
-                  <span>Miro</span>
-                </span>
-                <span class="tool-logo-card photoshop" aria-label="Photoshop">
-                  <img src="assets/logos/photoshop.svg" alt="" decoding="async">
-                  <span>Photoshop</span>
-                </span>
-                <span class="tool-logo-card airtable" aria-label="Airtable">
-                  <img src="assets/logos/airtable.svg" alt="" decoding="async">
-                  <span>Airtable</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="tool-carousel is-reverse" style="--duration: 32s; --hover-duration: 160s;" aria-label="API and automation tools">
-              <div class="tool-carousel-track">
-                <span class="tool-logo-card mcp" aria-label="Model Context Protocol">
-                  <img src="assets/logos/mcp.svg" alt="" decoding="async">
-                  <span>MCP</span>
-                </span>
-                <span class="tool-logo-card fastapi" aria-label="FastAPI">
-                  <img src="assets/logos/fastapi.svg" alt="" decoding="async">
-                  <span>FastAPI</span>
-                </span>
-                <span class="tool-logo-card php" aria-label="PHP">
-                  <img src="assets/logos/php.svg" alt="" decoding="async">
-                  <span>PHP</span>
-                </span>
-                <span class="tool-logo-card mermaid" aria-label="Mermaid">
-                  <img src="assets/logos/mermaid.svg" alt="" decoding="async">
-                  <span>Mermaid</span>
-                </span>
-                <span class="tool-logo-card zapier" aria-label="Zapier">
-                  <img src="assets/logos/zapier.svg" alt="" decoding="async">
-                  <span>Zapier</span>
-                </span>
-                <span class="tool-logo-card n8n" aria-label="n8n">
-                  <img src="assets/logos/n8n.svg" alt="" decoding="async">
-                  <span>n8n</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="projects" aria-labelledby="projects-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="projects-title">Projects</h2>
-              <p>Selected public and private projects showing CRM analytics, BI, pricing intelligence, data visualization and local productivity tools.</p>
-            </div>
-          </div>
-
-          <div class="projects-grid">
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-bank-details">
-                <div class="project-title-row">
-                  <h3>Bank Churners</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>End-to-end banking churn study with risk scoring, model interpretation and a Streamlit dashboard.</p>
-                <div class="tag-list"><span>Python</span><span>XGBoost</span><span>SHAP</span><span>Streamlit</span><span>CRM</span></div>
-              </div>
-              <div class="project-details" id="project-bank-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Credit card attrition case for a CRM or retention team that needs to identify risky customers and prioritize outreach.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Handled data audit, feature engineering, class imbalance, model benchmarking, threshold choice and global/local explainability.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Documented pipeline, tests, risk personas and dashboard artifacts with a retention-oriented decision threshold.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="button button-secondary" href="https://github.com/Brainfkt/Bank-Churners" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </article>
-
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-music-label-details">
-                <div class="project-title-row">
-                  <h3>Music Label Performance Analytics</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.</p>
-                <div class="tag-list"><span>SQL</span><span>MySQL</span><span>Python</span><span>Dash</span><span>Plotly</span></div>
-              </div>
-              <div class="project-details" id="project-music-label-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Reusable analytics dataset, artist performance score, campaign ROI views and executive dashboard for commercial decisions.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="button button-secondary" href="https://github.com/Brainfkt/music-label-performance-analytics" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </article>
-
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-pricelab-details">
-                <div class="project-title-row">
-                  <h3>PriceLab</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>Pricing intelligence simulator with reliability scoring, elasticity modeling and product-level recommendations.</p>
-                <div class="tag-list"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>Plotly</span><span>Pricing</span></div>
-              </div>
-              <div class="project-details" id="project-pricelab-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Product catalogue simulator turning sales, prices, stock, promotions and context history into guarded pricing scenarios.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Built schema validation, quality checks, feature engineering, backtesting, elasticity models and scenario optimization.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Recommendations include expected volume, revenue, margin, confidence, risk warnings and exportable product reports.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="button button-secondary" href="https://github.com/Brainfkt/PriceLab" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </article>
-
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-leadagotchi-details">
-                <div class="project-title-row">
-                  <h3>Leadagotchi</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>Tamagotchi-inspired micro CRM for managing leads, client momentum and business health.</p>
-                <div class="tag-list"><span>CRM</span><span>React</span><span>TypeScript</span><span>Vite</span><span>Tauri</span></div>
-              </div>
-              <div class="project-details" id="project-leadagotchi-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Personal CRM concept focused on keeping leads visible, active and easy to prioritize without a heavy enterprise tool.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Designed the product metaphor, local app structure and CRM interaction model for lightweight relationship tracking.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Public proof of CRM product thinking combined with frontend implementation and local application packaging.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="button button-secondary" href="https://github.com/Brainfkt/Leadagotchi" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </article>
-
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-repospace-details">
-                <div class="project-title-row">
-                  <h3>RepoSpace</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>Interactive 3D map that turns a GitHub profile into an explorable repository and file system space.</p>
-                <div class="tag-list"><span>React</span><span>Three.js</span><span>GitHub API</span><span>Zustand</span><span>Data viz</span></div>
-              </div>
-              <div class="project-details" id="project-repospace-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Portfolio readability problem: repositories are usually shown as flat lists instead of structured technical systems.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Fetched GitHub metadata and trees, normalized file data, created spatial layouts and built interactive navigation.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Public WebGL data visualization with language colors, file sizing, breadcrumbs, metadata panels and fallback data.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="button button-secondary" href="https://github.com/Brainfkt/RepoSpace" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </article>
-
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-whisperauto-details">
-                <div class="project-title-row">
-                  <h3>WhisperAuto</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>Private local transcription tool for legal audio workflows, with configurable offline processing modes.</p>
-                <div class="tag-list"><span>Python</span><span>Whisper</span><span>Local app</span><span>Audio</span><span>Privacy</span></div>
-              </div>
-              <div class="project-details" id="project-whisperauto-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Legal transcription workflow requiring local files, explicit model installation and no external audio upload.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Structured raw, cleaned, smart and report output modes with selectable Whisper backends and performance profiles.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Private application with queue management, local model handling, cancellation, benchmarking and export-oriented history.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <span class="private-repository-button" role="img" aria-label="Private repository" title="Private repository">
-                  <svg class="private-repository-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <rect x="5" y="10" width="14" height="10" rx="2"></rect>
-                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
-                  </svg>
-                </span>
-              </div>
-            </article>
-
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-dither-details">
-                <div class="project-title-row">
-                  <h3>Dither Studio</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>Private creative web app for transforming images and GIFs with dithering, palettes, presets and batch exports.</p>
-                <div class="tag-list"><span>React</span><span>TypeScript</span><span>Vite</span><span>GIF</span><span>Image processing</span></div>
-              </div>
-              <div class="project-details" id="project-dither-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Creative tooling project focused on repeatable visual transformations, custom palettes and export workflows.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Separated the React interface from the image engine, state persistence and worker-based processing pipeline.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Private app with image and GIF treatment, variations, presets, batch handling and ZIP-based exports.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <span class="private-repository-button" role="img" aria-label="Private repository" title="Private repository">
-                  <svg class="private-repository-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <rect x="5" y="10" width="14" height="10" rx="2"></rect>
-                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
-                  </svg>
-                </span>
-              </div>
-            </article>
-
-            <article class="project-card soft-card reveal" data-project-card>
-              <div class="project-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="project-my-applications-details">
-                <div class="project-title-row">
-                  <h3>My Applications / Job CRM</h3>
-                  <span class="project-expand-label">Details <span class="project-chevron" aria-hidden="true"></span></span>
-                </div>
-                <p>Private local macOS application for managing job applications as a personal recruitment CRM.</p>
-                <div class="tag-list"><span>Tauri</span><span>React</span><span>TypeScript</span><span>SQLite</span><span>Recharts</span></div>
-              </div>
-              <div class="project-details" id="project-my-applications-details" aria-hidden="true">
-                <div class="project-detail">
-                  <h4>Context</h4>
-                  <p>Personal job-search workflow with pipeline tracking, follow-ups, interviews, offer comparison and HR call preparation.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Role</h4>
-                  <p>Designed the local data model, Tauri desktop shell, SQLite persistence, dashboard views and import/export flows.</p>
-                </div>
-                <div class="project-detail">
-                  <h4>Outcome</h4>
-                  <p>Private desktop CRM with Kanban pipeline, CRUD records, timelines, actions, scoring, analytics and local-only storage.</p>
-                </div>
-              </div>
-              <div class="project-actions">
-                <span class="private-repository-button" role="img" aria-label="Private repository" title="Private repository">
-                  <svg class="private-repository-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <rect x="5" y="10" width="14" height="10" rx="2"></rect>
-                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
-                  </svg>
-                </span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section certifications-section" id="certifications" aria-labelledby="certifications-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="certifications-title">Certifications</h2>
-              <p>Verified training and assessment signals across data analysis, business analysis, BI tooling, CRM and product-oriented work.</p>
-            </div>
-          </div>
-
-          <div class="certification-grid">
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/microsoft-logo-square.png" alt="Microsoft logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>Career Essentials in Data Analysis</h3>
-                <p>Microsoft</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/microsoft-logo-square.png" alt="Microsoft logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>Career Essentials in Business Analysis</h3>
-                <p>Microsoft</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/datacamp-logo.png" alt="DataCamp logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>Data Engineer Certification</h3>
-                <p>DataCamp</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/alteryx-designer-core-certification.png" alt="Alteryx Designer Core certification badge" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>Alteryx Designer Core</h3>
-                <p>Alteryx</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/liora-logo.jpg" alt="Liora logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>Examen Data Analyst Niv. 3</h3>
-                <p>DataScientest / Liora</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/liora-logo.jpg" alt="Liora logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>QCM Python pour les Data Scientists, niveau 1</h3>
-                <p>Techaway</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/sellsy-logo-square.png" alt="Sellsy logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>CRM, Comptabilite, Facturation</h3>
-                <p>Sellsy</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/microsoft-logo-square.png" alt="Microsoft logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>Se preparer au metier de chef de projet</h3>
-                <p>Microsoft</p>
-              </div>
-            </article>
-            <article class="certification-card soft-card reveal">
-              <figure class="cert-media">
-                <img src="assets/certifications/linkedin-learning-logo-square.png" alt="LinkedIn Learning logo" loading="lazy" decoding="async">
-              </figure>
-              <div>
-                <h3>Devenir specialiste du service client</h3>
-                <p>LinkedIn Learning</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section languages-section" aria-labelledby="languages-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="languages-title">Languages</h2>
-              <p>Compact language comparison on practical CV dimensions.</p>
-            </div>
-          </div>
-
-          <article class="language-table-card soft-card reveal">
-            <table class="language-matrix" aria-label="Language proficiency comparison">
-              <thead>
-                <tr>
-                  <th scope="col"><span class="sr-only">Skill</span></th>
-                  <th scope="col">French</th>
-                  <th scope="col">English</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Speaking</th>
-                  <td data-label="French">Native</td>
-                  <td data-label="English">Professional</td>
-                </tr>
-                <tr>
-                  <th scope="row">Writing</th>
-                  <td data-label="French">Native</td>
-                  <td data-label="English">Professional</td>
-                </tr>
-                <tr>
-                  <th scope="row">Reading</th>
-                  <td data-label="French">Native</td>
-                  <td data-label="English">Advanced</td>
-                </tr>
-                <tr>
-                  <th scope="row">Listening</th>
-                  <td data-label="French">Native</td>
-                  <td data-label="English">Professional</td>
-                </tr>
-                <tr>
-                  <th scope="row">Vocabulary</th>
-                  <td data-label="French">Native</td>
-                  <td data-label="English">Professional</td>
-                </tr>
-              </tbody>
-            </table>
-          </article>
-        </div>
-      </section>
-
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="contact-title">Contact</h2>
-              <p>Open to data, dashboarding, marketing analytics, interface design and workflow clarification projects.</p>
-            </div>
-          </div>
-
-          <article class="contact-card soft-card reveal">
-            <div class="contact-options" aria-label="Contact options">
-              <a class="contact-option" href="mailto:enzo.de_matos@icloud.com" aria-label="Email Enzo de Matos">
-                <span class="contact-option-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M4.75 6.5h14.5a1.75 1.75 0 0 1 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75H4.75A1.75 1.75 0 0 1 3 15.75v-7.5A1.75 1.75 0 0 1 4.75 6.5Zm.9 1.5 6.35 5 6.35-5H5.65Zm-.15 1.9v5.75h13V9.9l-7.5 5.9-7.5-5.9Z"/>
-                  </svg>
-                </span>
-                <span>Email</span>
-              </a>
-              <a class="contact-option" href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
-                <span class="contact-option-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M5.36 7.85a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM3.72 20.2h3.28V9.22H3.72V20.2Zm5.54 0h3.28v-5.88c0-1.58.8-2.52 2.1-2.52 1.16 0 1.76.8 1.76 2.34v6.06h3.28v-6.5c0-3.08-1.54-4.74-4.08-4.74-1.46 0-2.54.58-3.16 1.66h-.04V9.22H9.26V20.2Z"/>
-                  </svg>
-                </span>
-                <span>LinkedIn</span>
-              </a>
-              <a class="contact-option" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer" aria-label="GitHub profile">
-                <span class="contact-option-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M12 2.9a9.35 9.35 0 0 0-2.96 18.22c.46.08.62-.2.62-.44v-1.72c-2.54.55-3.08-1.08-3.08-1.08-.42-1.06-1.02-1.34-1.02-1.34-.84-.58.06-.56.06-.56.92.06 1.4.94 1.4.94.82 1.4 2.14 1 2.66.76.08-.6.32-1 .58-1.24-2.02-.22-4.14-1-4.14-4.5 0-1 .36-1.8.94-2.44-.1-.24-.4-1.16.1-2.42 0 0 .76-.24 2.52.94a8.7 8.7 0 0 1 4.6 0c1.76-1.18 2.52-.94 2.52-.94.5 1.26.2 2.18.1 2.42.58.64.94 1.44.94 2.44 0 3.5-2.14 4.28-4.16 4.5.32.28.62.84.62 1.7v2.52c0 .24.16.52.62.44A9.35 9.35 0 0 0 12 2.9Z"/>
-                  </svg>
-                </span>
-                <span>GitHub</span>
-              </a>
-              <a class="contact-option" href="cv-enzo-de-matos.pdf" aria-label="Curriculum PDF">
-                <span class="contact-option-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M7.25 3.75h6.62c.46 0 .91.18 1.24.51l3.13 3.13c.33.33.51.78.51 1.24v9.12c0 .96-.79 1.75-1.75 1.75H7.25a1.75 1.75 0 0 1-1.75-1.75V5.5c0-.96.79-1.75 1.75-1.75Zm6.25 1.5V8c0 .41.34.75.75.75H17l-3.5-3.5ZM8.75 12a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5Z"/>
-                  </svg>
-                </span>
-                <span>Curriculum</span>
-              </a>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="section-shell footer-shell">
-        <span>&copy; <span id="year">2026</span> Enzo de Matos</span>
-        <a href="#profile">Back to top</a>
       </div>
-    </footer>
 
-    <script src="script.js?v=language-icons" defer></script>
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="tint-command-menu" data-command-button="tint">
+          <span class="action-hotkey" data-no-translate>⌃+T</span>
+          <span class="action-label">Tint</span>
+        </button>
+        <div class="command-menu" id="tint-command-menu" role="menu" aria-label="Tint selection" data-command-menu="tint" hidden>
+          <button type="button" role="menuitemradio" aria-checked="true" data-menu-item data-tint-choice="none"><span class="menu-icon" aria-hidden="true">⊹</span><span>None</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="blue"><span class="menu-icon" aria-hidden="true">⊹</span><span>Blue</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="green"><span class="menu-icon" aria-hidden="true">⊹</span><span>Green</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="orange"><span class="menu-icon" aria-hidden="true">⊹</span><span>Orange</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="purple"><span class="menu-icon" aria-hidden="true">⊹</span><span>Purple</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="red"><span class="menu-icon" aria-hidden="true">⊹</span><span>Red</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="yellow"><span class="menu-icon" aria-hidden="true">⊹</span><span>Yellow</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="pink"><span class="menu-icon" aria-hidden="true">⊹</span><span>Pink</span></button>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Close</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="navigation-command-menu" data-command-button="navigation">
+          <span class="action-hotkey" data-no-translate>⌃+N</span>
+          <span class="action-label">Navigation</span>
+        </button>
+        <div class="command-menu" id="navigation-command-menu" role="menu" aria-label="Portfolio navigation" data-command-menu="navigation" hidden>
+          <a href="#experience" role="menuitem" data-menu-item data-navigation-target="experience"><span class="menu-icon" aria-hidden="true">⊹</span><span>Experience</span><kbd data-no-translate>⌥+1</kbd></a>
+          <a href="#education" role="menuitem" data-menu-item data-navigation-target="education"><span class="menu-icon" aria-hidden="true">⊹</span><span>Education</span><kbd data-no-translate>⌥+2</kbd></a>
+          <a href="#skills" role="menuitem" data-menu-item data-navigation-target="skills"><span class="menu-icon" aria-hidden="true">⊹</span><span>Skills</span><kbd data-no-translate>⌥+3</kbd></a>
+          <a href="#projects" role="menuitem" data-menu-item data-navigation-target="projects"><span class="menu-icon" aria-hidden="true">⊹</span><span>Projects</span><kbd data-no-translate>⌥+4</kbd></a>
+          <a href="#certifications" role="menuitem" data-menu-item data-navigation-target="certifications"><span class="menu-icon" aria-hidden="true">⊹</span><span>Certifications</span><kbd data-no-translate>⌥+5</kbd></a>
+          <a href="#languages" role="menuitem" data-menu-item data-navigation-target="languages"><span class="menu-icon" aria-hidden="true">⊹</span><span>Languages</span><kbd data-no-translate>⌥+6</kbd></a>
+          <a href="#contact" role="menuitem" data-menu-item data-navigation-target="contact"><span class="menu-icon" aria-hidden="true">⊹</span><span>Contact</span><kbd data-no-translate>⌥+7</kbd></a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Close</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="actions-command-menu" data-command-button="actions">
+          <span class="action-hotkey" data-no-translate>⌃+O</span>
+          <span class="action-label">Actions</span>
+        </button>
+        <div class="command-menu" id="actions-command-menu" role="menu" aria-label="CV and contact actions" data-command-menu="actions" hidden>
+          <a href="cv-enzo-de-matos.pdf" download role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Download CV</span></a>
+          <a href="cv-enzo-de-matos.pdf" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Open CV</span></a>
+          <a href="mailto:enzo.de_matos@icloud.com" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Send email</span></a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Close</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="terminal-root">
+      <header class="grid identity-grid" id="profile" data-section-anchor tabindex="-1">
+        <section class="identity-row">
+          <div class="identity-lockup">
+            <img class="profile-portrait" src="assets/portrait_cv.png" alt="Portrait of Enzo de Matos" width="68" height="80" decoding="async">
+            <p class="identity-line">
+              <strong data-no-translate>ENZO DE MATOS</strong>
+              <span class="identity-date-status">
+                <time class="badge" datetime="2026-07-27" data-current-date data-no-translate>07/27/2026</time>
+                <span class="availability-status"><span>Available</span></span>
+              </span>
+            </p>
+          </div>
+          <div class="profile-card-rail">
+            <article class="terminal-card profile-info-card">
+              <header class="terminal-card-header"><span aria-hidden="true"></span><h2>About</h2><span aria-hidden="true"></span></header>
+              <div class="terminal-card-body">
+                <p>CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="profile-meta-row">
+          <p class="tag-row profile-tag-row"><span data-no-translate>Paris &amp; Strasbourg, France</span> · <span data-no-translate>CRM</span> · <span data-no-translate>BI</span> · <span>Data marketing</span></p>
+          <div class="profile-actions-control">
+            <button class="action-button command-trigger profile-actions-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="links-command-menu" data-command-button="links">
+              <span class="action-label">Links</span>
+            </button>
+            <div class="command-menu" id="links-command-menu" role="menu" aria-label="External profiles" data-command-menu="links" hidden>
+              <a href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>LinkedIn profile</span></a>
+              <a href="https://github.com/Brainfkt" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>GitHub profile</span></a>
+              <div class="command-menu-footer"><kbd>Esc</kbd><span>Close</span></div>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main class="grid portfolio-content" id="main-content" tabindex="-1">
+        <section class="terminal-section experience-section" id="experience" tabindex="-1" data-section-anchor>
+          <section class="terminal-window experience-window" aria-label="Experience">
+            <article class="terminal-card experience-list-card">
+              <header class="terminal-card-header terminal-card-header-left"><span aria-hidden="true"></span><h2>Jobs</h2><span aria-hidden="true"></span></header>
+              <div class="terminal-card-body table-scroll">
+                <table class="simple-table experience-table" role="grid" aria-label="Jobs">
+                  <thead>
+                    <tr><th>Role</th><th>Company</th><th>Period</th><th>Status</th></tr>
+                  </thead>
+                  <tbody data-experience-list></tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="terminal-card experience-detail-card">
+              <header class="terminal-card-header terminal-card-header-left"><span aria-hidden="true"></span><h2>Details</h2><span aria-hidden="true"></span></header>
+              <div class="terminal-card-body">
+                <div class="experience-detail" aria-live="polite" aria-atomic="true" data-experience-detail></div>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="terminal-section education-section" id="education" tabindex="-1" data-section-anchor>
+          <article class="terminal-card education-card" aria-label="Education">
+            <header class="terminal-card-header terminal-card-header-left"><span aria-hidden="true"></span><h2>Education</h2><span aria-hidden="true"></span></header>
+            <div class="terminal-card-body">
+              <p class="education-intro">Business, management, marketing and data education connected to applied analytics projects and work-study practice.</p>
+              <details class="education-disclosure">
+                <summary>
+                  <span class="education-disclosure-icon" aria-hidden="true">⊹</span>
+                  <span>Master of Science Manager in Data Marketing, Bac+5</span>
+                  <span class="status-ok" data-no-translate>2024—2026</span>
+                </summary>
+                <div class="education-disclosure-content">
+                  <div class="status-row"><span>INSEEC MSc · Lyon</span><span class="status-ok">ACTIVE</span></div>
+                  <p>Data management, marketing analytics, CRM, business intelligence, data-driven decision making, Python, Dataiku and applied data projects.</p>
+                  <p class="tag-row">Data marketing · CRM · Business intelligence</p>
+                </div>
+              </details>
+
+              <div class="terminal-divider-gradient education-divider" role="separator" aria-hidden="true"></div>
+
+              <details class="education-disclosure">
+                <summary>
+                  <span class="education-disclosure-icon" aria-hidden="true">⊹</span>
+                  <span>BUT Business and Administration Management, GEMA track, Bac+3</span>
+                  <span class="status-off" data-no-translate>2021—2024</span>
+                </summary>
+                <div class="education-disclosure-content">
+                  <div class="status-row"><span>IUT Lumiere Lyon 2</span><span class="status-off">CLOSED</span></div>
+                  <p>Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.</p>
+                  <p class="tag-row">Management · Activity steering · Business processes</p>
+                </div>
+              </details>
+            </div>
+          </article>
+        </section>
+
+        <section class="terminal-section skills-section" id="skills" tabindex="-1" data-section-anchor>
+            <section class="terminal-window skills-index-window" aria-label="Skills index">
+              <article class="terminal-card skills-database-card">
+                <header class="terminal-card-header terminal-card-header-left"><span aria-hidden="true"></span><h2><span>Skills</span> <span data-skills-page-title>[Page 1 of 2]</span></h2><span aria-hidden="true"></span></header>
+                <div class="terminal-card-body">
+                  <div class="skills-workspace">
+                    <aside class="terminal-drawer" data-skills-drawer>
+                      <div class="terminal-drawer-side" id="skills-drawer-panel" data-skills-drawer-panel hidden>
+                        <p class="skills-drawer-label">Types</p>
+                        <div class="skills-drawer-items" role="tablist" aria-label="Skill types">
+                          <button class="skills-drawer-item" id="skill-tab-hard" type="button" role="tab" aria-selected="true" aria-controls="skills-results-panel" tabindex="0" data-skill-category="hard"><span class="skills-drawer-icon" aria-hidden="true">⊹</span><span class="skills-drawer-text">Hard</span></button>
+                          <button class="skills-drawer-item" id="skill-tab-soft" type="button" role="tab" aria-selected="false" aria-controls="skills-results-panel" tabindex="-1" data-skill-category="soft"><span class="skills-drawer-icon" aria-hidden="true">⊹</span><span class="skills-drawer-text">Soft</span></button>
+                          <button class="skills-drawer-item" id="skill-tab-mad" type="button" role="tab" aria-selected="false" aria-controls="skills-results-panel" tabindex="-1" data-skill-category="mad"><span class="skills-drawer-icon" aria-hidden="true">⊹</span><span class="skills-drawer-text">Mad</span></button>
+                          <button class="skills-drawer-item" id="skill-tab-domain" type="button" role="tab" aria-selected="false" aria-controls="skills-results-panel" tabindex="-1" data-skill-category="domain"><span class="skills-drawer-icon" aria-hidden="true">⊹</span><span class="skills-drawer-text">Domain</span></button>
+                          <button class="skills-drawer-item" id="skill-tab-delivery" type="button" role="tab" aria-selected="false" aria-controls="skills-results-panel" tabindex="-1" data-skill-category="delivery"><span class="skills-drawer-icon" aria-hidden="true">⊹</span><span class="skills-drawer-text">Delivery</span></button>
+                        </div>
+                      </div>
+                      <div class="terminal-drawer-handle">
+                        <button class="terminal-drawer-toggle" type="button" aria-expanded="false" aria-controls="skills-drawer-panel" aria-label="Expand skill types" data-skills-drawer-toggle>⭢</button>
+                      </div>
+                    </aside>
+
+                    <section class="skills-results-panel" id="skills-results-panel" role="tabpanel" aria-labelledby="skill-tab-hard" aria-busy="true" data-skills-results>
+                      <div class="status-row skills-query-meta">
+                        <span><span>Dataset:</span> <strong data-skill-dataset-title>Hard</strong></span>
+                      </div>
+                      <div class="skills-loading" role="status" aria-live="polite" data-skills-loading>
+                        <span class="terminal-one-line-loader" aria-hidden="true" data-skills-loader-glyph>⠋⠋⠋⠋</span>
+                        <span>Querying…</span> <span data-skills-loader-elapsed>(0s)</span>
+                      </div>
+                      <div class="table-scroll" data-skills-table-wrap hidden>
+                        <table class="simple-table skills-table" aria-label="Skills">
+                          <thead><tr><th>Skill</th><th>Application</th></tr></thead>
+                          <tbody data-skills-table-body></tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </article>
+              <div class="terminal-row-space-between database-pagination">
+                <span data-skills-range>1–5 / 10 records</span>
+                <span class="database-pagination-actions">
+                  <button class="action-button database-page-button" type="button" data-skills-prev disabled><span class="action-hotkey" aria-hidden="true">←</span><span class="action-label">Prev</span></button>
+                  <button class="action-button database-page-button" type="button" data-skills-next><span class="action-hotkey" aria-hidden="true">→</span><span class="action-label">Next</span></button>
+                </span>
+              </div>
+
+              <div class="terminal-divider-gradient" role="separator" aria-hidden="true"></div>
+
+              <article class="terminal-card tools-database-card">
+                <header class="terminal-card-header terminal-card-header-left"><span aria-hidden="true"></span><h2><span>Tools and technologies</span> <span data-tools-page-title>[Page 1 of 5]</span></h2><span aria-hidden="true"></span></header>
+                <div class="terminal-card-body">
+                  <div class="terminal-input" data-tools-search-root>
+                    <label class="terminal-input-label" for="tools-search">Search toolkit</label>
+                    <div class="terminal-input-container">
+                      <div class="terminal-input-display terminal-input-placeholder" aria-hidden="true" data-tools-search-display>
+                        <span data-tools-search-text>Type a tool, category or use</span><span class="terminal-input-caret" aria-hidden="true">&nbsp;</span>
+                      </div>
+                      <input class="terminal-input-hidden" id="tools-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search toolkit" data-tools-search-input>
+                    </div>
+                  </div>
+                  <div class="table-scroll" data-tools-table-wrap>
+                    <table class="simple-table technology-table" aria-label="Tools and technologies">
+                      <thead><tr><th>Category</th><th>Tool</th><th>Application</th></tr></thead>
+                      <tbody data-tools-table-body></tbody>
+                    </table>
+                  </div>
+                </div>
+              </article>
+              <div class="terminal-row-space-between database-pagination">
+                <span data-tools-range>1–10 / 44 records</span>
+                <span class="database-pagination-actions">
+                  <button class="action-button database-page-button" type="button" data-tools-prev disabled><span class="action-hotkey" aria-hidden="true">←</span><span class="action-label">Prev</span></button>
+                  <button class="action-button database-page-button" type="button" data-tools-next><span class="action-hotkey" aria-hidden="true">→</span><span class="action-label">Next</span></button>
+                </span>
+              </div>
+            </section>
+        </section>
+
+        <section class="terminal-section projects-section" id="projects" tabindex="-1" data-section-anchor>
+          <article class="terminal-card projects-combobox" aria-label="Projects">
+            <header class="terminal-card-header"><span aria-hidden="true"></span><h2>Projects</h2><span aria-hidden="true"></span></header>
+            <div class="terminal-card-body">
+              <div class="project-picker" data-project-picker>
+                <button class="action-button project-picker-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="project-picker-menu" data-project-picker-trigger>
+                  <span class="action-hotkey" aria-hidden="true">↘</span>
+                  <span class="action-label">Select project</span>
+                </button>
+                <div class="command-menu project-picker-menu" id="project-picker-menu" role="menu" aria-label="Project selection" data-project-picker-menu hidden>
+                  <button type="button" role="menuitemradio" aria-checked="true" data-project-choice="bank-churners"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>BANK CHURNERS</span></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-project-choice="pricelab"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>PRICELAB</span></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-project-choice="repospace"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>REPOSPACE</span></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-project-choice="music-label"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>MUSIC LABEL PERFORMANCE ANALYTICS</span></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-project-choice="leadagotchi"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>LEADAGOTCHI</span></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-project-choice="whisperauto"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>WHISPERAUTO</span></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-project-choice="dither-studio"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>DITHER STUDIO</span></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-project-choice="job-crm"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>MY APPLICATIONS / JOB CRM</span></button>
+                  <div class="command-menu-footer"><kbd>Esc</kbd><span>Close</span></div>
+                </div>
+              </div>
+
+              <div class="project-combobox-list" data-project-list>
+                <article class="project-combobox-item" data-project-item="bank-churners">
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>BANK CHURNERS</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">End-to-end banking churn study with risk scoring, model interpretation and a Streamlit dashboard.</div>
+                    <p class="tag-row" data-no-translate>PYTHON · XGBOOST · SHAP · STREAMLIT · CRM</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Credit card attrition case for a CRM or retention team that needs to identify risky customers and prioritize outreach.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Handled data audit, feature engineering, class imbalance, model benchmarking, threshold choice and global/local explainability.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Documented pipeline, tests, risk personas and dashboard artifacts with a retention-oriented decision threshold.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <a class="action-button project-repo-button project-repo-button-public" href="https://github.com/Brainfkt/Bank-Churners" target="_blank" rel="noreferrer">
+                        <span class="action-hotkey" aria-hidden="true">★</span>
+                        <span class="action-label">View repository</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-combobox-item" data-project-item="pricelab" hidden>
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>PRICELAB</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Pricing intelligence simulator with reliability scoring, elasticity modeling and product-level recommendations.</div>
+                    <p class="tag-row" data-no-translate>PYTHON · STREAMLIT · SCIKIT-LEARN · PLOTLY · PRICING</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Product catalogue simulator turning sales, prices, stock, promotions and context history into guarded pricing scenarios.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Built schema validation, quality checks, feature engineering, backtesting, elasticity models and scenario optimization.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Recommendations include expected volume, revenue, margin, confidence, risk warnings and exportable product reports.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <a class="action-button project-repo-button project-repo-button-public" href="https://github.com/Brainfkt/PriceLab" target="_blank" rel="noreferrer">
+                        <span class="action-hotkey" aria-hidden="true">★</span>
+                        <span class="action-label">View repository</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-combobox-item" data-project-item="repospace" hidden>
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>REPOSPACE</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Interactive 3D map that turns a GitHub profile into an explorable repository and file system space.</div>
+                    <p class="tag-row" data-no-translate>REACT · THREE.JS · GITHUB API · ZUSTAND · DATA VIZ</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Portfolio readability problem: repositories are usually shown as flat lists instead of structured technical systems.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Fetched GitHub metadata and trees, normalized file data, created spatial layouts and built interactive navigation.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Public WebGL data visualization with language colors, file sizing, breadcrumbs, metadata panels and fallback data.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <a class="action-button project-repo-button project-repo-button-public" href="https://github.com/Brainfkt/RepoSpace" target="_blank" rel="noreferrer">
+                        <span class="action-hotkey" aria-hidden="true">★</span>
+                        <span class="action-label">View repository</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-combobox-item" data-project-item="music-label" hidden>
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>MUSIC LABEL PERFORMANCE ANALYTICS</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.</div>
+                    <p class="tag-row" data-no-translate>SQL · MYSQL · PYTHON · DASH · PLOTLY</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Reusable analytics dataset, artist performance score, campaign ROI views and executive dashboard for commercial decisions.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <a class="action-button project-repo-button project-repo-button-public" href="https://github.com/Brainfkt/music-label-performance-analytics" target="_blank" rel="noreferrer">
+                        <span class="action-hotkey" aria-hidden="true">★</span>
+                        <span class="action-label">View repository</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-combobox-item" data-project-item="leadagotchi" hidden>
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>LEADAGOTCHI</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Tamagotchi-inspired micro CRM for managing leads, client momentum and business health.</div>
+                    <p class="tag-row" data-no-translate>CRM · REACT · TYPESCRIPT · VITE · TAURI</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Personal CRM concept focused on keeping leads visible, active and easy to prioritize without a heavy enterprise tool.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Designed the product metaphor, local app structure and CRM interaction model for lightweight relationship tracking.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Public proof of CRM product thinking combined with frontend implementation and local application packaging.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <a class="action-button project-repo-button project-repo-button-public" href="https://github.com/Brainfkt/Leadagotchi" target="_blank" rel="noreferrer">
+                        <span class="action-hotkey" aria-hidden="true">★</span>
+                        <span class="action-label">View repository</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-combobox-item" data-project-item="whisperauto" hidden>
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>WHISPERAUTO</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Private local transcription tool for legal audio workflows, with configurable offline processing modes.</div>
+                    <p class="tag-row" data-no-translate>PYTHON · WHISPER · LOCAL APP · AUDIO · PRIVACY</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Legal transcription workflow requiring local files, explicit model installation and no external audio upload.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Structured raw, cleaned, smart and report output modes with selectable Whisper backends and performance profiles.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Private application with queue management, local model handling, cancellation, benchmarking and export-oriented history.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <button class="action-button project-repo-button project-repo-button-private" type="button" disabled>
+                        <span class="action-hotkey project-repo-lock" aria-hidden="true">
+                          <svg viewBox="0 0 16 16" focusable="false"><path d="M5.25 7V4.75a2.75 2.75 0 0 1 5.5 0V7"/><rect x="3.5" y="7" width="9" height="7"/></svg>
+                        </span>
+                        <span class="action-label">Private repository</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-combobox-item" data-project-item="dither-studio" hidden>
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>DITHER STUDIO</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Private creative web app for transforming images and GIFs with dithering, palettes, presets and batch exports.</div>
+                    <p class="tag-row" data-no-translate>REACT · TYPESCRIPT · VITE · GIF · IMAGE PROCESSING</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Creative tooling project focused on repeatable visual transformations, custom palettes and export workflows.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Separated the React interface from the image engine, state persistence and worker-based processing pipeline.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Private app with image and GIF treatment, variations, presets, batch handling and ZIP-based exports.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <button class="action-button project-repo-button project-repo-button-private" type="button" disabled>
+                        <span class="action-hotkey project-repo-lock" aria-hidden="true">
+                          <svg viewBox="0 0 16 16" focusable="false"><path d="M5.25 7V4.75a2.75 2.75 0 0 1 5.5 0V7"/><rect x="3.5" y="7" width="9" height="7"/></svg>
+                        </span>
+                        <span class="action-label">Private repository</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-combobox-item" data-project-item="job-crm" hidden>
+                  <header class="project-double-header"><span aria-hidden="true"></span><h3 data-no-translate>MY APPLICATIONS / JOB CRM</h3><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Private local macOS application for managing job applications as a personal recruitment CRM.</div>
+                    <p class="tag-row" data-no-translate>TAURI · REACT · TYPESCRIPT · SQLITE · RECHARTS</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Context</strong><p>Personal job-search workflow with pipeline tracking, follow-ups, interviews, offer comparison and HR call preparation.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Designed the local data model, Tauri desktop shell, SQLite persistence, dashboard views and import/export flows.</p></div>
+                        <div class="project-detail"><strong>Outcome</strong><p>Private desktop CRM with Kanban pipeline, CRUD records, timelines, actions, scoring, analytics and local-only storage.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <button class="action-button project-repo-button project-repo-button-private" type="button" disabled>
+                        <span class="action-hotkey project-repo-lock" aria-hidden="true">
+                          <svg viewBox="0 0 16 16" focusable="false"><path d="M5.25 7V4.75a2.75 2.75 0 0 1 5.5 0V7"/><rect x="3.5" y="7" width="9" height="7"/></svg>
+                        </span>
+                        <span class="action-label">Private repository</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </article>
+        </section>
+
+        <div class="certifications-layout">
+          <section class="terminal-section" id="certifications" tabindex="-1" data-section-anchor>
+            <article class="terminal-card">
+                <header class="terminal-card-header"><span aria-hidden="true"></span><h2>Credentials, verified</h2><span aria-hidden="true"></span></header>
+                <div class="terminal-card-body table-scroll">
+                  <table class="simple-table certification-table">
+                    <thead><tr><th>Certification</th><th>Source</th><th aria-label="Approved"></th></tr></thead>
+                    <tbody>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/career-data-analysis.png"><td>Career Essentials in Data Analysis</td><td data-no-translate>MICROSOFT</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/career-business-analysis.png"><td>Career Essentials in Business Analysis</td><td data-no-translate>MICROSOFT</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/datacamp-data-engineer.png"><td>Data Engineer Certification</td><td data-no-translate>DATACAMP</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/alteryx-designer-core.png"><td>Alteryx Designer Core</td><td data-no-translate>ALTERYX</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/liora-data-analyst-niv3.png"><td>Examen Data Analyst Niv. 3</td><td data-no-translate>DATASCIENTEST / LIORA</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/techaway-qcm-python.png"><td>QCM Python pour les Data Scientists, niveau 1</td><td data-no-translate>TECHAWAY</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/sellsy-crm.png|assets/certifications/public/previews/sellsy-comptabilite.png|assets/certifications/public/previews/sellsy-facturation.png"><td>CRM, Comptabilite, Facturation</td><td data-no-translate>SELLSY</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/microsoft-chef-projet.png"><td>Se preparer au metier de chef de projet</td><td data-no-translate>MICROSOFT</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                      <tr tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-certificate-previews="assets/certifications/public/previews/linkedin-service-client.png"><td>Devenir specialiste du service client</td><td data-no-translate>LINKEDIN LEARNING</td><td class="certification-check-cell"><label class="certification-checkbox"><input type="checkbox" checked disabled aria-label="Approved"><span aria-hidden="true">╳</span></label></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+            </article>
+          </section>
+
+          <div class="certificate-popover" id="certificate-preview-popover" role="dialog" aria-modal="false" aria-label="Certificate preview" data-certificate-popover hidden>
+            <div class="certificate-preview-rail" data-certificate-preview-rail></div>
+          </div>
+        </div>
+
+        <div class="languages-contact-row">
+          <section class="terminal-section" id="languages" tabindex="-1" data-section-anchor>
+            <article class="terminal-card">
+              <header class="terminal-card-header"><span aria-hidden="true"></span><h2>Languages</h2><span aria-hidden="true"></span></header>
+              <div class="terminal-card-body table-scroll">
+                <table class="simple-table language-detail-table" aria-label="Language proficiency comparison">
+                  <thead><tr><th>Skill</th><th>French</th><th>English</th></tr></thead>
+                  <tbody>
+                    <tr tabindex="0"><td>Speaking</td><td>Native</td><td>Professional</td></tr>
+                    <tr tabindex="0"><td>Writing</td><td>Native</td><td>Professional</td></tr>
+                    <tr tabindex="0"><td>Reading</td><td>Native</td><td>Advanced</td></tr>
+                    <tr tabindex="0"><td>Listening</td><td>Native</td><td>Professional</td></tr>
+                    <tr tabindex="0"><td>Vocabulary</td><td>Native</td><td>Professional</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </section>
+
+          <section class="terminal-section" id="contact" tabindex="-1" data-section-anchor>
+            <article class="terminal-card" aria-label="Contact">
+              <header class="terminal-card-header"><span aria-hidden="true"></span><h2>Contact</h2><span aria-hidden="true"></span></header>
+              <div class="terminal-card-body">
+                <div class="contact-actions" role="group" aria-label="Contact options">
+                  <a class="action-button" href="mailto:enzo.de_matos@icloud.com" aria-label="Email Enzo de Matos">
+                    <span class="action-label">Send email</span>
+                  </a>
+                  <a class="action-button" href="https://github.com/Brainfkt" target="_blank" rel="noreferrer">
+                    <span class="action-label">GitHub profile</span>
+                  </a>
+                  <a class="action-button" href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer">
+                    <span class="action-label">LinkedIn profile</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+
+      <footer class="grid site-footer">
+        <p><span id="year" data-no-translate>2026</span> <span data-no-translate>BRAINFKT</span> -- <span>All rights reserved</span> <span data-no-translate>(C) *</span> <a href="#profile">Back to top</a></p>
+      </footer>
+    </div>
+
+    <script src="script.js?v=brainfkt-20260729-1830" defer></script>
   </body>
 </html>
