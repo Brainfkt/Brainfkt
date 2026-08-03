@@ -1484,16 +1484,16 @@ const terminalStorageKeys = {
   tint: "brainfkt-portfolio-tint"
 };
 
-const terminalFaviconColors = Object.freeze({
-  none: "#808080",
-  blue: "#0047ff",
-  green: "#008000",
-  orange: "#c76f00",
-  purple: "#8000ff",
-  red: "#ff0000",
-  yellow: "#878700",
-  pink: "#ff00ff"
-});
+const terminalTints = Object.freeze([
+  "none",
+  "blue",
+  "green",
+  "orange",
+  "purple",
+  "red",
+  "yellow",
+  "pink"
+]);
 
 const terminalCommandHotkeys = {
   l: "language",
@@ -1812,12 +1812,15 @@ function terminalUpdateThemeColor() {
 }
 
 function terminalUpdateFavicon(tint) {
-  const favicon = document.querySelector("[data-dynamic-favicon]");
-  if (!favicon) return;
+  const nextTint = terminalTints.includes(tint) ? tint : "none";
 
-  const color = terminalFaviconColors[tint] || terminalFaviconColors.none;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="${color}"/></svg>`;
-  favicon.setAttribute("href", `data:image/svg+xml,${encodeURIComponent(svg)}`);
+  document.querySelectorAll("[data-dynamic-favicon]").forEach((favicon) => {
+    const size = favicon.dataset.dynamicFavicon;
+    const replacement = favicon.cloneNode(false);
+
+    replacement.setAttribute("href", `assets/favicon-${nextTint}-${size}.png`);
+    favicon.replaceWith(replacement);
+  });
 }
 
 function terminalApplyAppearance(choice, shouldPersist = true) {
@@ -1835,8 +1838,7 @@ function terminalApplyAppearance(choice, shouldPersist = true) {
 }
 
 function terminalApplyTint(choice, shouldPersist = true) {
-  const supported = ["none", "blue", "green", "orange", "purple", "red", "yellow", "pink"];
-  const nextChoice = supported.includes(choice) ? choice : "none";
+  const nextChoice = terminalTints.includes(choice) ? choice : "none";
 
   document.documentElement.dataset.tint = nextChoice;
   terminalSetChecked("[data-tint-choice]", nextChoice, "data-tint-choice");
