@@ -1811,7 +1811,18 @@ function terminalUpdateThemeColor() {
   });
 }
 
+function terminalSupportsDynamicFavicon() {
+  const userAgent = window.navigator.userAgent;
+  const isSafari = window.navigator.vendor === "Apple Computer, Inc."
+    && /Safari/i.test(userAgent)
+    && !/(CriOS|FxiOS|EdgiOS|OPiOS)/i.test(userAgent);
+
+  return !isSafari;
+}
+
 function terminalUpdateFavicon(tint) {
+  if (!terminalSupportsDynamicFavicon()) return;
+
   const nextTint = terminalTints.includes(tint) ? tint : "none";
 
   document.querySelectorAll("[data-dynamic-favicon]").forEach((favicon) => {
