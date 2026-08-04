@@ -31,22 +31,22 @@ document.documentElement.classList.add("motion-ready");
 
 const documentTranslations = {
   en: {
-    title: "Enzo de Matos - CV",
-    description: "Interactive CV for Enzo de Matos, Marketing Data Analyst in Lyon, France.",
-    ogTitle: "Enzo de Matos - CV",
-    ogDescription: "Interactive CV for Enzo de Matos, Marketing Data Analyst in Lyon, France."
+    title: "Enzo de Matos — Marketing Data Analyst",
+    description: "Portfolio of Enzo de Matos, a Data Analyst based in Paris and Strasbourg.",
+    ogTitle: "Enzo de Matos — Marketing Data Analyst",
+    ogDescription: "Portfolio of Enzo de Matos, a Data Analyst based in Paris and Strasbourg."
   },
   fr: {
-    title: "Enzo de Matos - CV",
-    description: "CV interactif d’Enzo de Matos, Marketing Data Analyst à Lyon, France.",
-    ogTitle: "Enzo de Matos - CV",
-    ogDescription: "CV interactif d’Enzo de Matos, Marketing Data Analyst à Lyon, France."
+    title: "Enzo de Matos — Marketing Data Analyst",
+    description: "Portfolio d’Enzo de Matos, Data Analyst basé à Paris et Strasbourg.",
+    ogTitle: "Enzo de Matos — Marketing Data Analyst",
+    ogDescription: "Portfolio d’Enzo de Matos, Data Analyst basé à Paris et Strasbourg."
   },
   es: {
-    title: "Enzo de Matos - CV",
-    description: "CV interactivo de Enzo de Matos, Marketing Data Analyst en Lyon, Francia.",
-    ogTitle: "Enzo de Matos - CV",
-    ogDescription: "CV interactivo de Enzo de Matos, Marketing Data Analyst en Lyon, Francia."
+    title: "Enzo de Matos — Marketing Data Analyst",
+    description: "Portfolio de Enzo de Matos, Data Analyst basado en París y Estrasburgo.",
+    ogTitle: "Enzo de Matos — Marketing Data Analyst",
+    ogDescription: "Portfolio de Enzo de Matos, Data Analyst basado en París y Estrasburgo."
   }
 };
 
@@ -65,7 +65,7 @@ const textTranslations = {
     "CURRENT": "ACTUEL",
     "ENDED": "TERMINÉ",
     "Education": "Formation",
-    "Skills": "Compétences",
+    "Skills": "Competences",
     "Projects": "Projets",
     "View projects": "Voir les projets",
     "Certifications": "Certifications",
@@ -82,34 +82,35 @@ const textTranslations = {
     "Turn large customer datasets into clear insights, reliable KPIs and actions that business teams can use.": "Transformer de grands jeux de données clients en insights clairs, en KPI fiables et en actions exploitables par les équipes métier.",
     "Professional experience": "Expérience professionnelle",
     "CRM, BI and operational reporting experience across banking, IT services and growing small-business environments.": "Expérience CRM, BI et reporting opérationnel dans la banque, les services IT et des environnements de TPE en croissance.",
-    "Marketing Analyst / Marketing Data Research Analyst": "Analyste marketing / Analyste data marketing",
+    "Marketing Analyst / Marketing Data Research Analyst": "Analyste data marketing (alternance)",
+    "Banque Populaire Auvergne Rhone Alpes": "Banque Populaire Auvergne Rhone Alpes",
     "Lyon, France": "Lyon, France",
     "Sep 2024 - Present": "Sept. 2024 - aujourd’hui",
-    "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.": "Analyse client, segmentation et suivi de campagnes pour les équipes marketing, commerciales et CRM.",
-    "Set up, monitor and optimize commercial campaigns in Adobe Campaign.": "Configurer, suivre et optimiser des campagnes commerciales dans Adobe Campaign.",
-    "Analyze customer populations ranging from thousands to several million records depending on the study scope.": "Analyser des populations clients allant de quelques milliers à plusieurs millions d’enregistrements selon le périmètre d’étude.",
-    "Create around ten Power BI dashboards for commercial steering, customer follow-up, campaigns and equipment.": "Créer une dizaine de tableaux de bord Power BI pour le pilotage commercial, le suivi client, les campagnes et l’équipement.",
-    "Automate recurring reporting, including daily monitoring when required by business teams.": "Automatiser les reportings récurrents, y compris le suivi quotidien lorsque les équipes métier en ont besoin.",
+    "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.": "Segmentation de bases clients, pilotage de campagnes Adobe Campaign et création de tableaux de bord Power BI pour les équipes marketing, commerciales et CRM.",
+    "Set up, monitor and optimize commercial campaigns in Adobe Campaign.": "Construire les ciblages, paramétrer les campagnes commerciales dans Adobe Campaign et controler leur exécution.",
+    "Analyze customer populations ranging from thousands to several million records depending on the study scope.": "Interroger et analyser des populations allant de quelques milliers à plusieurs millions de clients selon le besoin métier.",
+    "Create around ten Power BI dashboards for commercial steering, customer follow-up, campaigns and equipment.": "Concevoir une dizaine de tableaux de bord Power BI pour suivre l’activité commerciale, les campagnes, les clients et leur équipement.",
+    "Automate recurring reporting, including daily monitoring when required by business teams.": "Automatiser les reportings récurrents, jusqu’à un suivi quotidien pour les équipes qui en ont besoin.",
     "Apprenticeship / CRM analytics": "Alternance / analyse CRM",
     "Banking campaigns": "Campagnes bancaires",
     "ETI Management Assistant": "Assistant de gestion ETI",
     "Nov 2023 - Sep 2024": "Nov. 2023 - sept. 2024",
-    "Everwin administration, portfolio reporting and user support for commercial and operational units.": "Administration Everwin, reporting de portefeuille et support utilisateurs pour les équipes commerciales et opérationnelles.",
-    "Maintained and improved the reliability of Everwin data used for business and operational tracking.": "Maintien et amélioration de la fiabilité des données Everwin utilisées pour le suivi business et opérationnel.",
-    "Produced ad hoc reports and analyses in Excel and Power BI for portfolio monitoring.": "Production de rapports et d’analyses ad hoc sous Excel et Power BI pour le suivi de portefeuille.",
-    "Improved existing BI reports through UI/UX adjustments, new indicators and more useful features.": "Amélioration de rapports BI existants via des ajustements UI/UX, de nouveaux indicateurs et des fonctionnalités plus utiles.",
-    "Trained new users and increased average BI report usage frequency by 50%.": "Formation de nouveaux utilisateurs et hausse de 50 % de la fréquence moyenne d’utilisation des rapports BI.",
+    "Everwin administration, portfolio reporting and user support for commercial and operational units.": "Fiabilisation des données Everwin et refonte de reportings utilisés par les équipes commerciales et opérationnelles.",
+    "Maintained and improved the reliability of Everwin data used for business and operational tracking.": "Administrer Everwin et fiabiliser les données utilisées pour le suivi commercial et opérationnel.",
+    "Produced ad hoc reports and analyses in Excel and Power BI for portfolio monitoring.": "Produire des analyses ad hoc et des reportings de portefeuille dans Excel et Power BI.",
+    "Improved existing BI reports through UI/UX adjustments, new indicators and more useful features.": "Repenser des rapports BI existants : hiérarchie de l’information, indicateurs et parcours utilisateur.",
+    "Trained new users and increased average BI report usage frequency by 50%.": "Former les utilisateurs aux nouveaux rapports ; leur fréquence moyenne d’utilisation a progressé de 50 %.",
     "Reporting": "Reporting",
     "User training": "Formation des utilisateurs",
     "Functional administration": "Administration fonctionnelle",
     "BI adoption": "Adoption BI",
     "TPE Management Assistant": "Assistant de gestion TPE",
     "May 2022 - Sep 2023": "Mai 2022 - sept. 2023",
-    "CRM, order tracking, sales KPIs and internal process structuring in a fast-growing small business.": "CRM, suivi des commandes, KPI commerciaux et structuration des processus internes dans une TPE en forte croissance.",
-    "Tracked customers, orders, quotes, invoices, unpaid items and sales indicators through the CRM.": "Suivi des clients, commandes, devis, factures, impayés et indicateurs commerciaux via le CRM.",
-    "Structured internal processes around commercial coordination, invoicing and product catalogue updates.": "Structuration des processus internes autour de la coordination commerciale, de la facturation et de la mise à jour du catalogue produit.",
-    "Automated CRM tasks to streamline order processing, customer follow-up and invoice management.": "Automatisation de tâches CRM pour fluidifier le traitement des commandes, le suivi client et la gestion des factures.",
-    "Divided invoice processing time by three through CRM workflow automation.": "Division par trois du temps de traitement des factures grâce à l’automatisation des workflows CRM.",
+    "CRM, order tracking, sales KPIs and internal process structuring in a fast-growing small business.": "Structuration du CRM, du suivi commercial et de la facturation dans une TPE en croissance.",
+    "Tracked customers, orders, quotes, invoices, unpaid items and sales indicators through the CRM.": "Centraliser dans le CRM le suivi des clients, commandes, devis, factures, impayés et indicateurs commerciaux.",
+    "Structured internal processes around commercial coordination, invoicing and product catalogue updates.": "Formaliser les processus de coordination commerciale, de facturation et de mise à jour du catalogue.",
+    "Automated CRM tasks to streamline order processing, customer follow-up and invoice management.": "Automatiser les tâches répétitives liées aux commandes, au suivi client et aux factures.",
+    "Divided invoice processing time by three through CRM workflow automation.": "Diviser par trois le temps de traitement des factures grâce à ces automatisations.",
     "Sales KPIs": "KPI commerciaux",
     "Invoicing": "Facturation",
     "CRM operations": "Opérations CRM",
@@ -117,10 +118,10 @@ const textTranslations = {
     "Communication and Web Projects": "Communication et projets web",
     "My Serigraphy / freelance web design": "My Serigraphy / web design freelance",
     "Lyon and remote": "Lyon et distanciel",
-    "Complementary CRM, marketing communication, SEO and website delivery experience.": "Expérience complémentaire en CRM, communication marketing, SEO et livraison de sites web.",
-    "Managed CRM follow-up, weekly marketing KPIs, emailing campaigns and LinkedIn editorial planning.": "Gestion du suivi CRM, des KPI marketing hebdomadaires, des campagnes d’emailing et du planning éditorial LinkedIn.",
-    "Handled prospecting support, SEO audit work and competitive monitoring for My Serigraphy.": "Prise en charge du support à la prospection, des audits SEO et de la veille concurrentielle pour My Serigraphy.",
-    "Scoped, designed and delivered a showcase/e-commerce website as a freelance web designer.": "Cadrage, design et livraison d’un site vitrine/e-commerce en tant que web designer freelance.",
+    "Complementary CRM, marketing communication, SEO and website delivery experience.": "Mise en place d’outils simples pour suivre la prospection, mesurer les actions marketing et publier des contenus web.",
+    "Managed CRM follow-up, weekly marketing KPIs, emailing campaigns and LinkedIn editorial planning.": "Tenir le CRM, suivre les KPI marketing hebdomadaires et préparer les campagnes d’emailing et le calendrier LinkedIn.",
+    "Handled prospecting support, SEO audit work and competitive monitoring for My Serigraphy.": "Appuyer la prospection avec des audits SEO et une veille concurrentielle structurée.",
+    "Scoped, designed and delivered a showcase/e-commerce website as a freelance web designer.": "Cadrer, concevoir et livrer un site vitrine/e-commerce en freelance.",
     "Emailing": "Emailing",
     "Marketing support": "Support marketing",
     "Web design": "Web design",
@@ -129,7 +130,8 @@ const textTranslations = {
     "Data marketing": "Data marketing",
     "Business intelligence": "Business intelligence",
     "BUT Business and Administration Management, GEMA track": "BUT Gestion des Entreprises et des Administrations, GEMA",
-    "Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.": "Gestion des organisations, pilotage d’activité, analyse financière, entrepreneuriat et compréhension des processus business.",
+    "IUT Lumiere Lyon 2": "IUT Lumiere Lyon 2",
+    "Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.": "Formation en gestion, pilotage d’activité, analyse financiere et structuration des processus d’entreprise.",
     "Management": "Management",
     "Activity steering": "Pilotage d’activité",
     "Business processes": "Processus business",
@@ -149,55 +151,55 @@ const textTranslations = {
     "Rigorous": "Rigoureux",
     "Team spirit": "Esprit d’équipe",
     "Agile": "Agile",
-    "Tools and technologies": "Outils et technologies",
+    "Tools and technologies": "Outils utilisés",
     "Core analytics, design and web tools used across portfolio projects.": "Outils principaux d’analytics, de design et de web utilisés dans les projets du portfolio.",
     "Data and business intelligence tools": "Outils data et business intelligence",
     "Web development and database tools": "Outils de développement web et bases de données",
     "Design and workspace tools": "Outils de design et de workspace",
     "API and automation tools": "Outils API et automatisation",
     "Details": "Détails",
-    "End-to-end banking churn study with risk scoring, model interpretation and a Streamlit dashboard.": "Étude bancaire du churn de bout en bout, avec scoring de risque, interprétation du modèle et dashboard Streamlit.",
+    "End-to-end banking churn study with risk scoring, model interpretation and a Streamlit dashboard.": "Pipeline de scoring du churn bancaire, du controle des données à l’explication des prédictions dans Streamlit.",
     "Context": "Contexte",
-    "Credit card attrition case for a CRM or retention team that needs to identify risky customers and prioritize outreach.": "Cas d’attrition de carte bancaire pour une équipe CRM ou une équipe de rétention devant identifier les clients à risque et prioriser les actions.",
-    "Role": "Rôle",
-    "Handled data audit, feature engineering, class imbalance, model benchmarking, threshold choice and global/local explainability.": "Prise en charge de l’audit des données, du feature engineering, du déséquilibre des classes, du benchmark de modèles, du choix du seuil et de l’explicabilité globale et locale.",
-    "Outcome": "Résultat",
-    "Documented pipeline, tests, risk personas and dashboard artifacts with a retention-oriented decision threshold.": "Pipeline, tests, personas de risque et artefacts de dashboard documentés, avec un seuil de décision orienté vers la rétention.",
-    "View repository": "Voir le dépôt",
-    "Opening repository": "Ouverture du dépôt",
+    "Credit card attrition case for a CRM or retention team that needs to identify risky customers and prioritize outreach.": "Cas simulé d’attrition de carte bancaire : identifier les clients à risque et aider une équipe CRM à prioriser les actions de rétention.",
+    "Role": "Role",
+    "Handled data audit, feature engineering, class imbalance, model benchmarking, threshold choice and global/local explainability.": "Auditer les données, créer les variables, traiter le déséquilibre des classes, comparer les modeles, choisir le seuil de décision et expliquer les prédictions avec SHAP.",
+    "Outcome": "Livrable",
+    "Documented pipeline, tests, risk personas and dashboard artifacts with a retention-oriented decision threshold.": "Application Streamlit documentée avec scores individuels, profils à risque, tests et seuil paramétré pour prioriser les clients à contacter.",
+    "View repository": "Voir le dépot",
+    "Opening repository": "Ouverture du dépot",
     "Certificate preview": "Aperçu du certificat",
-    "Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.": "Outil d’aide à la décision pour suivre la performance du catalogue, les tendances de streaming et les priorités d’investissement dans les artistes.",
-    "Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.": "Cas analytics simulé pour un label indépendant comparant artistes, genres, plateformes et ROI de campagnes sur 12 mois.",
-    "Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.": "Conception du modèle relationnel, écriture de requêtes SQL métier, construction d’un pipeline de scoring Python et structuration du parcours du dashboard.",
-    "Reusable analytics dataset, artist performance score, campaign ROI views and executive dashboard for commercial decisions.": "Dataset analytics réutilisable, score de performance artiste, vues ROI de campagnes et dashboard exécutif pour les décisions commerciales.",
-    "Pricing intelligence simulator with reliability scoring, elasticity modeling and product-level recommendations.": "Simulateur de pricing intelligence avec score de fiabilité, modélisation de l’élasticité et recommandations au niveau du produit.",
-    "Product catalogue simulator turning sales, prices, stock, promotions and context history into guarded pricing scenarios.": "Simulateur de catalogue produit transformant les ventes, les prix, le stock, les promotions et l’historique du contexte en scénarios de prix encadrés.",
-    "Built schema validation, quality checks, feature engineering, backtesting, elasticity models and scenario optimization.": "Mise en place de la validation du schéma, des contrôles qualité, du feature engineering, du backtesting, des modèles d’élasticité et de l’optimisation de scénarios.",
-    "Recommendations include expected volume, revenue, margin, confidence, risk warnings and exportable product reports.": "Les recommandations incluent le volume attendu, le chiffre d’affaires, la marge, le niveau de confiance, les alertes de risque et des rapports produit exportables.",
-    "Tamagotchi-inspired micro CRM for managing leads, client momentum and business health.": "Micro-CRM inspiré de Tamagotchi pour gérer les leads, la dynamique client et la santé de l’activité.",
-    "Personal CRM concept focused on keeping leads visible, active and easy to prioritize without a heavy enterprise tool.": "Concept de CRM personnel centré sur des leads visibles, actifs et faciles à prioriser, sans outil d’entreprise lourd.",
-    "Designed the product metaphor, local app structure and CRM interaction model for lightweight relationship tracking.": "Conception de la métaphore produit, de la structure de l’application locale et du modèle d’interaction CRM pour un suivi relationnel léger.",
-    "Public proof of CRM product thinking combined with frontend implementation and local application packaging.": "Preuve publique d’une réflexion produit CRM combinée à une implémentation frontend et au packaging d’une application locale.",
-    "Interactive 3D map that turns a GitHub profile into an explorable repository and file system space.": "Carte 3D interactive transformant un profil GitHub en espace explorable de dépôts et de fichiers.",
-    "Portfolio readability problem: repositories are usually shown as flat lists instead of structured technical systems.": "Problème de lisibilité du portfolio : les dépôts sont souvent présentés comme des listes plates plutôt que comme des systèmes techniques structurés.",
-    "Fetched GitHub metadata and trees, normalized file data, created spatial layouts and built interactive navigation.": "Récupération des métadonnées et des arborescences GitHub, normalisation des données de fichiers, création de layouts spatiaux et mise en place d’une navigation interactive.",
-    "Public WebGL data visualization with language colors, file sizing, breadcrumbs, metadata panels and fallback data.": "Datavisualisation WebGL publique avec couleurs par langage, dimensionnement des fichiers, fil d’Ariane, panneaux de métadonnées et données de repli.",
-    "Private local transcription tool for legal audio workflows, with configurable offline processing modes.": "Outil privé de transcription locale pour des workflows audio juridiques, avec des modes de traitement hors ligne configurables.",
+    "Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.": "Dashboard pour comparer la performance d’un catalogue musical, les tendances de streaming et le ROI des campagnes.",
+    "Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.": "Cas simulé pour un label indépendant comparant artistes, genres, plateformes et campagnes sur douze mois.",
+    "Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.": "Concevoir le modele relationnel, écrire les requêtes SQL, construire le score de performance en Python et organiser le parcours du dashboard.",
+    "Reusable analytics dataset, artist performance score, campaign ROI views and executive dashboard for commercial decisions.": "Base analytique réutilisable, score documenté par artiste, vues du ROI des campagnes et dashboard Dash destiné au pilotage du catalogue.",
+    "Pricing intelligence simulator with reliability scoring, elasticity modeling and product-level recommendations.": "Simulateur de prix qui estime, produit par produit, le volume, le chiffre d’affaires et la marge attendus.",
+    "Product catalogue simulator turning sales, prices, stock, promotions and context history into guarded pricing scenarios.": "Cas simulé de catalogue produit : comparer des scénarios de prix à partir des ventes, du stock, des promotions et de l’historique disponible.",
+    "Built schema validation, quality checks, feature engineering, backtesting, elasticity models and scenario optimization.": "Construire la validation des données, les controles qualité, les variables, le backtesting, les modeles d’élasticité et les garde-fous de recommandation.",
+    "Recommendations include expected volume, revenue, margin, confidence, risk warnings and exportable product reports.": "Application Streamlit qui affiche, pour chaque scénario, les estimations de volume, chiffre d’affaires et marge, avec niveau de confiance, alertes et rapport exportable.",
+    "Tamagotchi-inspired micro CRM for managing leads, client momentum and business health.": "Prototype de micro-CRM inspiré de Tamagotchi pour visualiser les leads à relancer en priorité.",
+    "Personal CRM concept focused on keeping leads visible, active and easy to prioritize without a heavy enterprise tool.": "Tester une alternative légere aux CRM d’entreprise pour garder les leads visibles et repérer ceux dont la relation se dégrade.",
+    "Designed the product metaphor, local app structure and CRM interaction model for lightweight relationship tracking.": "Concevoir la métaphore produit, les regles de priorité, la structure de l’application locale et les interactions de suivi.",
+    "Public proof of CRM product thinking combined with frontend implementation and local application packaging.": "Prototype public combinant logique CRM, interface React et packaging d’une application desktop locale.",
+    "Interactive 3D map that turns a GitHub profile into an explorable repository and file system space.": "Carte 3D interactive pour explorer les dépots et fichiers d’un profil GitHub.",
+    "Portfolio readability problem: repositories are usually shown as flat lists instead of structured technical systems.": "Les portfolios GitHub présentent généralement les dépots comme une liste, sans montrer leur structure interne.",
+    "Fetched GitHub metadata and trees, normalized file data, created spatial layouts and built interactive navigation.": "Récupérer les métadonnées et arborescences via l’API GitHub, normaliser les fichiers, calculer leur disposition spatiale et construire la navigation.",
+    "Public WebGL data visualization with language colors, file sizing, breadcrumbs, metadata panels and fallback data.": "Visualisation WebGL publique avec code couleur par langage, taille relative des fichiers, fil d’Ariane, métadonnées et données de secours.",
+    "Private local transcription tool for legal audio workflows, with configurable offline processing modes.": "Application privée de transcription juridique qui traite les fichiers audio en local, sans envoi vers un service externe.",
     "Local app": "App locale",
     "Privacy": "Confidentialité",
-    "Legal transcription workflow requiring local files, explicit model installation and no external audio upload.": "Workflow de transcription juridique nécessitant des fichiers locaux et l’installation explicite du modèle, sans aucun envoi audio externe.",
-    "Structured raw, cleaned, smart and report output modes with selectable Whisper backends and performance profiles.": "Structuration des modes de sortie « brut », « nettoyé », « smart » et « rapport », avec des backends Whisper et des profils de performance sélectionnables.",
-    "Private application with queue management, local model handling, cancellation, benchmarking and export-oriented history.": "Application privée avec gestion de file d’attente, modèles locaux, annulation, benchmarking et historique orienté export.",
-    "Private repository": "Dépôt privé",
-    "Private creative web app for transforming images and GIFs with dithering, palettes, presets and batch exports.": "Application web créative privée pour transformer des images et des GIF avec du dithering, des palettes, des presets et des exports par lots.",
+    "Legal transcription workflow requiring local files, explicit model installation and no external audio upload.": "Transcrire des contenus sensibles tout en gardant les fichiers, les modeles et les résultats sur la machine de l’utilisateur.",
+    "Structured raw, cleaned, smart and report output modes with selectable Whisper backends and performance profiles.": "Concevoir quatre modes de sortie, intégrer plusieurs moteurs Whisper et permettre le choix du compromis entre vitesse et précision.",
+    "Private application with queue management, local model handling, cancellation, benchmarking and export-oriented history.": "Application locale avec file d’attente, gestion des modeles, annulation, comparaison des performances, historique et exports.",
+    "Private repository": "Dépot privé",
+    "Private creative web app for transforming images and GIFs with dithering, palettes, presets and batch exports.": "Application web privée pour appliquer des effets de dithering reproductibles à des images et des GIF.",
     "Image processing": "Traitement d’image",
-    "Creative tooling project focused on repeatable visual transformations, custom palettes and export workflows.": "Projet d’outil créatif centré sur des transformations visuelles répétables, des palettes personnalisées et des workflows d’export.",
-    "Separated the React interface from the image engine, state persistence and worker-based processing pipeline.": "Séparation de l’interface React du moteur d’image, de la persistance d’état et du pipeline de traitement basé sur des workers.",
-    "Private app with image and GIF treatment, variations, presets, batch handling and ZIP-based exports.": "Application privée avec traitement d’images et de GIF, variations, presets, gestion par lots et exports ZIP.",
-    "Private local macOS application for managing job applications as a personal recruitment CRM.": "Application macOS locale et privée pour gérer les candidatures comme un CRM de recrutement personnel.",
-    "Personal job-search workflow with pipeline tracking, follow-ups, interviews, offer comparison and HR call preparation.": "Workflow personnel de recherche d’emploi avec suivi du pipeline, relances, entretiens, comparaison d’offres et préparation d’appels RH.",
-    "Designed the local data model, Tauri desktop shell, SQLite persistence, dashboard views and import/export flows.": "Conception du modèle de données local, du shell desktop Tauri, de la persistance SQLite, des vues du dashboard et des flux d’import/export.",
-    "Private desktop CRM with Kanban pipeline, CRUD records, timelines, actions, scoring, analytics and local-only storage.": "CRM desktop privé avec pipeline Kanban, fiches CRUD, timelines, actions, scoring, analytics et stockage exclusivement local.",
+    "Creative tooling project focused on repeatable visual transformations, custom palettes and export workflows.": "Pouvoir tester, mémoriser et réappliquer les mêmes traitements visuels sur un lot de fichiers.",
+    "Separated the React interface from the image engine, state persistence and worker-based processing pipeline.": "Séparer l’interface React, le moteur d’image, la persistance des réglages et le traitement en arriere-plan avec des workers.",
+    "Private app with image and GIF treatment, variations, presets, batch handling and ZIP-based exports.": "Application avec aperçu des variations, palettes et presets personnalisés, traitement par lots et exports ZIP.",
+    "Private local macOS application for managing job applications as a personal recruitment CRM.": "Application macOS privée pour suivre les candidatures, relances et entretiens dans un pipeline local.",
+    "Personal job-search workflow with pipeline tracking, follow-ups, interviews, offer comparison and HR call preparation.": "Remplacer les tableaux dispersés par un seul outil pour préparer les échanges RH et savoir quelle action effectuer ensuite.",
+    "Designed the local data model, Tauri desktop shell, SQLite persistence, dashboard views and import/export flows.": "Concevoir le modele de données, l’application Tauri, la persistance SQLite, les vues de suivi et les flux d’import/export.",
+    "Private desktop CRM with Kanban pipeline, CRUD records, timelines, actions, scoring, analytics and local-only storage.": "CRM desktop avec pipeline Kanban, fiches candidature, historique, prochaines actions, comparaison des offres, statistiques et stockage exclusivement local.",
     "Verified training and assessment signals across data analysis, business analysis, BI tooling, CRM and product-oriented work.": "Signaux de formation et d’évaluation vérifiés en analyse de données, business analysis, outils BI, CRM et travail orienté produit.",
     "Microsoft logo": "Logo Microsoft",
     "DataCamp logo": "Logo DataCamp",
@@ -207,7 +209,7 @@ const textTranslations = {
     "LinkedIn Learning logo": "Logo LinkedIn Learning",
     "Languages": "Langues",
     "Compact language comparison on practical CV dimensions.": "Comparaison compacte des langues sur des dimensions pratiques du CV.",
-    "Language proficiency comparison": "Comparaison du niveau de langue",
+    "Language proficiency comparison": "Niveaux de langue (auto-évaluation)",
     "Skill": "Compétence",
     "French": "Français",
     "English": "Anglais",
@@ -420,7 +422,7 @@ Object.assign(textTranslations.fr, {
   "Work": "Projets",
   "Data that": "La data qui",
   "moves people": "fait agir",
-  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "Data Analyst orienté CRM, transformant les signaux clients, la performance des campagnes et la BI en décisions directement utiles aux équipes.",
+  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "Data Analyst orienté CRM : je transforme les données clients et de campagne en ciblages, tableaux de bord et automatisations utilisés au quotidien par les équipes marketing.",
   "Explore my work": "Découvrir mes projets",
   "Selected outcomes": "Résultats sélectionnés",
   "Dashboards": "Tableaux de bord",
@@ -429,9 +431,9 @@ Object.assign(textTranslations.fr, {
   "Scroll": "Défiler",
   "Scroll to expertise": "Aller à l’expertise",
   "From customer signal to business action": "Du signal client à l’action",
-  "A practical toolkit for finding the pattern, framing the decision and making the next move obvious.": "Une boîte à outils concrète pour détecter les tendances, cadrer la décision et rendre la prochaine action évidente.",
+  "A practical toolkit for finding the pattern, framing the decision and making the next move obvious.": "Une boîte à outils concrete pour détecter les tendances, cadrer la décision et rendre la prochaine action évidente.",
   "Pipeline status": "État du pipeline",
-  "System Analysis": "Analyse du système",
+  "System Analysis": "Analyse du systeme",
   "Operational": "Opérationnel",
   "Customer segmentation": "Segmentation client",
   "Decision ready": "Décision prête",
@@ -444,7 +446,7 @@ Object.assign(textTranslations.fr, {
   "Data freshness": "Fraîcheur des données",
   "Pipeline status": "État du pipeline",
   "Healthy": "Opérationnel",
-  "Last run": "Dernière exécution",
+  "Last run": "Derniere exécution",
   "Today, 09:42": "Aujourd’hui, 09:42",
   "Banque Populaire · 2024—Now": "Banque Populaire · 2024—Aujourd’hui",
   "Soft skills": "Compétences humaines",
@@ -455,15 +457,15 @@ Object.assign(textTranslations.fr, {
   "Power BI · Alteryx · Figma": "Power BI · Alteryx · Figma",
   "Clarity · Autonomy · Curiosity": "Clarté · Autonomie · Curiosité",
   "Built for useful momentum": "Conçu pour avancer",
-  "Experience across banking, IT services and growing businesses — always close to the decision.": "Une expérience dans la banque, les services IT et des entreprises en croissance — toujours au plus près de la décision.",
+  "Experience across banking, IT services and growing businesses — always close to the decision.": "Une expérience dans la banque, les services IT et des entreprises en croissance — toujours au plus pres de la décision.",
   "Marketing Data Analyst": "Marketing Data Analyst",
   "Communication & Web": "Communication & Web",
   "Data workflow illustration": "Illustration du workflow data",
   "MSc · Manager in Data Marketing": "MSc · Manager en Data Marketing",
   "BUT GEA · Business & Administration": "BUT GEA · Gestion des entreprises",
-  "Selected systems, built end to end": "Des systèmes conçus de bout en bout",
+  "Selected systems, built end to end": "Des systemes conçus de bout en bout",
   "Analytics, decision tools and interfaces designed to make complex work easier to act on.": "Des analyses, outils de décision et interfaces conçus pour rendre les sujets complexes plus simples à activer.",
-  "Credentials, verified": "Compétences, certifiées",
+  "Credentials, verified": "Competences, certifiées",
   "Training and assessment signals across analytics, BI, CRM and product-oriented work.": "Des formations et évaluations vérifiées en analytics, BI, CRM et conception produit.",
   "Let’s make the signal useful": "Rendons le signal utile"
 });
@@ -562,7 +564,6 @@ function saveLanguage(language) {
 }
 
 function getTranslatedValue(source, language) {
-  if (language === "en") return source;
   return textTranslations[language]?.[source] || source;
 }
 
@@ -1180,7 +1181,7 @@ Object.assign(textTranslations.fr, {
   "Appearance selection": "Sélection de l’apparence",
   "Tint selection": "Sélection de la teinte",
   "Portfolio navigation": "Navigation du portfolio",
-  "System": "Système",
+  "System": "Systeme",
   "Light": "Clair",
   "Dark": "Sombre",
   "None": "Aucune",
@@ -1217,14 +1218,14 @@ Object.assign(textTranslations.fr, {
   "Source": "Source",
   "Language": "Langue",
   "Level": "Niveau",
-  "Interface system:": "Système d’interface :"
+  "Interface system:": "Systeme d’interface :"
 });
 
 Object.assign(textTranslations.es, {
   "Available": "Disponible",
   "Jobs": "Puestos",
   "Company": "Empresa",
-  "Location": "Ubicación",
+  "Location": "Ubicacion",
   "Sep 2024—Present": "Sept. 2024—actualidad",
   "Nov 2023—Sep 2024": "Nov. 2023—sept. 2024",
   "May 2022—Sep 2023": "Mayo 2022—sept. 2023",
@@ -1232,7 +1233,7 @@ Object.assign(textTranslations.es, {
   "Language": "Idioma",
   "Appearance": "Apariencia",
   "Tint": "Tinte",
-  "Navigation": "Navegación",
+  "Navigation": "Navegacion",
   "Actions": "Acciones",
   "Links": "Enlaces",
   "Open CV": "Abrir CV",
@@ -1289,12 +1290,19 @@ Object.assign(textTranslations.fr, {
   "Browse a local skills index by capability type, then search the full tools inventory.": "Parcourez un index local de compétences par type, puis recherchez dans l’inventaire complet des outils.",
   "Skill database": "Base de compétences",
   "Skills database": "Base de compétences",
-  "Skill types": "Types de compétences",
+  "Skill types": "Catégories de compétences",
+  "Skills index": "Index des compétences",
+  "Types": "Catégories",
+  "Hard": "Data & BI",
+  "Soft": "Collaboration",
+  "Mad": "Produit & code",
+  "Domain": "Métiers",
+  "Delivery": "Livraison",
   "Hard skills": "Compétences techniques",
   "Mad skills": "Compétences atypiques",
   "Domain skills": "Compétences métier",
   "Delivery skills": "Compétences de réalisation",
-  "Dataset:": "Jeu de données :",
+  "Dataset:": "Filtre :",
   "records": "enregistrements",
   "Page": "Page",
   "of": "sur",
@@ -1306,13 +1314,17 @@ Object.assign(textTranslations.fr, {
   "Querying local skills index…": "Interrogation de l’index local des compétences…",
   "Application": "Application",
   "Distinctive": "Différenciante",
-  "Collapse skill types": "Réduire les types de compétences",
-  "Expand skill types": "Développer les types de compétences",
+  "Collapse skill types": "Réduire les catégories",
+  "Expand skill types": "Développer les catégories",
   "Search toolkit": "Rechercher dans les outils",
   "Type a tool, category or use": "Saisissez un outil, une catégorie ou un usage",
   "Tools indexed": "Outils indexés",
   "Tool": "Outil",
   "No tools match this search.": "Aucun outil ne correspond à cette recherche.",
+  "Approved": "Vérifié",
+  "CRM, Comptabilite, Facturation": "CRM, Comptabilité, Facturation",
+  "Se preparer au metier de chef de projet": "Se préparer au métier de chef de projet",
+  "Devenir specialiste du service client": "Devenir spécialiste du service client",
   "Data analysis and decision support": "Analyse de données et aide à la décision",
   "Customer and campaign intelligence": "Intelligence client et campagne",
   "Dashboarding and operational reporting": "Dashboarding et reporting opérationnel",
@@ -1333,7 +1345,7 @@ Object.assign(textTranslations.fr, {
   "Data modeling": "Modélisation de données",
   "Analytical rigor": "Rigueur analytique",
   "Business communication": "Communication business",
-  "Synthesis": "Esprit de synthèse",
+  "Synthesis": "Esprit de synthese",
   "Curiosity": "Curiosité",
   "Team collaboration": "Collaboration en équipe",
   "Autonomy": "Autonomie",
@@ -1341,7 +1353,7 @@ Object.assign(textTranslations.fr, {
   "Pedagogy": "Pédagogie",
   "Active listening": "Écoute active",
   "Prioritization": "Priorisation",
-  "Interface systems": "Systèmes d’interface",
+  "Interface systems": "Systemes d’interface",
   "Rapid prototyping": "Prototypage rapide",
   "Local-first tooling": "Outils locaux et privés",
   "Cross-domain translation": "Traduction interdisciplinaire",
@@ -1477,6 +1489,160 @@ Object.assign(textTranslations.es, {
   "Interfaces, dashboards and data storytelling": "Interfaces, dashboards y narrativa de datos",
   "Campaign, customer and workflow operations": "Operaciones de campañas, clientes y workflows",
   "Local automation and tool orchestration": "Automatización local y orquestación de herramientas"
+});
+
+textTranslations.en = {
+  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "CRM-focused Data Analyst: I turn customer and campaign data into targeting, dashboards and automations used daily by marketing teams.",
+  "Marketing Analyst / Marketing Data Research Analyst": "Marketing Data Analyst (apprenticeship)",
+  "Banque Populaire Auvergne Rhone Alpes": "Banque Populaire Auvergne Rhone Alpes",
+  "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.": "Customer database segmentation, Adobe Campaign management and Power BI dashboard creation for marketing, sales and CRM teams.",
+  "Set up, monitor and optimize commercial campaigns in Adobe Campaign.": "Build target audiences, configure sales campaigns in Adobe Campaign and monitor their execution.",
+  "Analyze customer populations ranging from thousands to several million records depending on the study scope.": "Query and analyze populations ranging from a few thousand to several million customers, depending on the business need.",
+  "Create around ten Power BI dashboards for commercial steering, customer follow-up, campaigns and equipment.": "Design around ten Power BI dashboards to track sales activity, campaigns, customers and product holdings.",
+  "Automate recurring reporting, including daily monitoring when required by business teams.": "Automate recurring reporting, down to daily monitoring for the teams that need it.",
+  "Everwin administration, portfolio reporting and user support for commercial and operational units.": "Improved Everwin data reliability and redesigned reports used by sales and operations teams.",
+  "Maintained and improved the reliability of Everwin data used for business and operational tracking.": "Administer Everwin and ensure the reliability of data used for sales and operational tracking.",
+  "Produced ad hoc reports and analyses in Excel and Power BI for portfolio monitoring.": "Produce ad hoc analyses and portfolio reports in Excel and Power BI.",
+  "Improved existing BI reports through UI/UX adjustments, new indicators and more useful features.": "Redesign existing BI reports: information hierarchy, indicators and user journeys.",
+  "Trained new users and increased average BI report usage frequency by 50%.": "Train users on the new reports; their average usage frequency increased by 50%.",
+  "CRM, order tracking, sales KPIs and internal process structuring in a fast-growing small business.": "Structured CRM, sales tracking and invoicing in a growing small business.",
+  "Tracked customers, orders, quotes, invoices, unpaid items and sales indicators through the CRM.": "Centralize customer, order, quote, invoice, unpaid balance and sales indicator tracking in the CRM.",
+  "Structured internal processes around commercial coordination, invoicing and product catalogue updates.": "Formalize processes for sales coordination, invoicing and product catalogue updates.",
+  "Automated CRM tasks to streamline order processing, customer follow-up and invoice management.": "Automate recurring tasks related to orders, customer follow-up and invoices.",
+  "Divided invoice processing time by three through CRM workflow automation.": "Cut invoice processing time to one-third through these automations.",
+  "Complementary CRM, marketing communication, SEO and website delivery experience.": "Set up simple tools to track prospecting, measure marketing activity and publish web content.",
+  "Managed CRM follow-up, weekly marketing KPIs, emailing campaigns and LinkedIn editorial planning.": "Maintain the CRM, track weekly marketing KPIs, and prepare email campaigns and the LinkedIn content calendar.",
+  "Handled prospecting support, SEO audit work and competitive monitoring for My Serigraphy.": "Support prospecting with structured SEO audits and competitive monitoring.",
+  "Scoped, designed and delivered a showcase/e-commerce website as a freelance web designer.": "Scope, design and deliver a showcase/e-commerce website as a freelancer.",
+  "IUT Lumiere Lyon 2": "IUT Lumiere Lyon 2",
+  "Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.": "Training in management, activity steering, financial analysis and business process structuring.",
+  "Tools and technologies": "Tools used",
+  "End-to-end banking churn study with risk scoring, model interpretation and a Streamlit dashboard.": "Bank churn scoring pipeline, from data quality checks to prediction explanations in Streamlit.",
+  "Credit card attrition case for a CRM or retention team that needs to identify risky customers and prioritize outreach.": "Simulated credit card attrition case: identify at-risk customers and help a CRM team prioritize retention actions.",
+  "Handled data audit, feature engineering, class imbalance, model benchmarking, threshold choice and global/local explainability.": "Audit the data, engineer features, address class imbalance, compare models, choose the decision threshold and explain predictions with SHAP.",
+  "Outcome": "Deliverable",
+  "Documented pipeline, tests, risk personas and dashboard artifacts with a retention-oriented decision threshold.": "Documented Streamlit application with individual scores, risk profiles, tests and a threshold configured to prioritize customers for outreach.",
+  "Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.": "Dashboard for comparing music catalogue performance, streaming trends and campaign ROI.",
+  "Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.": "Simulated case for an independent label comparing artists, genres, platforms and campaigns over twelve months.",
+  "Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.": "Design the relational model, write the SQL queries, build the performance score in Python and structure the dashboard journey.",
+  "Reusable analytics dataset, artist performance score, campaign ROI views and executive dashboard for commercial decisions.": "Reusable analytics database, documented artist score, campaign ROI views and a Dash dashboard for catalogue steering.",
+  "Pricing intelligence simulator with reliability scoring, elasticity modeling and product-level recommendations.": "Pricing simulator that estimates expected volume, revenue and margin for each product.",
+  "Product catalogue simulator turning sales, prices, stock, promotions and context history into guarded pricing scenarios.": "Simulated product catalogue case: compare pricing scenarios using sales, stock, promotions and available historical data.",
+  "Built schema validation, quality checks, feature engineering, backtesting, elasticity models and scenario optimization.": "Build data validation, quality checks, features, backtesting, elasticity models and recommendation guardrails.",
+  "Recommendations include expected volume, revenue, margin, confidence, risk warnings and exportable product reports.": "Streamlit application showing estimated volume, revenue and margin for each scenario, with confidence levels, alerts and an exportable report.",
+  "Tamagotchi-inspired micro CRM for managing leads, client momentum and business health.": "Tamagotchi-inspired micro-CRM prototype for visualizing which leads should be followed up first.",
+  "Personal CRM concept focused on keeping leads visible, active and easy to prioritize without a heavy enterprise tool.": "Test a lightweight alternative to enterprise CRMs that keeps leads visible and highlights deteriorating relationships.",
+  "Designed the product metaphor, local app structure and CRM interaction model for lightweight relationship tracking.": "Design the product metaphor, priority rules, local application structure and tracking interactions.",
+  "Public proof of CRM product thinking combined with frontend implementation and local application packaging.": "Public prototype combining CRM logic, a React interface and local desktop application packaging.",
+  "Interactive 3D map that turns a GitHub profile into an explorable repository and file system space.": "Interactive 3D map for exploring the repositories and files in a GitHub profile.",
+  "Portfolio readability problem: repositories are usually shown as flat lists instead of structured technical systems.": "GitHub portfolios usually present repositories as a list without showing their internal structure.",
+  "Fetched GitHub metadata and trees, normalized file data, created spatial layouts and built interactive navigation.": "Retrieve metadata and trees through the GitHub API, normalize files, calculate their spatial layout and build the navigation.",
+  "Public WebGL data visualization with language colors, file sizing, breadcrumbs, metadata panels and fallback data.": "Public WebGL visualization with language colors, relative file sizes, breadcrumbs, metadata and fallback data.",
+  "Private local transcription tool for legal audio workflows, with configurable offline processing modes.": "Private legal transcription application that processes audio files locally without sending them to an external service.",
+  "Legal transcription workflow requiring local files, explicit model installation and no external audio upload.": "Transcribe sensitive content while keeping files, models and results on the user’s machine.",
+  "Structured raw, cleaned, smart and report output modes with selectable Whisper backends and performance profiles.": "Design four output modes, integrate multiple Whisper engines and let users choose the balance between speed and accuracy.",
+  "Private application with queue management, local model handling, cancellation, benchmarking and export-oriented history.": "Local application with queue management, model handling, cancellation, performance comparison, history and exports.",
+  "Private creative web app for transforming images and GIFs with dithering, palettes, presets and batch exports.": "Private web application for applying reproducible dithering effects to images and GIFs.",
+  "Creative tooling project focused on repeatable visual transformations, custom palettes and export workflows.": "Test, save and reapply the same visual treatments across a batch of files.",
+  "Separated the React interface from the image engine, state persistence and worker-based processing pipeline.": "Separate the React interface, image engine, settings persistence and background processing with workers.",
+  "Private app with image and GIF treatment, variations, presets, batch handling and ZIP-based exports.": "Application with variation previews, custom palettes and presets, batch processing and ZIP exports.",
+  "Private local macOS application for managing job applications as a personal recruitment CRM.": "Private macOS application for tracking applications, follow-ups and interviews in a local pipeline.",
+  "Personal job-search workflow with pipeline tracking, follow-ups, interviews, offer comparison and HR call preparation.": "Replace scattered spreadsheets with one tool for preparing HR conversations and identifying the next action.",
+  "Designed the local data model, Tauri desktop shell, SQLite persistence, dashboard views and import/export flows.": "Design the data model, Tauri application, SQLite persistence, tracking views and import/export flows.",
+  "Private desktop CRM with Kanban pipeline, CRUD records, timelines, actions, scoring, analytics and local-only storage.": "Desktop CRM with a Kanban pipeline, application records, history, next actions, offer comparison, analytics and local-only storage.",
+  "Credentials, verified": "Skills, certified",
+  "Language proficiency comparison": "Language levels (self-assessment)",
+  "Types": "Categories",
+  "Hard": "Data & BI",
+  "Soft": "Collaboration",
+  "Mad": "Product & code",
+  "Domain": "Domains",
+  "Dataset:": "Filter:",
+  "Skill types": "Skill categories",
+  "Collapse skill types": "Collapse skill categories",
+  "Expand skill types": "Expand skill categories",
+  "Approved": "Verified",
+  "CRM, Comptabilite, Facturation": "CRM, Comptabilité, Facturation",
+  "Se preparer au metier de chef de projet": "Se préparer au métier de chef de projet",
+  "Devenir specialiste du service client": "Devenir spécialiste du service client"
+};
+
+Object.assign(textTranslations.es, {
+  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "Data Analyst orientado a CRM: transformo los datos de clientes y campañas en segmentaciones, dashboards y automatizaciones que los equipos de marketing utilizan a diario.",
+  "Marketing Analyst / Marketing Data Research Analyst": "Analista de datos de marketing (en alternancia)",
+  "Banque Populaire Auvergne Rhone Alpes": "Banque Populaire Auvergne Rhone Alpes",
+  "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.": "Segmentación de bases de clientes, gestión de campañas en Adobe Campaign y creación de dashboards en Power BI para los equipos de marketing, ventas y CRM.",
+  "Set up, monitor and optimize commercial campaigns in Adobe Campaign.": "Crear las segmentaciones, configurar las campañas comerciales en Adobe Campaign y controlar su ejecución.",
+  "Analyze customer populations ranging from thousands to several million records depending on the study scope.": "Consultar y analizar poblaciones de entre miles y varios millones de clientes según la necesidad de negocio.",
+  "Create around ten Power BI dashboards for commercial steering, customer follow-up, campaigns and equipment.": "Diseñar alrededor de diez dashboards en Power BI para seguir la actividad comercial, las campañas, los clientes y sus productos contratados.",
+  "Automate recurring reporting, including daily monitoring when required by business teams.": "Automatizar los informes recurrentes, hasta un seguimiento diario para los equipos que lo necesiten.",
+  "Everwin administration, portfolio reporting and user support for commercial and operational units.": "Mejora de la fiabilidad de los datos de Everwin y rediseño de informes utilizados por los equipos comerciales y operativos.",
+  "Maintained and improved the reliability of Everwin data used for business and operational tracking.": "Administrar Everwin y garantizar la fiabilidad de los datos utilizados para el seguimiento comercial y operativo.",
+  "Produced ad hoc reports and analyses in Excel and Power BI for portfolio monitoring.": "Producir análisis ad hoc e informes de cartera en Excel y Power BI.",
+  "Improved existing BI reports through UI/UX adjustments, new indicators and more useful features.": "Rediseñar informes de BI existentes: jerarquía de la información, indicadores y recorridos de usuario.",
+  "Trained new users and increased average BI report usage frequency by 50%.": "Formar a los usuarios en los nuevos informes; su frecuencia media de uso aumentó un 50 %.",
+  "CRM, order tracking, sales KPIs and internal process structuring in a fast-growing small business.": "Estructuración del CRM, el seguimiento comercial y la facturación en una pequeña empresa en crecimiento.",
+  "Tracked customers, orders, quotes, invoices, unpaid items and sales indicators through the CRM.": "Centralizar en el CRM el seguimiento de clientes, pedidos, presupuestos, facturas, impagos e indicadores comerciales.",
+  "Structured internal processes around commercial coordination, invoicing and product catalogue updates.": "Formalizar los procesos de coordinación comercial, facturación y actualización del catálogo de productos.",
+  "Automated CRM tasks to streamline order processing, customer follow-up and invoice management.": "Automatizar las tareas recurrentes relacionadas con pedidos, seguimiento de clientes y facturas.",
+  "Divided invoice processing time by three through CRM workflow automation.": "Reducir a un tercio el tiempo de procesamiento de facturas gracias a estas automatizaciones.",
+  "Complementary CRM, marketing communication, SEO and website delivery experience.": "Puesta en marcha de herramientas sencillas para seguir la prospección, medir las acciones de marketing y publicar contenidos web.",
+  "Managed CRM follow-up, weekly marketing KPIs, emailing campaigns and LinkedIn editorial planning.": "Mantener el CRM, seguir los KPI semanales de marketing y preparar las campañas de email y el calendario de contenidos de LinkedIn.",
+  "Handled prospecting support, SEO audit work and competitive monitoring for My Serigraphy.": "Apoyar la prospección con auditorías SEO y una vigilancia competitiva estructurada.",
+  "Scoped, designed and delivered a showcase/e-commerce website as a freelance web designer.": "Definir, diseñar y entregar un sitio web corporativo y de comercio electrónico como freelance.",
+  "IUT Lumiere Lyon 2": "IUT Lumiere Lyon 2",
+  "Organization management, activity steering, financial analysis, entrepreneurship and business process understanding.": "Formación en gestión, dirección de actividades, análisis financiero y estructuración de procesos empresariales.",
+  "Tools and technologies": "Herramientas utilizadas",
+  "End-to-end banking churn study with risk scoring, model interpretation and a Streamlit dashboard.": "Pipeline de scoring de churn bancario, desde el control de los datos hasta la explicación de las predicciones en Streamlit.",
+  "Credit card attrition case for a CRM or retention team that needs to identify risky customers and prioritize outreach.": "Caso simulado de abandono de tarjetas de crédito: identificar clientes en riesgo y ayudar a un equipo de CRM a priorizar las acciones de retención.",
+  "Handled data audit, feature engineering, class imbalance, model benchmarking, threshold choice and global/local explainability.": "Auditar los datos, crear las variables, tratar el desequilibrio de clases, comparar los modelos, elegir el umbral de decisión y explicar las predicciones con SHAP.",
+  "Outcome": "Entregable",
+  "Documented pipeline, tests, risk personas and dashboard artifacts with a retention-oriented decision threshold.": "Aplicación Streamlit documentada con scores individuales, perfiles de riesgo, pruebas y un umbral configurado para priorizar los clientes a contactar.",
+  "Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.": "Dashboard para comparar el rendimiento de un catálogo musical, las tendencias de streaming y el ROI de las campañas.",
+  "Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.": "Caso simulado para un sello independiente que compara artistas, géneros, plataformas y campañas durante doce meses.",
+  "Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.": "Diseñar el modelo relacional, escribir las consultas SQL, construir el score de rendimiento en Python y organizar el recorrido del dashboard.",
+  "Reusable analytics dataset, artist performance score, campaign ROI views and executive dashboard for commercial decisions.": "Base analítica reutilizable, score documentado por artista, vistas del ROI de las campañas y dashboard en Dash para gestionar el catálogo.",
+  "Pricing intelligence simulator with reliability scoring, elasticity modeling and product-level recommendations.": "Simulador de precios que estima, para cada producto, el volumen, los ingresos y el margen esperados.",
+  "Product catalogue simulator turning sales, prices, stock, promotions and context history into guarded pricing scenarios.": "Caso simulado de catálogo de productos: comparar escenarios de precios a partir de las ventas, el stock, las promociones y los datos históricos disponibles.",
+  "Built schema validation, quality checks, feature engineering, backtesting, elasticity models and scenario optimization.": "Construir la validación de datos, los controles de calidad, las variables, el backtesting, los modelos de elasticidad y las reglas de seguridad de las recomendaciones.",
+  "Recommendations include expected volume, revenue, margin, confidence, risk warnings and exportable product reports.": "Aplicación Streamlit que muestra las estimaciones de volumen, ingresos y margen para cada escenario, con nivel de confianza, alertas e informe exportable.",
+  "Tamagotchi-inspired micro CRM for managing leads, client momentum and business health.": "Prototipo de micro-CRM inspirado en Tamagotchi para visualizar qué leads deben recibir seguimiento primero.",
+  "Personal CRM concept focused on keeping leads visible, active and easy to prioritize without a heavy enterprise tool.": "Probar una alternativa ligera a los CRM empresariales para mantener visibles los leads y detectar las relaciones que se deterioran.",
+  "Designed the product metaphor, local app structure and CRM interaction model for lightweight relationship tracking.": "Diseñar la metáfora del producto, las reglas de prioridad, la estructura de la aplicación local y las interacciones de seguimiento.",
+  "Public proof of CRM product thinking combined with frontend implementation and local application packaging.": "Prototipo público que combina lógica CRM, una interfaz React y el empaquetado de una aplicación de escritorio local.",
+  "Interactive 3D map that turns a GitHub profile into an explorable repository and file system space.": "Mapa 3D interactivo para explorar los repositorios y archivos de un perfil de GitHub.",
+  "Portfolio readability problem: repositories are usually shown as flat lists instead of structured technical systems.": "Los portfolios de GitHub suelen presentar los repositorios como una lista sin mostrar su estructura interna.",
+  "Fetched GitHub metadata and trees, normalized file data, created spatial layouts and built interactive navigation.": "Obtener metadatos y árboles mediante la API de GitHub, normalizar los archivos, calcular su disposición espacial y construir la navegación.",
+  "Public WebGL data visualization with language colors, file sizing, breadcrumbs, metadata panels and fallback data.": "Visualización WebGL pública con colores por lenguaje, tamaño relativo de los archivos, ruta de navegación, metadatos y datos de respaldo.",
+  "Private local transcription tool for legal audio workflows, with configurable offline processing modes.": "Aplicación privada de transcripción jurídica que procesa los archivos de audio localmente, sin enviarlos a un servicio externo.",
+  "Legal transcription workflow requiring local files, explicit model installation and no external audio upload.": "Transcribir contenidos sensibles manteniendo los archivos, los modelos y los resultados en el equipo del usuario.",
+  "Structured raw, cleaned, smart and report output modes with selectable Whisper backends and performance profiles.": "Diseñar cuatro modos de salida, integrar varios motores Whisper y permitir elegir el equilibrio entre velocidad y precisión.",
+  "Private application with queue management, local model handling, cancellation, benchmarking and export-oriented history.": "Aplicación local con cola de procesamiento, gestión de modelos, cancelación, comparación de rendimiento, historial y exportaciones.",
+  "Private creative web app for transforming images and GIFs with dithering, palettes, presets and batch exports.": "Aplicación web privada para aplicar efectos de dithering reproducibles a imágenes y GIF.",
+  "Creative tooling project focused on repeatable visual transformations, custom palettes and export workflows.": "Probar, guardar y volver a aplicar los mismos tratamientos visuales a un lote de archivos.",
+  "Separated the React interface from the image engine, state persistence and worker-based processing pipeline.": "Separar la interfaz React, el motor de imagen, la persistencia de los ajustes y el procesamiento en segundo plano con workers.",
+  "Private app with image and GIF treatment, variations, presets, batch handling and ZIP-based exports.": "Aplicación con vista previa de variaciones, paletas y presets personalizados, procesamiento por lotes y exportaciones ZIP.",
+  "Private local macOS application for managing job applications as a personal recruitment CRM.": "Aplicación privada para macOS que permite seguir candidaturas, recordatorios y entrevistas en un pipeline local.",
+  "Personal job-search workflow with pipeline tracking, follow-ups, interviews, offer comparison and HR call preparation.": "Sustituir las hojas de cálculo dispersas por una sola herramienta para preparar las conversaciones con RR. HH. e identificar la siguiente acción.",
+  "Designed the local data model, Tauri desktop shell, SQLite persistence, dashboard views and import/export flows.": "Diseñar el modelo de datos, la aplicación Tauri, la persistencia SQLite, las vistas de seguimiento y los flujos de importación y exportación.",
+  "Private desktop CRM with Kanban pipeline, CRUD records, timelines, actions, scoring, analytics and local-only storage.": "CRM de escritorio con pipeline Kanban, fichas de candidatura, historial, próximas acciones, comparación de ofertas, estadísticas y almacenamiento exclusivamente local.",
+  "Credentials, verified": "Competencias certificadas",
+  "Language proficiency comparison": "Niveles de idioma (autoevaluación)",
+  "Skills index": "Indice de competencias",
+  "Types": "Categorias",
+  "Hard": "Datos y BI",
+  "Soft": "Colaboracion",
+  "Mad": "Producto y codigo",
+  "Domain": "Negocio",
+  "Delivery": "Entrega",
+  "Dataset:": "Filtro:",
+  "Skill types": "Categorías de competencias",
+  "Collapse skill types": "Contraer las categorías",
+  "Expand skill types": "Expandir las categorías",
+  "Approved": "Verificado",
+  "CRM, Comptabilite, Facturation": "CRM, Comptabilité, Facturation",
+  "Se preparer au metier de chef de projet": "Se préparer au métier de chef de projet",
+  "Devenir specialiste du service client": "Devenir spécialiste du service client"
 });
 
 const terminalStorageKeys = {
@@ -1620,130 +1786,287 @@ const terminalExperienceCatalog = [
   }
 ];
 
-const terminalSkillCatalog = {
+const terminalEnglishSkillCatalog = {
   hard: {
-    label: "HARD",
+    label: "DATA & BI",
     rows: [
-      ["SQL and data querying", "Data analysis and decision support", "Advanced", "ACTIVE"],
-      ["Python analytics", "Data analysis and decision support", "Advanced", "ACTIVE"],
-      ["Power BI and DAX", "Dashboarding and operational reporting", "Advanced", "ACTIVE"],
-      ["Customer segmentation", "Customer and campaign intelligence", "Advanced", "APPROVED"],
-      ["Campaign analytics", "Customer and campaign intelligence", "Advanced", "ACTIVE"],
-      ["Statistical analysis", "Data analysis and decision support", "Professional", "APPROVED"],
-      ["Data visualization", "Interface and experience design", "Advanced", "ACTIVE"],
-      ["Web development", "Automation and application delivery", "Professional", "ACTIVE"],
-      ["API and automation", "Automation and application delivery", "Professional", "OPEN"],
-      ["Data modeling", "Quality and structured execution", "Professional", "APPROVED"]
+      ["SQL and querying", "Segment and analyze customer databases"],
+      ["Python", "Prepare, analyze and model data"],
+      ["Power BI and DAX", "Build operational dashboards"],
+      ["Customer segmentation", "Define campaign-ready audiences"],
+      ["Campaign analysis", "Measure execution and performance"],
+      ["Data modeling", "Structure reliable, reusable data sources"],
+      ["Statistical analysis", "Compare populations and test hypotheses"],
+      ["Quality control", "Detect inconsistencies before delivery"]
     ]
   },
   soft: {
-    label: "SOFT",
+    label: "COLLABORATION",
     rows: [
-      ["Analytical rigor", "Quality and structured execution", "Core", "ACTIVE"],
-      ["Business communication", "Communication and collaboration", "Core", "ACTIVE"],
-      ["Synthesis", "Business framing and recommendations", "Core", "ACTIVE"],
-      ["Curiosity", "Learning and adaptation", "Core", "ACTIVE"],
-      ["Team collaboration", "Communication and collaboration", "Core", "ACTIVE"],
-      ["Autonomy", "Quality and structured execution", "Core", "APPROVED"],
-      ["Adaptability", "Learning and adaptation", "Core", "ACTIVE"],
-      ["Pedagogy", "Documentation and enablement", "Core", "APPROVED"],
-      ["Active listening", "Communication and collaboration", "Core", "ACTIVE"],
-      ["Prioritization", "Quality and structured execution", "Core", "ACTIVE"]
+      ["Business communication", "Explain an analysis without technical jargon"],
+      ["Synthesis", "Surface the finding and expected action"],
+      ["User enablement", "Train users on delivered tools"],
+      ["Prioritization", "Separate what is useful from what is merely interesting"],
+      ["Autonomy", "Lead an analysis from request to presentation"],
+      ["Teamwork", "Build with marketing, CRM and sales teams"]
     ]
   },
   mad: {
-    label: "MAD",
+    label: "PRODUCT & CODE",
     rows: [
-      ["Interface systems", "Interface and experience design", "Distinctive", "ACTIVE"],
-      ["Rapid prototyping", "Automation and application delivery", "Distinctive", "ACTIVE"],
-      ["Local-first tooling", "Quality and structured execution", "Distinctive", "APPROVED"],
-      ["Cross-domain translation", "Communication and collaboration", "Distinctive", "ACTIVE"],
-      ["Data storytelling", "Interface and experience design", "Distinctive", "ACTIVE"],
-      ["Workflow reverse engineering", "Business framing and recommendations", "Distinctive", "APPROVED"],
-      ["AI tool orchestration", "Automation and application delivery", "Distinctive", "OPEN"],
-      ["3D data experiences", "Interface and experience design", "Distinctive", "OPEN"],
-      ["Documentation as product", "Documentation and enablement", "Distinctive", "APPROVED"],
-      ["Experimental learning", "Learning and adaptation", "Distinctive", "ACTIVE"]
+      ["Rapid prototyping", "Test a use case with a working application"],
+      ["Web development", "Deliver interfaces and analytical tools"],
+      ["APIs and automation", "Connect data sources and remove manual tasks"],
+      ["Local and private tools", "Process sensitive data without external uploads"],
+      ["Data visualization", "Make gaps and priorities immediately readable"],
+      ["AI tool integration", "Add targeted features to existing workflows"],
+      ["3D experiences", "Explore alternative ways to navigate data"]
     ]
   },
   domain: {
-    label: "DOMAIN",
+    label: "DOMAINS",
     rows: [
-      ["CRM and customer lifecycle", "Customer and campaign intelligence", "Advanced", "ACTIVE"],
-      ["Banking marketing", "Customer and campaign intelligence", "Professional", "ACTIVE"],
-      ["Campaign operations", "Quality and structured execution", "Advanced", "ACTIVE"],
-      ["Pricing and revenue", "Business framing and recommendations", "Professional", "APPROVED"],
-      ["Sales operations", "Business framing and recommendations", "Professional", "APPROVED"],
-      ["Customer service", "Communication and collaboration", "Professional", "APPROVED"],
-      ["Product analytics", "Data analysis and decision support", "Professional", "OPEN"],
-      ["Privacy-aware audio workflows", "Quality and structured execution", "Professional", "APPROVED"],
-      ["Small-business operations", "Business framing and recommendations", "Professional", "APPROVED"],
-      ["Portfolio reporting", "Dashboarding and operational reporting", "Advanced", "ACTIVE"]
+      ["CRM and customer lifecycle", "Segmentation, activation and retention"],
+      ["Banking marketing", "Campaigns, product holdings and customer tracking"],
+      ["Campaign operations", "Targeting, configuration and execution control"],
+      ["Sales operations", "Portfolios, orders and invoicing"],
+      ["Pricing and revenue", "Elasticity, margin and pricing scenarios"],
+      ["Portfolio reporting", "Recurring activity and variance tracking"]
     ]
   },
   delivery: {
     label: "DELIVERY",
     rows: [
-      ["KPI framing", "Business framing and recommendations", "Advanced", "ACTIVE"],
-      ["Requirements clarification", "Communication and collaboration", "Advanced", "ACTIVE"],
-      ["Stakeholder alignment", "Communication and collaboration", "Professional", "ACTIVE"],
-      ["Dashboard adoption", "Documentation and enablement", "Advanced", "APPROVED"],
-      ["Data quality assurance", "Quality and structured execution", "Advanced", "ACTIVE"],
-      ["Technical documentation", "Documentation and enablement", "Professional", "APPROVED"],
-      ["User training", "Documentation and enablement", "Professional", "APPROVED"],
-      ["Process automation", "Automation and application delivery", "Advanced", "ACTIVE"],
-      ["Decision recommendations", "Business framing and recommendations", "Advanced", "ACTIVE"],
-      ["Project scoping", "Quality and structured execution", "Professional", "APPROVED"]
+      ["KPI framing", "Define the calculation, source and intended use"],
+      ["Requirements clarification", "Turn a business question into a feasible analysis"],
+      ["Dashboard adoption", "Design, document and train"],
+      ["Data quality", "Verify inputs, rules and results"],
+      ["Technical documentation", "Make a tool understandable and maintainable"],
+      ["User training", "Support onboarding and gather feedback"],
+      ["Process automation", "Reduce recurring work and errors"],
+      ["Project scoping", "Define the scope, constraints and deliverable"]
     ]
   }
 };
 
-const terminalToolCatalog = [
-  ["Data and BI", "Python", "Analysis, reporting and decision support", "ACTIVE"],
-  ["Data and BI", "SQL", "Analysis, reporting and decision support", "ACTIVE"],
-  ["Data and BI", "Power BI", "Analysis, reporting and decision support", "ACTIVE"],
-  ["Data and BI", "DAX", "Analysis, reporting and decision support", "ACTIVE"],
-  ["Data and BI", "Excel", "Analysis, reporting and decision support", "ACTIVE"],
-  ["Data and BI", "Teradata", "Analysis, reporting and decision support", "ACTIVE"],
-  ["Data and BI", "Dataiku", "Analysis, reporting and decision support", "APPROVED"],
-  ["Data and BI", "SAS", "Analysis, reporting and decision support", "APPROVED"],
-  ["Data and BI", "Alteryx", "Analysis, reporting and decision support", "APPROVED"],
-  ["Data and BI", "Tableau", "Analysis, reporting and decision support", "APPROVED"],
-  ["Data and BI", "R / RStudio", "Analysis, reporting and decision support", "APPROVED"],
-  ["Data and BI", "Minitab", "Analysis, reporting and decision support", "APPROVED"],
-  ["Data and BI", "scikit-learn", "Analysis, reporting and decision support", "APPROVED"],
-  ["Data and BI", "XGBoost", "Analysis, reporting and decision support", "OPEN"],
-  ["Data and BI", "SHAP", "Analysis, reporting and decision support", "OPEN"],
-  ["Web and applications", "JavaScript", "Static tools and analytical applications", "ACTIVE"],
-  ["Web and applications", "TypeScript", "Static tools and analytical applications", "ACTIVE"],
-  ["Web and applications", "React", "Static tools and analytical applications", "ACTIVE"],
-  ["Web and applications", "HTML", "Static tools and analytical applications", "ACTIVE"],
-  ["Web and applications", "CSS", "Static tools and analytical applications", "ACTIVE"],
-  ["Web and applications", "Git", "Static tools and analytical applications", "ACTIVE"],
-  ["Web and applications", "SQLite", "Static tools and analytical applications", "APPROVED"],
-  ["Web and applications", "MySQL", "Static tools and analytical applications", "APPROVED"],
-  ["Web and applications", "Streamlit", "Static tools and analytical applications", "APPROVED"],
-  ["Web and applications", "Dash", "Static tools and analytical applications", "APPROVED"],
-  ["Web and applications", "FastAPI", "Static tools and analytical applications", "OPEN"],
-  ["Web and applications", "PHP", "Static tools and analytical applications", "APPROVED"],
-  ["Web and applications", "Vite", "Static tools and analytical applications", "ACTIVE"],
-  ["Web and applications", "Three.js", "Static tools and analytical applications", "OPEN"],
-  ["Visualization and design", "Plotly", "Interfaces, dashboards and data storytelling", "ACTIVE"],
-  ["Visualization and design", "Mermaid", "Interfaces, dashboards and data storytelling", "ACTIVE"],
-  ["Visualization and design", "Figma", "Interfaces, dashboards and data storytelling", "ACTIVE"],
-  ["Visualization and design", "Miro", "Interfaces, dashboards and data storytelling", "APPROVED"],
-  ["Visualization and design", "Photoshop", "Interfaces, dashboards and data storytelling", "APPROVED"],
-  ["Visualization and design", "WebGL", "Interfaces, dashboards and data storytelling", "OPEN"],
-  ["CRM and operations", "Adobe Campaign", "Campaign, customer and workflow operations", "ACTIVE"],
-  ["CRM and operations", "Everwin", "Campaign, customer and workflow operations", "APPROVED"],
-  ["CRM and operations", "Airtable", "Campaign, customer and workflow operations", "APPROVED"],
-  ["CRM and operations", "Notion", "Campaign, customer and workflow operations", "ACTIVE"],
-  ["Automation and AI", "MCP", "Local automation and tool orchestration", "ACTIVE"],
-  ["Automation and AI", "n8n", "Local automation and tool orchestration", "OPEN"],
-  ["Automation and AI", "Zapier", "Local automation and tool orchestration", "APPROVED"],
-  ["Automation and AI", "Whisper", "Local automation and tool orchestration", "APPROVED"],
-  ["Automation and AI", "GitHub API", "Local automation and tool orchestration", "ACTIVE"]
+const terminalEnglishToolCatalog = [
+  ["Data and BI", "SQL", "Customer database segmentation and analysis"],
+  ["Data and BI", "Python", "Data preparation, analysis and modeling"],
+  ["Data and BI", "Power BI", "Operational dashboards"],
+  ["Data and BI", "DAX", "Measures and business logic in Power BI"],
+  ["Data and BI", "Excel", "Ad hoc analysis and operational controls"],
+  ["Data and BI", "Teradata", "Queries on banking customer data"],
+  ["Data and BI", "SAS", "Data processing and analysis"],
+  ["Data and BI", "Alteryx", "Data preparation and workflow automation"],
+  ["Data and BI", "Dataiku", "Data projects completed during training"],
+  ["Data and BI", "scikit-learn / XGBoost / SHAP", "Scoring and explainability for the churn project"],
+  ["Web and applications", "React / TypeScript", "Analytical application interfaces"],
+  ["Web and applications", "JavaScript / HTML / CSS", "Websites and web tools"],
+  ["Web and applications", "Streamlit", "Interactive data applications"],
+  ["Web and applications", "Dash", "Analytical dashboard for the music project"],
+  ["Web and applications", "Tauri", "Local desktop applications"],
+  ["Web and applications", "SQLite / MySQL", "Local storage and relational models"],
+  ["Web and applications", "Three.js / WebGL", "3D visualization of GitHub repositories"],
+  ["Web and applications", "Git", "Project versioning and publishing"],
+  ["Visualization and design", "Plotly", "Interactive charts in data applications"],
+  ["Visualization and design", "Figma", "Interface prototyping"],
+  ["CRM and operations", "Adobe Campaign", "Campaign targeting and execution"],
+  ["CRM and operations", "Everwin", "Portfolio administration and reporting"],
+  ["Automation", "Whisper", "Local audio transcription"],
+  ["Automation", "GitHub API", "Repository metadata collection"]
 ];
+
+const terminalSpanishSkillCatalog = {
+  hard: {
+    label: "DATOS Y BI",
+    rows: [
+      ["SQL y consultas", "Segmentar y analizar bases de clientes"],
+      ["Python", "Preparar, analizar y modelar datos"],
+      ["Power BI y DAX", "Construir dashboards operativos"],
+      ["Segmentación de clientes", "Definir audiencias activables en campañas"],
+      ["Análisis de campañas", "Medir la ejecución y el rendimiento"],
+      ["Modelado de datos", "Estructurar fuentes fiables y reutilizables"],
+      ["Análisis estadístico", "Comparar poblaciones y probar hipótesis"],
+      ["Control de calidad", "Detectar incoherencias antes de la entrega"]
+    ]
+  },
+  soft: {
+    label: "COLABORACION",
+    rows: [
+      ["Comunicación de negocio", "Explicar un análisis sin jerga técnica"],
+      ["Capacidad de síntesis", "Destacar la conclusión y la acción esperada"],
+      ["Formación de usuarios", "Formar a los usuarios en las herramientas entregadas"],
+      ["Priorización", "Distinguir lo útil de lo simplemente interesante"],
+      ["Autonomía", "Llevar un análisis desde la solicitud hasta la presentación"],
+      ["Trabajo en equipo", "Construir con los equipos de marketing, CRM y ventas"]
+    ]
+  },
+  mad: {
+    label: "PRODUCTO Y CODIGO",
+    rows: [
+      ["Prototipado rápido", "Probar un uso con una aplicación funcional"],
+      ["Desarrollo web", "Entregar interfaces y herramientas analíticas"],
+      ["API y automatización", "Conectar fuentes y eliminar tareas manuales"],
+      ["Herramientas locales y privadas", "Procesar datos sensibles sin envíos externos"],
+      ["Visualización de datos", "Hacer visibles de inmediato las diferencias y prioridades"],
+      ["Integración de herramientas de IA", "Añadir funciones específicas a workflows existentes"],
+      ["Experiencias 3D", "Explorar otras formas de navegar por los datos"]
+    ]
+  },
+  domain: {
+    label: "NEGOCIO",
+    rows: [
+      ["CRM y ciclo de vida del cliente", "Segmentación, activación y retención"],
+      ["Marketing bancario", "Campañas, productos contratados y seguimiento de clientes"],
+      ["Operaciones de campañas", "Segmentación, configuración y control de ejecución"],
+      ["Operaciones comerciales", "Carteras, pedidos y facturación"],
+      ["Pricing e ingresos", "Elasticidad, margen y escenarios de precios"],
+      ["Informes de cartera", "Seguimiento recurrente de actividad y desviaciones"]
+    ]
+  },
+  delivery: {
+    label: "ENTREGA",
+    rows: [
+      ["Definición de KPI", "Definir el cálculo, la fuente y el uso esperado"],
+      ["Clarificación de necesidades", "Convertir una pregunta de negocio en un análisis viable"],
+      ["Adopción de dashboards", "Diseñar, documentar y formar"],
+      ["Calidad de datos", "Verificar las entradas, las reglas y los resultados"],
+      ["Documentación técnica", "Hacer que una herramienta sea comprensible y mantenible"],
+      ["Formación de usuarios", "Acompañar la adopción y recoger comentarios"],
+      ["Automatización de procesos", "Reducir las tareas recurrentes y los errores"],
+      ["Definición del proyecto", "Definir el alcance, las restricciones y el entregable"]
+    ]
+  }
+};
+
+const terminalSpanishToolCatalog = [
+  ["Datos y BI", "SQL", "Segmentación y análisis de bases de clientes"],
+  ["Datos y BI", "Python", "Preparación, análisis y modelado de datos"],
+  ["Datos y BI", "Power BI", "Dashboards de gestión"],
+  ["Datos y BI", "DAX", "Medidas y lógica de negocio en Power BI"],
+  ["Datos y BI", "Excel", "Análisis ad hoc y controles operativos"],
+  ["Datos y BI", "Teradata", "Consultas sobre datos de clientes bancarios"],
+  ["Datos y BI", "SAS", "Procesamiento y análisis de datos"],
+  ["Datos y BI", "Alteryx", "Preparación y automatización de flujos de datos"],
+  ["Datos y BI", "Dataiku", "Proyectos de datos realizados durante la formación"],
+  ["Datos y BI", "scikit-learn / XGBoost / SHAP", "Scoring y explicabilidad en el proyecto de churn"],
+  ["Web y aplicaciones", "React / TypeScript", "Interfaces de aplicaciones analíticas"],
+  ["Web y aplicaciones", "JavaScript / HTML / CSS", "Sitios y herramientas web"],
+  ["Web y aplicaciones", "Streamlit", "Aplicaciones de datos interactivas"],
+  ["Web y aplicaciones", "Dash", "Dashboard analítico del proyecto musical"],
+  ["Web y aplicaciones", "Tauri", "Aplicaciones de escritorio locales"],
+  ["Web y aplicaciones", "SQLite / MySQL", "Almacenamiento local y modelos relacionales"],
+  ["Web y aplicaciones", "Three.js / WebGL", "Visualización 3D de repositorios de GitHub"],
+  ["Web y aplicaciones", "Git", "Versionado y publicación de proyectos"],
+  ["Visualización y diseño", "Plotly", "Gráficos interactivos en aplicaciones de datos"],
+  ["Visualización y diseño", "Figma", "Prototipado de interfaces"],
+  ["CRM y operaciones", "Adobe Campaign", "Segmentación y ejecución de campañas"],
+  ["CRM y operaciones", "Everwin", "Administración e informes de cartera"],
+  ["Automatización", "Whisper", "Transcripción de audio local"],
+  ["Automatización", "GitHub API", "Recopilación de metadatos de repositorios"]
+];
+
+const terminalFrenchSkillCatalog = {
+  hard: {
+    label: "DATA & BI",
+    rows: [
+      ["SQL et requêtage", "Segmenter et analyser des bases clients"],
+      ["Python", "Préparer, analyser et modéliser des données"],
+      ["Power BI et DAX", "Construire des tableaux de bord opérationnels"],
+      ["Segmentation client", "Définir des populations activables en campagne"],
+      ["Analyse de campagnes", "Mesurer l’exécution et la performance"],
+      ["Modélisation de données", "Structurer des sources fiables et réutilisables"],
+      ["Analyse statistique", "Comparer des populations et tester des hypotheses"],
+      ["Controle qualité", "Détecter les incohérences avant diffusion"]
+    ]
+  },
+  soft: {
+    label: "COLLABORATION",
+    rows: [
+      ["Communication métier", "Expliquer une analyse sans jargon technique"],
+      ["Esprit de synthese", "Faire ressortir le constat et l’action attendue"],
+      ["Pédagogie", "Former les utilisateurs aux outils livrés"],
+      ["Priorisation", "Distinguer l’utile du simplement intéressant"],
+      ["Autonomie", "Mener une analyse de la demande à la restitution"],
+      ["Travail en équipe", "Construire avec les équipes marketing, CRM et commerciales"]
+    ]
+  },
+  mad: {
+    label: "PRODUIT & CODE",
+    rows: [
+      ["Prototypage rapide", "Tester un usage avec une application fonctionnelle"],
+      ["Développement web", "Livrer des interfaces et outils analytiques"],
+      ["API et automatisation", "Relier des sources et supprimer des tâches manuelles"],
+      ["Outils locaux et privés", "Traiter les données sensibles sans envoi externe"],
+      ["Visualisation de données", "Rendre les écarts et priorités immédiatement lisibles"],
+      ["Intégration d’outils IA", "Ajouter des fonctions ciblées à des workflows existants"],
+      ["Expériences 3D", "Explorer d’autres formes de navigation dans les données"]
+    ]
+  },
+  domain: {
+    label: "MÉTIERS",
+    rows: [
+      ["CRM et cycle de vie client", "Segmentation, activation et rétention"],
+      ["Marketing bancaire", "Campagnes, équipement et suivi client"],
+      ["Opérations de campagnes", "Ciblage, paramétrage et controle d’exécution"],
+      ["Opérations commerciales", "Portefeuille, commandes et facturation"],
+      ["Pricing et revenu", "Élasticité, marge et scénarios de prix"],
+      ["Reporting de portefeuille", "Suivi régulier de l’activité et des écarts"]
+    ]
+  },
+  delivery: {
+    label: "LIVRAISON",
+    rows: [
+      ["Cadrage des KPI", "Définir le calcul, la source et l’usage attendu"],
+      ["Clarification du besoin", "Transformer une question métier en analyse réalisable"],
+      ["Adoption des tableaux de bord", "Concevoir, documenter et former"],
+      ["Qualité des données", "Vérifier les entrées, les regles et les résultats"],
+      ["Documentation technique", "Rendre un outil compréhensible et maintenable"],
+      ["Formation utilisateurs", "Accompagner la prise en main et recueillir les retours"],
+      ["Automatisation des processus", "Réduire les opérations répétitives et les erreurs"],
+      ["Cadrage de projet", "Définir le périmetre, les contraintes et le livrable"]
+    ]
+  }
+};
+
+const terminalFrenchToolCatalog = [
+  ["Data et BI", "SQL", "Segmentation et analyse de bases clients"],
+  ["Data et BI", "Python", "Préparation, analyse et modélisation de données"],
+  ["Data et BI", "Power BI", "Tableaux de bord de pilotage"],
+  ["Data et BI", "DAX", "Mesures et logique métier dans Power BI"],
+  ["Data et BI", "Excel", "Analyses ad hoc et controles opérationnels"],
+  ["Data et BI", "Teradata", "Requêtes sur les données clients bancaires"],
+  ["Data et BI", "SAS", "Traitements et analyses de données"],
+  ["Data et BI", "Alteryx", "Préparation et automatisation de flux de données"],
+  ["Data et BI", "Dataiku", "Projets data réalisés en formation"],
+  ["Data et BI", "scikit-learn / XGBoost / SHAP", "Scoring et explicabilité sur le projet churn"],
+  ["Web et applications", "React / TypeScript", "Interfaces d’applications analytiques"],
+  ["Web et applications", "JavaScript / HTML / CSS", "Sites et outils web"],
+  ["Web et applications", "Streamlit", "Applications data interactives"],
+  ["Web et applications", "Dash", "Dashboard analytique du projet musical"],
+  ["Web et applications", "Tauri", "Applications desktop locales"],
+  ["Web et applications", "SQLite / MySQL", "Stockage local et modeles relationnels"],
+  ["Web et applications", "Three.js / WebGL", "Visualisation 3D de dépots GitHub"],
+  ["Web et applications", "Git", "Versionnement et publication des projets"],
+  ["Visualisation et design", "Plotly", "Graphiques interactifs dans les applications data"],
+  ["Visualisation et design", "Figma", "Prototypage d’interfaces"],
+  ["CRM et opérations", "Adobe Campaign", "Ciblage et exécution de campagnes"],
+  ["CRM et opérations", "Everwin", "Administration et reporting de portefeuille"],
+  ["Automatisation", "Whisper", "Transcription audio locale"],
+  ["Automatisation", "GitHub API", "Collecte des métadonnées de dépots"]
+];
+
+function terminalGetSkillCatalog() {
+  if (activeLanguage === "fr") return terminalFrenchSkillCatalog;
+  if (activeLanguage === "es") return terminalSpanishSkillCatalog;
+  return terminalEnglishSkillCatalog;
+}
+
+function terminalGetToolCatalog() {
+  if (activeLanguage === "fr") return terminalFrenchToolCatalog;
+  if (activeLanguage === "es") return terminalSpanishToolCatalog;
+  return terminalEnglishToolCatalog;
+}
 
 const terminalSkillsPageSize = 5;
 const terminalToolsPageSize = 10;
@@ -2236,7 +2559,7 @@ function terminalUpdateDatabasePager(scope, page, totalPages, totalRecords, star
 }
 
 function terminalRenderSkillTable(categoryKey) {
-  const category = terminalSkillCatalog[categoryKey];
+  const category = terminalGetSkillCatalog()[categoryKey];
   const body = document.querySelector("[data-skills-table-body]");
   const panel = document.querySelector("[data-skills-results]");
   const loading = document.querySelector("[data-skills-loading]");
@@ -2279,7 +2602,7 @@ function terminalRenderSkillTable(categoryKey) {
 }
 
 function terminalSelectSkillCategory(categoryKey, showLoading = true) {
-  const category = terminalSkillCatalog[categoryKey];
+  const category = terminalGetSkillCatalog()[categoryKey];
   const panel = document.querySelector("[data-skills-results]");
   const loading = document.querySelector("[data-skills-loading]");
   const tableWrap = document.querySelector("[data-skills-table-wrap]");
@@ -2378,7 +2701,7 @@ function terminalRenderTools(query = terminalToolsSearchQuery) {
   if (query !== terminalToolsSearchQuery) terminalToolsPage = 1;
   terminalToolsSearchQuery = query;
   const normalizedQuery = terminalNormalizeSearchText(query.trim());
-  const localizedRows = terminalToolCatalog.map(([category, tool, application]) => ({
+  const localizedRows = terminalGetToolCatalog().map(([category, tool, application]) => ({
     category: getTranslatedValue(category, activeLanguage),
     tool,
     application: getTranslatedValue(application, activeLanguage)
@@ -2446,7 +2769,7 @@ function terminalUpdateToolsSearchDisplay() {
 function terminalRefreshSkillsInterfaceLanguage() {
   if (terminalSkillsInterfaceReady) {
     const panel = document.querySelector("[data-skills-results]");
-    const category = terminalSkillCatalog[terminalSkillsCategory];
+    const category = terminalGetSkillCatalog()[terminalSkillsCategory];
     if (panel?.getAttribute("aria-busy") === "true") {
       const title = document.querySelector("[data-skill-dataset-title]");
       if (category && title) {
@@ -2550,7 +2873,7 @@ function terminalSetupSkillsDatabase() {
   });
 
   next.addEventListener("click", () => {
-    const category = terminalSkillCatalog[terminalSkillsCategory];
+    const category = terminalGetSkillCatalog()[terminalSkillsCategory];
     const totalPages = category ? Math.max(1, Math.ceil(category.rows.length / terminalSkillsPageSize)) : 1;
     if (terminalSkillsPage >= totalPages) return;
     terminalSkillsPage += 1;
@@ -2615,7 +2938,7 @@ function terminalSetupToolsSearch() {
 
   next.addEventListener("click", () => {
     const normalizedQuery = terminalNormalizeSearchText(terminalToolsSearchQuery.trim());
-    const matchCount = terminalToolCatalog.filter(([category, tool, application]) => {
+    const matchCount = terminalGetToolCatalog().filter(([category, tool, application]) => {
       if (!normalizedQuery) return true;
       const localizedCategory = getTranslatedValue(category, activeLanguage);
       const localizedApplication = getTranslatedValue(application, activeLanguage);
