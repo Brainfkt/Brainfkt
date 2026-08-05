@@ -1131,12 +1131,14 @@ kbd,
   align-self: stretch;
   background: var(--theme-button-background);
   display: inline-flex;
+  flex: 1 1 auto;
   justify-content: flex-start;
-  min-width: 10ch;
+  min-width: max-content;
   padding: 0 1ch;
   text-transform: uppercase;
   user-select: none;
-  width: 10ch;
+  white-space: nowrap;
+  width: max-content;
 }
 
 .skills-drawer-item:hover .skills-drawer-icon,

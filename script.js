@@ -1295,7 +1295,7 @@ Object.assign(textTranslations.fr, {
   "Types": "Catégories",
   "Hard": "Data & BI",
   "Soft": "Collaboration",
-  "Mad": "Produit & code",
+  "Mad": "Produit",
   "Domain": "Métiers",
   "Delivery": "Livraison",
   "Hard skills": "Compétences techniques",
@@ -1555,7 +1555,7 @@ textTranslations.en = {
   "Types": "Categories",
   "Hard": "Data & BI",
   "Soft": "Collaboration",
-  "Mad": "Product & code",
+  "Mad": "Product",
   "Domain": "Domains",
   "Dataset:": "Filter:",
   "Skill types": "Skill categories",
@@ -1632,7 +1632,7 @@ Object.assign(textTranslations.es, {
   "Types": "Categorias",
   "Hard": "Datos y BI",
   "Soft": "Colaboracion",
-  "Mad": "Producto y codigo",
+  "Mad": "Producto",
   "Domain": "Negocio",
   "Delivery": "Entrega",
   "Dataset:": "Filtro:",
@@ -1812,7 +1812,7 @@ const terminalEnglishSkillCatalog = {
     ]
   },
   mad: {
-    label: "PRODUCT & CODE",
+    label: "PRODUCT",
     rows: [
       ["Rapid prototyping", "Test a use case with a working application"],
       ["Web development", "Deliver interfaces and analytical tools"],
@@ -1902,7 +1902,7 @@ const terminalSpanishSkillCatalog = {
     ]
   },
   mad: {
-    label: "PRODUCTO Y CODIGO",
+    label: "PRODUCTO",
     rows: [
       ["Prototipado rápido", "Probar un uso con una aplicación funcional"],
       ["Desarrollo web", "Entregar interfaces y herramientas analíticas"],
@@ -1992,7 +1992,7 @@ const terminalFrenchSkillCatalog = {
     ]
   },
   mad: {
-    label: "PRODUIT & CODE",
+    label: "PRODUIT",
     rows: [
       ["Prototypage rapide", "Tester un usage avec une application fonctionnelle"],
       ["Développement web", "Livrer des interfaces et outils analytiques"],
