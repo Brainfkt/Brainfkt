@@ -26,6 +26,17 @@ jobs:
           cache-dependency-path: cache/requirements.txt
       - name: Install dependencies
         run: python -m pip install -r cache/requirements.txt
+      - name: Patch stars counter
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('today.py')
+          source = path.read_text()
+          old = "    for node in data: total_stars += node['node']['stargazers']['totalCount']"
+          new = "    for node in data:\n        if node.get('node') and node['node'].get('stargazers'):\n            total_stars += node['node']['stargazers'].get('totalCount', 0)"
+          if old in source:
+              path.write_text(source.replace(old, new))
+          PY
       - name: Update README file
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
