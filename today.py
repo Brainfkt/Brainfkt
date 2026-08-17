@@ -291,7 +291,9 @@ def force_close_file(data):
 
 def stars_counter(data):
     total_stars = 0
-    for node in data: total_stars += node['node']['stargazers']['totalCount']
+    for node in data:
+        if node.get('node') and node['node'].get('stargazers'):
+            total_stars += node['node']['stargazers'].get('totalCount', 0)
     return total_stars
 
 
