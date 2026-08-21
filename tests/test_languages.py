@@ -99,6 +99,34 @@ class LanguageAggregationTests(unittest.TestCase):
         self.assertEqual(simple_request.call_args_list[1].args[2]['cursor'], 'next-page')
 
 
+class GraphqlRequestTests(unittest.TestCase):
+    @patch('today.time.sleep')
+    @patch('today.requests.post')
+    def test_graphql_request_retries_a_transient_bad_gateway(self, post, sleep):
+        bad_gateway = Mock(status_code=502)
+        success = Mock(status_code=200)
+        post.side_effect = [bad_gateway, success]
+
+        response = today.graphql_request('query', {'login': 'Brainfkt'})
+
+        self.assertIs(response, success)
+        self.assertEqual(post.call_count, 2)
+        self.assertEqual(post.call_args.kwargs['timeout'], today.GITHUB_REQUEST_TIMEOUT)
+        sleep.assert_called_once_with(1)
+
+    @patch('today.time.sleep')
+    @patch('today.requests.post')
+    def test_graphql_request_does_not_retry_a_permanent_error(self, post, sleep):
+        bad_request = Mock(status_code=400)
+        post.return_value = bad_request
+
+        response = today.graphql_request('query', {})
+
+        self.assertIs(response, bad_request)
+        post.assert_called_once()
+        sleep.assert_not_called()
+
+
 class LanguageSvgTests(unittest.TestCase):
     def test_svg_templates_have_extended_canvas_and_language_bar(self):
         namespace = {'svg': 'http://www.w3.org/2000/svg'}

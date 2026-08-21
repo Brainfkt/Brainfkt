@@ -14,6 +14,10 @@ QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, '
 LANGUAGE_BAR_BLOCKS = 96
 LANGUAGE_BAR_LANGUAGE_LIMIT = 6
 LANGUAGE_BAR_FALLBACK_COLOR = '#8b949e'
+GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql'
+GITHUB_REQUEST_TIMEOUT = 30
+GITHUB_REQUEST_ATTEMPTS = 4
+GITHUB_RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
 
 
 def daily_readme(birthday):
@@ -25,8 +29,36 @@ def daily_readme(birthday):
         ' 🎂' if (diff.months == 0 and diff.days == 0) else '')
 
 
+def graphql_request(query, variables):
+    last_error = None
+    for attempt in range(GITHUB_REQUEST_ATTEMPTS):
+        try:
+            request = requests.post(
+                GITHUB_GRAPHQL_URL,
+                json={'query': query, 'variables': variables},
+                headers=HEADERS,
+                timeout=GITHUB_REQUEST_TIMEOUT,
+            )
+        except requests.RequestException as error:
+            last_error = error
+        else:
+            if request.status_code not in GITHUB_RETRYABLE_STATUS_CODES:
+                return request
+            last_error = None
+
+        if attempt < GITHUB_REQUEST_ATTEMPTS - 1:
+            time.sleep(2 ** attempt)
+
+    if last_error is not None:
+        raise last_error
+    return request
+
+
 def simple_request(func_name, query, variables):
-    request = requests.post('https://api.github.com/graphql', json={'query': query, 'variables':variables}, headers=HEADERS)
+    try:
+        request = graphql_request(query, variables)
+    except requests.RequestException as error:
+        raise Exception(func_name, ' has failed with a network error:', str(error), QUERY_COUNT) from error
     if request.status_code == 200:
         return request
     raise Exception(func_name, ' has failed with a', request.status_code, request.text, QUERY_COUNT)
@@ -177,7 +209,11 @@ def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my
     }'''
     variables = {'repo_name': repo_name, 'owner': owner, 'cursor': cursor}
     # Preserve partial cache progress when a repository request fails.
-    request = requests.post('https://api.github.com/graphql', json={'query': query, 'variables':variables}, headers=HEADERS)
+    try:
+        request = graphql_request(query, variables)
+    except requests.RequestException as error:
+        force_close_file(data)
+        raise Exception('recursive_loc() has failed with a network error:', str(error), QUERY_COUNT) from error
     if request.status_code == 200:
         if request.json()['data']['repository']['defaultBranchRef'] is not None:
             return loc_counter_one_repo(owner, repo_name, data, request.json()['data']['repository']['defaultBranchRef']['target']['history'], addition_total, deletion_total, my_commits)
