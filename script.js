@@ -31,22 +31,22 @@ document.documentElement.classList.add("motion-ready");
 
 const documentTranslations = {
   en: {
-    title: "Enzo de Matos — Marketing Data Analyst",
-    description: "Portfolio of Enzo de Matos, a Data Analyst based in Paris and Strasbourg.",
-    ogTitle: "Enzo de Matos — Marketing Data Analyst",
-    ogDescription: "Portfolio of Enzo de Matos, a Data Analyst based in Paris and Strasbourg."
+    title: "Enzo de Matos — Data/BI Consultant",
+    description: "Portfolio of Enzo de Matos, a Data/BI Consultant based in Strasbourg.",
+    ogTitle: "Enzo de Matos — Data/BI Consultant",
+    ogDescription: "Portfolio of Enzo de Matos, a Data/BI Consultant based in Strasbourg."
   },
   fr: {
-    title: "Enzo de Matos — Marketing Data Analyst",
-    description: "Portfolio d’Enzo de Matos, Data Analyst basé à Paris et Strasbourg.",
-    ogTitle: "Enzo de Matos — Marketing Data Analyst",
-    ogDescription: "Portfolio d’Enzo de Matos, Data Analyst basé à Paris et Strasbourg."
+    title: "Enzo de Matos — Data/BI Consultant",
+    description: "Portfolio d’Enzo de Matos, Data/BI Consultant basé à Strasbourg.",
+    ogTitle: "Enzo de Matos — Data/BI Consultant",
+    ogDescription: "Portfolio d’Enzo de Matos, Data/BI Consultant basé à Strasbourg."
   },
   es: {
-    title: "Enzo de Matos — Marketing Data Analyst",
-    description: "Portfolio de Enzo de Matos, Data Analyst basado en París y Estrasburgo.",
-    ogTitle: "Enzo de Matos — Marketing Data Analyst",
-    ogDescription: "Portfolio de Enzo de Matos, Data Analyst basado en París y Estrasburgo."
+    title: "Enzo de Matos — Data/BI Consultant",
+    description: "Portfolio de Enzo de Matos, Data/BI Consultant ubicado en Estrasburgo.",
+    ogTitle: "Enzo de Matos — Data/BI Consultant",
+    ogDescription: "Portfolio de Enzo de Matos, Data/BI Consultant ubicado en Estrasburgo."
   }
 };
 
@@ -424,7 +424,7 @@ Object.assign(textTranslations.fr, {
   "Work": "Projets",
   "Data that": "La data qui",
   "moves people": "fait agir",
-  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "Data Analyst orienté CRM : je transforme les données clients et de campagne en ciblages, tableaux de bord et automatisations utilisés au quotidien par les équipes marketing.",
+  "Data/BI Consultant at Lemon Data: I design, develop and modernize data and Business Intelligence solutions, from data integration to visualization and reporting.": "Data/BI Consultant chez Lemon Data : je conçois, développe et modernise des solutions Data et Business Intelligence, de l’intégration des données à la visualisation et au reporting.",
   "Explore my work": "Découvrir mes projets",
   "Selected outcomes": "Résultats sélectionnés",
   "Dashboards": "Tableaux de bord",
@@ -477,7 +477,7 @@ Object.assign(textTranslations.es, {
   "Work": "Proyectos",
   "Data that": "Datos que",
   "moves people": "mueven decisiones",
-  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "Data Analyst orientado a CRM que convierte señales de clientes, rendimiento de campañas y BI en decisiones útiles para los equipos.",
+  "Data/BI Consultant at Lemon Data: I design, develop and modernize data and Business Intelligence solutions, from data integration to visualization and reporting.": "Data/BI Consultant en Lemon Data: diseño, desarrollo y modernizo soluciones de datos y Business Intelligence, desde la integración de datos hasta la visualización y la elaboración de informes.",
   "Explore my work": "Explorar mis proyectos",
   "Selected outcomes": "Resultados seleccionados",
   "Dashboards": "Dashboards",
@@ -1159,11 +1159,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 Object.assign(textTranslations.fr, {
-  "Available": "Disponible",
+  "Employed": "En poste",
   "Jobs": "Postes",
   "Company": "Entreprise",
   "Location": "Lieu",
-  "Sep 2024—Present": "Sept. 2024—aujourd’hui",
+  "Sep 2024—Sep 2026": "Sept. 2024—sept. 2026",
+  "Oct 2026—Present": "Oct. 2026—aujourd’hui",
+  "At Lemon Data, I contribute to the design, development, and modernization of Data & Business Intelligence solutions, from data integration to visualization and reporting.": "Chez Lemon Data, je contribue à la conception, au développement et à la modernisation de solutions Data et Business Intelligence, de l’intégration des données à la visualisation et au reporting.",
+  "Design and optimize data models, develop SQL and dbt transformations, and contribute to building scalable and reliable data architectures.": "Concevoir et optimiser des modèles de données, développer des transformations SQL et dbt, et contribuer à la construction d’architectures de données évolutives et fiables.",
+  "Develop Business Intelligence solutions and interactive dashboards using tools such as Power BI to transform complex data into actionable insights.": "Développer des solutions de Business Intelligence et des tableaux de bord interactifs avec des outils comme Power BI pour transformer des données complexes en informations exploitables.",
+  "Improve data quality and reliability through automated testing, optimized data pipelines, Git version control, and CI/CD practices.": "Améliorer la qualité et la fiabilité des données grâce aux tests automatisés, à l’optimisation des pipelines de données, à la gestion de versions avec Git et aux pratiques CI/CD.",
+  "Support the modernization of traditional BI environments through the adoption of Modern Data Stack technologies and Data Warehouse, Data Lake, and Lakehouse architectures.": "Accompagner la modernisation des environnements BI traditionnels par l’adoption des technologies du Modern Data Stack et d’architectures Data Warehouse, Data Lake et Lakehouse.",
+  "Collaborate with business stakeholders to understand requirements, translate business needs into technical solutions, and deliver tailored data projects.": "Collaborer avec les équipes métier pour comprendre leurs besoins, les traduire en solutions techniques et réaliser des projets data sur mesure.",
+  "Contribute to technical documentation, knowledge sharing, and continuous improvement of data engineering and analytics practices.": "Contribuer à la documentation technique, au partage des connaissances et à l’amélioration continue des pratiques de data engineering et d’analyse de données.",
   "Nov 2023—Sep 2024": "Nov. 2023—sept. 2024",
   "May 2022—Sep 2023": "Mai 2022—sept. 2023",
   "Portrait of Enzo de Matos": "Portrait d’Enzo de Matos",
@@ -1224,11 +1232,20 @@ Object.assign(textTranslations.fr, {
 });
 
 Object.assign(textTranslations.es, {
-  "Available": "Disponible",
+  "Employed": "En activo",
   "Jobs": "Puestos",
   "Company": "Empresa",
   "Location": "Ubicacion",
-  "Sep 2024—Present": "Sept. 2024—actualidad",
+  "Sep 2024—Sep 2026": "Sept. 2024—sept. 2026",
+  "Oct 2026—Present": "Oct. 2026—actualidad",
+  "Strasbourg, France": "Estrasburgo, Francia",
+  "At Lemon Data, I contribute to the design, development, and modernization of Data & Business Intelligence solutions, from data integration to visualization and reporting.": "En Lemon Data, contribuyo al diseño, desarrollo y modernización de soluciones de datos y Business Intelligence, desde la integración de datos hasta la visualización y la elaboración de informes.",
+  "Design and optimize data models, develop SQL and dbt transformations, and contribute to building scalable and reliable data architectures.": "Diseñar y optimizar modelos de datos, desarrollar transformaciones SQL y dbt, y contribuir a la construcción de arquitecturas de datos escalables y fiables.",
+  "Develop Business Intelligence solutions and interactive dashboards using tools such as Power BI to transform complex data into actionable insights.": "Desarrollar soluciones de Business Intelligence y dashboards interactivos con herramientas como Power BI para transformar datos complejos en información útil para la toma de decisiones.",
+  "Improve data quality and reliability through automated testing, optimized data pipelines, Git version control, and CI/CD practices.": "Mejorar la calidad y fiabilidad de los datos mediante pruebas automatizadas, pipelines de datos optimizados, control de versiones con Git y prácticas de CI/CD.",
+  "Support the modernization of traditional BI environments through the adoption of Modern Data Stack technologies and Data Warehouse, Data Lake, and Lakehouse architectures.": "Apoyar la modernización de entornos BI tradicionales mediante la adopción de tecnologías del Modern Data Stack y arquitecturas Data Warehouse, Data Lake y Lakehouse.",
+  "Collaborate with business stakeholders to understand requirements, translate business needs into technical solutions, and deliver tailored data projects.": "Colaborar con los equipos de negocio para comprender sus requisitos, traducir sus necesidades en soluciones técnicas y entregar proyectos de datos a medida.",
+  "Contribute to technical documentation, knowledge sharing, and continuous improvement of data engineering and analytics practices.": "Contribuir a la documentación técnica, al intercambio de conocimientos y a la mejora continua de las prácticas de ingeniería y análisis de datos.",
   "Nov 2023—Sep 2024": "Nov. 2023—sept. 2024",
   "May 2022—Sep 2023": "Mayo 2022—sept. 2023",
   "Portrait of Enzo de Matos": "Retrato de Enzo de Matos",
@@ -1494,7 +1511,6 @@ Object.assign(textTranslations.es, {
 });
 
 textTranslations.en = {
-  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "CRM-focused Data Analyst: I turn customer and campaign data into targeting, dashboards and automations used daily by marketing teams.",
   "Marketing Analyst / Marketing Data Research Analyst": "Marketing Data Analyst (apprenticeship)",
   "Banque Populaire Auvergne Rhone Alpes": "Banque Populaire Auvergne Rhone Alpes",
   "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.": "Customer database segmentation, Adobe Campaign management and Power BI dashboard creation for marketing, sales and CRM teams.",
@@ -1570,7 +1586,6 @@ textTranslations.en = {
 };
 
 Object.assign(textTranslations.es, {
-  "CRM-focused Data Analyst turning customer signals, campaign performance and BI into decisions teams can use.": "Data Analyst orientado a CRM: transformo los datos de clientes y campañas en segmentaciones, dashboards y automatizaciones que los equipos de marketing utilizan a diario.",
   "Marketing Analyst / Marketing Data Research Analyst": "Analista de datos de marketing (en alternancia)",
   "Banque Populaire Auvergne Rhone Alpes": "Banque Populaire Auvergne Rhone Alpes",
   "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.": "Segmentación de bases de clientes, gestión de campañas en Adobe Campaign y creación de dashboards en Power BI para los equipos de marketing, ventas y CRM.",
@@ -1683,13 +1698,43 @@ const terminalSectionIds = [
 
 const terminalExperienceCatalog = [
   {
+    tableRole: "Data/BI Consultant",
+    role: "Data/BI Consultant",
+    tableCompany: "Lemon Data",
+    company: "Lemon Data",
+    tablePeriod: "10/26 -->",
+    period: "Oct 2026—Present",
+    status: "CURRENT",
+    location: "Strasbourg, France",
+    summary: "At Lemon Data, I contribute to the design, development, and modernization of Data & Business Intelligence solutions, from data integration to visualization and reporting.",
+    responsibilities: [
+      "Design and optimize data models, develop SQL and dbt transformations, and contribute to building scalable and reliable data architectures.",
+      "Develop Business Intelligence solutions and interactive dashboards using tools such as Power BI to transform complex data into actionable insights.",
+      "Improve data quality and reliability through automated testing, optimized data pipelines, Git version control, and CI/CD practices.",
+      "Support the modernization of traditional BI environments through the adoption of Modern Data Stack technologies and Data Warehouse, Data Lake, and Lakehouse architectures.",
+      "Collaborate with business stakeholders to understand requirements, translate business needs into technical solutions, and deliver tailored data projects.",
+      "Contribute to technical documentation, knowledge sharing, and continuous improvement of data engineering and analytics practices."
+    ],
+    tags: [
+      "SQL",
+      "dbt",
+      "POWER BI",
+      "GIT",
+      "CI/CD",
+      "MODERN DATA STACK",
+      "DATA WAREHOUSE",
+      "DATA LAKE",
+      "LAKEHOUSE"
+    ]
+  },
+  {
     tableRole: "Marketing Data Analyst",
     role: "Marketing Analyst / Marketing Data Research Analyst",
     tableCompany: "Banque Populaire",
     company: "Banque Populaire Auvergne Rhone Alpes",
-    tablePeriod: "09/24 -->",
-    period: "Sep 2024—Present",
-    status: "CURRENT",
+    tablePeriod: "09/24—09/26",
+    period: "Sep 2024—Sep 2026",
+    status: "ENDED",
     location: "Lyon, France",
     summary: "Customer analytics, segmentation and campaign monitoring for marketing, commercial and CRM teams.",
     responsibilities: [
