@@ -168,6 +168,7 @@ const textTranslations = {
     "View repository": "Voir le dépot",
     "Opening repository": "Ouverture du dépot",
     "Certificate preview": "Aperçu du certificat",
+    "Click to enlarge": "cliquer pour agrandir",
     "Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.": "Dashboard pour comparer la performance d’un catalogue musical, les tendances de streaming et le ROI des campagnes.",
     "Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.": "Cas simulé pour un label indépendant comparant artistes, genres, plateformes et campagnes sur douze mois.",
     "Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.": "Concevoir le modele relationnel, écrire les requêtes SQL, construire le score de performance en Python et organiser le parcours du dashboard.",
@@ -350,6 +351,7 @@ const textTranslations = {
     "View repository": "Ver repositorio",
     "Opening repository": "Abriendo repositorio",
     "Certificate preview": "Vista previa del certificado",
+    "Click to enlarge": "Haz clic para ampliar",
     "Decision tool for tracking catalogue performance, streaming trends and artist investment priorities.": "Herramienta de decision para seguir rendimiento de catalogo, tendencias de streaming y prioridades de inversion en artistas.",
     "Simulated analytics case for an independent music label comparing artists, genres, platforms and campaign ROI over 12 months.": "Caso analytics simulado para un sello independiente comparando artistas, generos, plataformas y ROI de campanas durante 12 meses.",
     "Designed the relational model, wrote business SQL, built a Python scoring pipeline and structured the dashboard journey.": "Diseno del modelo relacional, escritura de SQL de negocio, construccion de un pipeline de scoring en Python y estructuracion del recorrido dashboard.",
@@ -3004,32 +3006,20 @@ function terminalSetupCertificatePreviews() {
   const rows = Array.from(document.querySelectorAll("[data-certificate-previews]"));
   const popover = document.querySelector("[data-certificate-popover]");
   const rail = document.querySelector("[data-certificate-preview-rail]");
-  if (!rows.length || !popover || !rail) return;
+  const viewer = document.getElementById("certificate-viewer");
+  if (!rows.length || !popover || !rail || !viewer) return;
 
   let activeRow = null;
-  let closeTimer = 0;
   let rotationTimer = 0;
-  let pointerX = null;
-  let pointerY = null;
-
-  const clearCloseTimer = () => {
-    if (!closeTimer) return;
-    window.clearTimeout(closeTimer);
-    closeTimer = 0;
-  };
-
-  const clearRotationTimer = () => {
-    if (!rotationTimer) return;
-    window.clearTimeout(rotationTimer);
-    rotationTimer = 0;
-  };
+  let pointerX = 0;
+  let pointerY = 0;
 
   const closePreview = () => {
-    clearCloseTimer();
-    clearRotationTimer();
+    window.clearTimeout(rotationTimer);
     if (activeRow) activeRow.setAttribute("aria-expanded", "false");
     activeRow = null;
     popover.hidden = true;
+    viewer.replaceChildren();
     rail.replaceChildren();
   };
 
@@ -3050,16 +3040,20 @@ function terminalSetupCertificatePreviews() {
     popover.style.top = `${Math.round(top)}px`;
   };
 
-  const openPreview = (row) => {
-    clearCloseTimer();
-    clearRotationTimer();
-    if (activeRow && activeRow !== row) activeRow.setAttribute("aria-expanded", "false");
-
+  const openPreview = (row, expand = false) => {
+    if (activeRow !== row) closePreview();
     activeRow = row;
-    row.setAttribute("aria-expanded", "true");
-    row.setAttribute("aria-controls", popover.id);
-    popover.setAttribute("aria-label", getTranslatedValue("Certificate preview", activeLanguage));
-    rail.replaceChildren();
+
+    if (expand) {
+      popover.hidden = true;
+      row.setAttribute("aria-expanded", "true");
+      viewer.setAttribute("aria-label", getTranslatedValue("Certificate preview", activeLanguage));
+      viewer.showModal();
+      if (rail.firstElementChild) {
+        viewer.append(rail.firstElementChild);
+        return;
+      }
+    }
 
     const title = row.cells?.[0]?.textContent.trim() || getTranslatedValue("Certificate preview", activeLanguage);
     const sources = row.dataset.certificatePreviews.split("|").filter(Boolean);
@@ -3083,7 +3077,7 @@ function terminalSetupCertificatePreviews() {
     };
 
     image.decoding = "async";
-    rail.append(image);
+    (expand ? viewer : rail).append(image);
     sources.slice(1).forEach((source) => {
       const preload = new Image();
       preload.src = source;
@@ -3091,49 +3085,34 @@ function terminalSetupCertificatePreviews() {
     showSource();
     scheduleRotation();
 
-    popover.hidden = false;
+    popover.hidden = expand;
     window.requestAnimationFrame(positionPreview);
   };
 
-  const queueClose = () => {
-    clearCloseTimer();
-    closeTimer = window.setTimeout(() => {
-      if (activeRow === document.activeElement) return;
-      closePreview();
-    }, 140);
-  };
-
   rows.forEach((row) => {
-    row.addEventListener("pointerenter", (event) => {
+    row.setAttribute("aria-controls", viewer.id);
+    const followMouse = (event) => {
+      if (event.pointerType !== "mouse" || viewer.open) return;
       pointerX = event.clientX;
       pointerY = event.clientY;
-      openPreview(row);
-    });
-    row.addEventListener("pointermove", (event) => {
-      pointerX = event.clientX;
-      pointerY = event.clientY;
+      if (activeRow !== row) openPreview(row);
       positionPreview();
+    };
+    row.addEventListener("pointerenter", followMouse);
+    row.addEventListener("pointermove", followMouse);
+    row.addEventListener("pointerleave", () => {
+      if (!viewer.open && activeRow === row) closePreview();
     });
-    row.addEventListener("pointerleave", queueClose);
-    row.addEventListener("focus", () => {
-      pointerX = null;
-      pointerY = null;
-      openPreview(row);
+    row.addEventListener("click", () => openPreview(row, true));
+    row.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openPreview(row, true);
     });
-    row.addEventListener("blur", queueClose);
-    row.addEventListener("click", () => openPreview(row));
   });
 
-  document.addEventListener("pointerdown", (event) => {
-    if (!activeRow) return;
-    if (activeRow.contains(event.target) || popover.contains(event.target)) return;
-    closePreview();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && activeRow) closePreview();
-  });
-
+  viewer.addEventListener("click", () => viewer.close());
+  viewer.addEventListener("close", closePreview);
   window.addEventListener("resize", positionPreview);
   window.addEventListener("scroll", positionPreview, true);
 }

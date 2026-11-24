@@ -382,14 +382,16 @@ ul li::before {
 .action-button:hover .action-hotkey,
 .action-button:focus .action-hotkey,
 .action-button:active .action-hotkey,
-.action-button[aria-expanded="true"] .action-hotkey {
+.action-button[aria-expanded="true"] .action-hotkey,
+.certificate-caption .action-hotkey {
   background: var(--theme-focused-foreground);
 }
 
 .action-button:hover .action-label,
 .action-button:focus .action-label,
 .action-button:active .action-label,
-.action-button[aria-expanded="true"] .action-label {
+.action-button[aria-expanded="true"] .action-label,
+.certificate-caption .action-label {
   box-shadow: inset 0 0 0 2px var(--theme-focused-foreground);
 }
 
@@ -1569,8 +1571,8 @@ kbd,
 }
 
 .certification-table {
-  min-width: 64ch;
-  white-space: nowrap;
+  min-width: 0;
+  white-space: normal;
 }
 
 .certifications-layout {
@@ -1591,65 +1593,55 @@ kbd,
   cursor: pointer;
 }
 
-.certification-checkbox {
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-}
-
-.certification-checkbox input {
-  height: 1px;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 1px;
-}
-
-.certification-checkbox span {
-  background: var(--theme-button-foreground);
-  color: var(--theme-text);
-  display: inline-block;
-  padding: 0 1ch;
-}
-
-.certification-check-cell {
-  width: 1%;
-}
-
 .certificate-popover {
-  background: transparent;
-  box-shadow: none;
-  font-weight: 400;
-  left: 0;
-  max-width: min(21ch, calc(100vw - 2ch));
-  overflow: hidden;
-  padding: 0;
-  pointer-events: none;
   position: fixed;
-  top: 0;
   width: max-content;
+  pointer-events: none;
   z-index: var(--z-index-page-popover, 1200);
-}
-
-.certificate-popover[hidden] {
-  display: none;
-}
-
-.certificate-preview-rail {
-  background: #ffffff;
-  display: flex;
-  gap: 1ch;
-  width: max-content;
 }
 
 .certificate-preview-rail img {
   display: block;
-  height: auto;
-  max-height: calc(var(--line) * 9);
-  max-width: min(21ch, calc(100vw - 2ch));
-  object-fit: contain;
   width: auto;
+  max-width: min(23rem, 42vw);
+  max-height: 38vh;
+  background: white;
+  box-shadow: 0 2px 8px #0003;
+}
+
+.certificate-caption {
+  width: fit-content;
+  margin-top: 0.35rem;
+}
+
+.certificate-viewer[open] {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background: #101010f5;
+  cursor: zoom-out;
+  overscroll-behavior: contain;
+}
+
+.certificate-viewer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  min-height: 0;
+}
+
+.certificate-viewer img[src$="/liora-data-analyst-niv3.png"],
+.certificate-viewer img[src$="/techaway-qcm-python.png"] {
+  background: white;
 }
 
 .languages-contact-row {
@@ -1827,8 +1819,8 @@ kbd,
     min-width: 100%;
   }
 
-  .certification-table {
-    min-width: 64ch;
+  .certification-table td {
+    padding-block: 0.35em;
   }
 
   .database-pagination {
