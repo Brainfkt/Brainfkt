@@ -90,11 +90,13 @@ Le secret GitHub Actions `ACCESS_TOKEN` doit exister pour que le script puisse i
 
 ## Site portfolio
 
-Le site est un site statique en HTML, CSS et JavaScript. Il ne depend pas d'un framework et ne necessite pas de build.
+GitHub Pages sert les pages HTML générées à la racine et dans `en/`, `fr/` et `es/`. Pour modifier le contenu, éditer `_site_src/portfolio.html` ou les traductions JSON de ce dossier. Régénérer les pages avec `python -m pip install lxml` puis `python build_site.py` et inclure les fichiers générés dans le même commit.
+
+L’accueil présente le profil. Chaque rubrique et chaque fiche projet possède sa page dans les trois langues. Les chemins des rubriques sont définis dans `SECTIONS` dans le générateur.
 
 Fichiers principaux :
 
-- `index.html` contient la structure ;
+- `index.html` est l’accueil anglais généré ;
 - `styles.css` contient le design responsive ;
 - `script.js` contient les interactions ;
 - `assets/` contient les logos et images ;

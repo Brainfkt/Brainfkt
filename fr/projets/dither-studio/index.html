@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr" data-theme="light" data-appearance="system" data-tint="none">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Application web privée pour appliquer des effets de dithering reproductibles à des images et des GIF.">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DITHER STUDIO — Enzo de Matos">
+    <meta property="og:description" content="Application web privée pour appliquer des effets de dithering reproductibles à des images et des GIF.">
+    <title>DITHER STUDIO — Enzo de Matos</title>
+    <link rel="preload" href="/assets/fonts/sfmono-square-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32" data-dynamic-favicon="32x32">
+    <link rel="icon" href="/assets/favicon-16x16.png" type="image/png" sizes="16x16" data-dynamic-favicon="16x16">
+    <link rel="shortcut icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32" data-dynamic-favicon="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#808080">
+    <script>
+      (() => {
+        let appearance = "system";
+        let tint = "none";
+
+        try {
+          appearance = localStorage.getItem("brainfkt-portfolio-appearance") || "system";
+          tint = localStorage.getItem("brainfkt-portfolio-tint") || "none";
+        } catch {
+          // Storage is optional.
+        }
+
+        const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.appearance = appearance;
+        document.documentElement.dataset.theme = appearance === "system"
+          ? (prefersDark ? "dark" : "light")
+          : appearance;
+        document.documentElement.dataset.tint = tint;
+      })();
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=portfolio-home-7">
+  <meta property="og:url" content="https://github.human---think.ing/fr/projets/dither-studio/"><link rel="canonical" href="https://github.human---think.ing/fr/projets/dither-studio/"><link rel="alternate" hreflang="en" href="https://github.human---think.ing/en/projects/dither-studio/"><link rel="alternate" hreflang="fr" href="https://github.human---think.ing/fr/projets/dither-studio/"><link rel="alternate" hreflang="es" href="https://github.human---think.ing/es/proyectos/dither-studio/"><link rel="alternate" hreflang="x-default" href="https://github.human---think.ing/en/projects/dither-studio/"></head>
+  <body>
+    <div class="command-bar" data-command-bar role="toolbar" aria-label="Commandes du portfolio">
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="language-command-menu" data-command-button="language">
+          <span class="action-hotkey" data-no-translate>⌃+L</span>
+          <span class="action-label">Langue</span>
+        </button>
+        <div class="command-menu" id="language-command-menu" role="menu" aria-label="Sélection de langue" data-command-menu="language" hidden>
+          <a role="menuitemradio" aria-checked="false" data-menu-item data-language-choice="en" href="/en/projects/dither-studio/" lang="en" hreflang="en">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>English</span>
+          </a>
+          <a role="menuitemradio" aria-checked="true" data-menu-item data-language-choice="fr" href="/fr/projets/dither-studio/" lang="fr" hreflang="fr">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>Français</span>
+          </a>
+          <a role="menuitemradio" aria-checked="false" data-menu-item data-language-choice="es" href="/es/proyectos/dither-studio/" lang="es" hreflang="es">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>Español</span>
+          </a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Fermer</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="appearance-command-menu" data-command-button="appearance">
+          <span class="action-hotkey" data-no-translate>⌃+A</span>
+          <span class="action-label">Apparence</span>
+        </button>
+        <div class="command-menu" id="appearance-command-menu" role="menu" aria-label="Sélection de l’apparence" data-command-menu="appearance" hidden>
+          <button type="button" role="menuitemradio" aria-checked="true" data-menu-item data-appearance-choice="system">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Systeme</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-appearance-choice="light">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Clair</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-appearance-choice="dark">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Sombre</span>
+          </button>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Fermer</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="tint-command-menu" data-command-button="tint">
+          <span class="action-hotkey" data-no-translate>⌃+T</span>
+          <span class="action-label">Teinte</span>
+        </button>
+        <div class="command-menu" id="tint-command-menu" role="menu" aria-label="Sélection de la teinte" data-command-menu="tint" hidden>
+          <button type="button" role="menuitemradio" aria-checked="true" data-menu-item data-tint-choice="none"><span class="menu-icon" aria-hidden="true">⊹</span><span>Aucune</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="blue"><span class="menu-icon" aria-hidden="true">⊹</span><span>Bleu</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="green"><span class="menu-icon" aria-hidden="true">⊹</span><span>Vert</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="orange"><span class="menu-icon" aria-hidden="true">⊹</span><span>Orange</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="purple"><span class="menu-icon" aria-hidden="true">⊹</span><span>Violet</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="red"><span class="menu-icon" aria-hidden="true">⊹</span><span>Rouge</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="yellow"><span class="menu-icon" aria-hidden="true">⊹</span><span>Jaune</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="pink"><span class="menu-icon" aria-hidden="true">⊹</span><span>Rose</span></button>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Fermer</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="navigation-command-menu" data-command-button="navigation">
+          <span class="action-hotkey" data-no-translate>⌃+N</span>
+          <span class="action-label">Navigation</span>
+        </button>
+        <div class="command-menu" id="navigation-command-menu" role="menu" aria-label="Navigation du portfolio" data-command-menu="navigation" hidden>
+          <a role="menuitem" data-menu-item data-navigation-target="experience" href="/fr/experience/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Postes</span><kbd data-no-translate>⌥+1</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="education" href="/fr/formation/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Formation</span><kbd data-no-translate>⌥+2</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="skills" href="/fr/competences/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Compétences</span><kbd data-no-translate>⌥+3</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="projects" href="/fr/projets/" aria-current="location"><span class="menu-icon" aria-hidden="true">⊹</span><span>Projets</span><kbd data-no-translate>⌥+4</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="certifications" href="/fr/certifications/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Certifications</span><kbd data-no-translate>⌥+5</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="languages" href="/fr/langues/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Langues</span><kbd data-no-translate>⌥+6</kbd></a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Fermer</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="actions-command-menu" data-command-button="actions">
+          <span class="action-hotkey" data-no-translate>⌃+O</span>
+          <span class="action-label">Actions</span>
+        </button>
+        <div class="command-menu" id="actions-command-menu" role="menu" aria-label="Actions CV et contact" data-command-menu="actions" hidden>
+          <a href="/cv-enzo-de-matos.pdf" download role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Télécharger le CV</span></a>
+          <a href="/cv-enzo-de-matos.pdf" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Ouvrir le CV</span></a>
+          <a href="mailto:enzo.de_matos@icloud.com" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Envoyer un mail</span></a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Fermer</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="terminal-root">
+      <header class="grid identity-grid" id="profile" data-section-anchor tabindex="-1">
+        <section class="identity-row">
+          <div class="identity-lockup">
+            <img class="profile-portrait" src="/assets/portrait_cv.png" alt="Portrait d’Enzo de Matos" width="68" height="80" decoding="async">
+            <p class="identity-line">
+              <strong data-no-translate>ENZO DE MATOS</strong>
+              <span class="identity-date-status">
+                <time class="badge" datetime="2026-07-27" data-current-date data-no-translate>07/27/2026</time>
+                <span class="availability-status"><span>En poste</span></span>
+              </span>
+            </p>
+          </div>
+          <div class="profile-card-rail">
+            <article class="terminal-card profile-info-card">
+              <header class="terminal-card-header"><span aria-hidden="true"></span><h2>À propos</h2><span aria-hidden="true"></span></header>
+              <div class="terminal-card-body">
+                <p>Data/BI Consultant chez Lemon Data : je conçois, développe et modernise des solutions Data et Business Intelligence, de l’intégration des données à la visualisation et au reporting.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="profile-meta-row">
+          <p class="tag-row profile-tag-row"><span data-no-translate>Strasbourg, France</span> · <span data-no-translate>Data engineering</span> · <span data-no-translate>BI</span> · <span data-no-translate>Modern Data Stack</span></p>
+          <div class="profile-actions-control">
+            <button class="action-button command-trigger profile-actions-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="links-command-menu" data-command-button="links">
+              <span class="action-label">Liens</span>
+            </button>
+            <div class="command-menu" id="links-command-menu" role="menu" aria-label="Profils externes" data-command-menu="links" hidden>
+              <a href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Profil LinkedIn</span></a>
+              <a href="https://github.com/Brainfkt" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Profil GitHub</span></a>
+              <a href="https://gitlab.lemon-data.cloud/edematos" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Profil GitLab</span></a>
+              <div class="command-menu-footer"><kbd>Esc</kbd><span>Fermer</span></div>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main class="grid portfolio-content" id="main-content" tabindex="-1">
+        <noscript><nav aria-label="Sélection de langue"><a href="/en/projects/dither-studio/">English</a> · <a href="/fr/projets/dither-studio/">Français</a> · <a href="/es/proyectos/dither-studio/">Español</a></nav><nav aria-label="Navigation du portfolio"><a href="/fr/experience/">Postes</a> · <a href="/fr/formation/">Formation</a> · <a href="/fr/competences/">Compétences</a> · <a href="/fr/projets/">Projets</a> · <a href="/fr/certifications/">Certifications</a> · <a href="/fr/langues/">Langues</a></nav><nav aria-label="Profils externes"><a href="https://linkedin.com/in/e-d-m">Profil LinkedIn</a> · <a href="https://github.com/Brainfkt">Profil GitHub</a> · <a href="https://gitlab.lemon-data.cloud/edematos">Profil GitLab</a></nav><nav aria-label="Sélection de projet"><a href="/fr/projets/bank-churners/">BANK CHURNERS</a> · <a href="/fr/projets/pricelab/">PRICELAB</a> · <a href="/fr/projets/repospace/">REPOSPACE</a> · <a href="/fr/projets/music-label/">MUSIC LABEL PERFORMANCE ANALYTICS</a> · <a href="/fr/projets/leadagotchi/">LEADAGOTCHI</a> · <a href="/fr/projets/whisperauto/">WHISPERAUTO</a> · <a href="/fr/projets/dither-studio/">DITHER STUDIO</a> · <a href="/fr/projets/job-crm/">MY APPLICATIONS / JOB CRM</a></nav></noscript><section class="terminal-section projects-section" id="projects" tabindex="-1" data-section-anchor>
+          <article class="terminal-card projects-combobox" aria-label="Projets">
+            <header class="terminal-card-header"><span aria-hidden="true"></span><h2>Projets</h2><span aria-hidden="true"></span></header>
+            <div class="terminal-card-body">
+              <div class="project-picker" data-project-picker>
+                <button class="action-button project-picker-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="project-picker-menu" data-project-picker-trigger>
+                  <span class="action-hotkey" aria-hidden="true">↘</span>
+                  <span class="action-label">Sélectionner un projet</span>
+                </button>
+                <div class="command-menu project-picker-menu" id="project-picker-menu" role="menu" aria-label="Sélection de projet" data-project-picker-menu hidden>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="bank-churners" href="/fr/projets/bank-churners/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>BANK CHURNERS</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="pricelab" href="/fr/projets/pricelab/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>PRICELAB</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="repospace" href="/fr/projets/repospace/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>REPOSPACE</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="music-label" href="/fr/projets/music-label/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>MUSIC LABEL PERFORMANCE ANALYTICS</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="leadagotchi" href="/fr/projets/leadagotchi/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>LEADAGOTCHI</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="whisperauto" href="/fr/projets/whisperauto/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>WHISPERAUTO</span></a>
+                  <a role="menuitemradio" aria-checked="true" data-project-choice="dither-studio" href="/fr/projets/dither-studio/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>DITHER STUDIO</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="job-crm" href="/fr/projets/job-crm/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>MY APPLICATIONS / JOB CRM</span></a>
+                  <div class="command-menu-footer"><kbd>Esc</kbd><span>Fermer</span></div>
+                </div>
+              </div>
+
+              <div class="project-combobox-list" data-project-list>
+                <article class="project-combobox-item" data-project-item="dither-studio">
+                  <header class="project-double-header"><span aria-hidden="true"></span><h1 data-no-translate>DITHER STUDIO</h1><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Application web privée pour appliquer des effets de dithering reproductibles à des images et des GIF.</div>
+                    <p class="tag-row" data-no-translate>REACT · TYPESCRIPT · VITE · GIF · IMAGE PROCESSING</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Contexte</strong><p>Pouvoir tester, mémoriser et réappliquer les mêmes traitements visuels sur un lot de fichiers.</p></div>
+                        <div class="project-detail"><strong>Role</strong><p>Séparer l’interface React, le moteur d’image, la persistance des réglages et le traitement en arriere-plan avec des workers.</p></div>
+                        <div class="project-detail"><strong>Livrable</strong><p>Application avec aperçu des variations, palettes et presets personnalisés, traitement par lots et exports ZIP.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <button class="action-button project-repo-button project-repo-button-private" type="button" disabled>
+                        <span class="action-hotkey project-repo-lock" aria-hidden="true">
+                          <svg viewbox="0 0 16 16" focusable="false"><path d="M5.25 7V4.75a2.75 2.75 0 0 1 5.5 0V7"></path><rect x="3.5" y="7" width="9" height="7"></rect></svg>
+                        </span>
+                        <span class="action-label">Dépot privé</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                </div>
+
+            </div>
+          </article>
+        </section>
+
+        </main>
+
+      <footer class="grid site-footer">
+        <p><span id="year" data-no-translate>2026</span> <span data-no-translate>BRAINFKT</span> -- <span>Tous droits réservés</span> <span data-no-translate>(C) *</span> <a data-home-link href="/fr/">Retour à l’accueil</a></p>
+      </footer>
+    </div>
+
+    <script src="/fr/strings.js" defer></script><script src="/script.js?v=portfolio-home-7" defer></script>
+  </body>
+</html>

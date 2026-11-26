@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es" data-theme="light" data-appearance="system" data-tint="none">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pipeline de scoring de churn bancario, desde el control de los datos hasta la explicación de las predicciones en Streamlit.">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BANK CHURNERS — Enzo de Matos">
+    <meta property="og:description" content="Pipeline de scoring de churn bancario, desde el control de los datos hasta la explicación de las predicciones en Streamlit.">
+    <title>BANK CHURNERS — Enzo de Matos</title>
+    <link rel="preload" href="/assets/fonts/sfmono-square-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32" data-dynamic-favicon="32x32">
+    <link rel="icon" href="/assets/favicon-16x16.png" type="image/png" sizes="16x16" data-dynamic-favicon="16x16">
+    <link rel="shortcut icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32" data-dynamic-favicon="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#808080">
+    <script>
+      (() => {
+        let appearance = "system";
+        let tint = "none";
+
+        try {
+          appearance = localStorage.getItem("brainfkt-portfolio-appearance") || "system";
+          tint = localStorage.getItem("brainfkt-portfolio-tint") || "none";
+        } catch {
+          // Storage is optional.
+        }
+
+        const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.appearance = appearance;
+        document.documentElement.dataset.theme = appearance === "system"
+          ? (prefersDark ? "dark" : "light")
+          : appearance;
+        document.documentElement.dataset.tint = tint;
+      })();
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=portfolio-home-7">
+  <meta property="og:url" content="https://github.human---think.ing/es/proyectos/bank-churners/"><link rel="canonical" href="https://github.human---think.ing/es/proyectos/bank-churners/"><link rel="alternate" hreflang="en" href="https://github.human---think.ing/en/projects/bank-churners/"><link rel="alternate" hreflang="fr" href="https://github.human---think.ing/fr/projets/bank-churners/"><link rel="alternate" hreflang="es" href="https://github.human---think.ing/es/proyectos/bank-churners/"><link rel="alternate" hreflang="x-default" href="https://github.human---think.ing/en/projects/bank-churners/"></head>
+  <body>
+    <div class="command-bar" data-command-bar role="toolbar" aria-label="Comandos del portfolio">
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="language-command-menu" data-command-button="language">
+          <span class="action-hotkey" data-no-translate>⌃+L</span>
+          <span class="action-label">Idioma</span>
+        </button>
+        <div class="command-menu" id="language-command-menu" role="menu" aria-label="Selección de idioma" data-command-menu="language" hidden>
+          <a role="menuitemradio" aria-checked="false" data-menu-item data-language-choice="en" href="/en/projects/bank-churners/" lang="en" hreflang="en">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>English</span>
+          </a>
+          <a role="menuitemradio" aria-checked="false" data-menu-item data-language-choice="fr" href="/fr/projets/bank-churners/" lang="fr" hreflang="fr">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>Français</span>
+          </a>
+          <a role="menuitemradio" aria-checked="true" data-menu-item data-language-choice="es" href="/es/proyectos/bank-churners/" lang="es" hreflang="es">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>Español</span>
+          </a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Cerrar</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="appearance-command-menu" data-command-button="appearance">
+          <span class="action-hotkey" data-no-translate>⌃+A</span>
+          <span class="action-label">Apariencia</span>
+        </button>
+        <div class="command-menu" id="appearance-command-menu" role="menu" aria-label="Selección de apariencia" data-command-menu="appearance" hidden>
+          <button type="button" role="menuitemradio" aria-checked="true" data-menu-item data-appearance-choice="system">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Sistema</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-appearance-choice="light">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Claro</span>
+          </button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-appearance-choice="dark">
+            <span class="menu-icon" aria-hidden="true">⊹</span><span>Oscuro</span>
+          </button>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Cerrar</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="tint-command-menu" data-command-button="tint">
+          <span class="action-hotkey" data-no-translate>⌃+T</span>
+          <span class="action-label">Tinte</span>
+        </button>
+        <div class="command-menu" id="tint-command-menu" role="menu" aria-label="Selección de tinte" data-command-menu="tint" hidden>
+          <button type="button" role="menuitemradio" aria-checked="true" data-menu-item data-tint-choice="none"><span class="menu-icon" aria-hidden="true">⊹</span><span>Ninguno</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="blue"><span class="menu-icon" aria-hidden="true">⊹</span><span>Azul</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="green"><span class="menu-icon" aria-hidden="true">⊹</span><span>Verde</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="orange"><span class="menu-icon" aria-hidden="true">⊹</span><span>Naranja</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="purple"><span class="menu-icon" aria-hidden="true">⊹</span><span>Morado</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="red"><span class="menu-icon" aria-hidden="true">⊹</span><span>Rojo</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="yellow"><span class="menu-icon" aria-hidden="true">⊹</span><span>Amarillo</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-menu-item data-tint-choice="pink"><span class="menu-icon" aria-hidden="true">⊹</span><span>Rosa</span></button>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Cerrar</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="navigation-command-menu" data-command-button="navigation">
+          <span class="action-hotkey" data-no-translate>⌃+N</span>
+          <span class="action-label">Navegacion</span>
+        </button>
+        <div class="command-menu" id="navigation-command-menu" role="menu" aria-label="Navegación del portfolio" data-command-menu="navigation" hidden>
+          <a role="menuitem" data-menu-item data-navigation-target="experience" href="/es/experiencia/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Puestos</span><kbd data-no-translate>⌥+1</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="education" href="/es/formacion/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Formación</span><kbd data-no-translate>⌥+2</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="skills" href="/es/competencias/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Competencias</span><kbd data-no-translate>⌥+3</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="projects" href="/es/proyectos/" aria-current="location"><span class="menu-icon" aria-hidden="true">⊹</span><span>Proyectos</span><kbd data-no-translate>⌥+4</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="certifications" href="/es/certificaciones/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Certificaciones</span><kbd data-no-translate>⌥+5</kbd></a>
+          <a role="menuitem" data-menu-item data-navigation-target="languages" href="/es/idiomas/"><span class="menu-icon" aria-hidden="true">⊹</span><span>Idiomas</span><kbd data-no-translate>⌥+6</kbd></a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Cerrar</span></div>
+        </div>
+      </div>
+
+      <div class="command-control">
+        <button class="action-button command-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="actions-command-menu" data-command-button="actions">
+          <span class="action-hotkey" data-no-translate>⌃+O</span>
+          <span class="action-label">Acciones</span>
+        </button>
+        <div class="command-menu" id="actions-command-menu" role="menu" aria-label="Acciones de CV y contacto" data-command-menu="actions" hidden>
+          <a href="/cv-enzo-de-matos.pdf" download role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Descargar CV</span></a>
+          <a href="/cv-enzo-de-matos.pdf" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Abrir CV</span></a>
+          <a href="mailto:enzo.de_matos@icloud.com" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Enviar un correo</span></a>
+          <div class="command-menu-footer"><kbd>Esc</kbd><span>Cerrar</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="terminal-root">
+      <header class="grid identity-grid" id="profile" data-section-anchor tabindex="-1">
+        <section class="identity-row">
+          <div class="identity-lockup">
+            <img class="profile-portrait" src="/assets/portrait_cv.png" alt="Retrato de Enzo de Matos" width="68" height="80" decoding="async">
+            <p class="identity-line">
+              <strong data-no-translate>ENZO DE MATOS</strong>
+              <span class="identity-date-status">
+                <time class="badge" datetime="2026-07-27" data-current-date data-no-translate>07/27/2026</time>
+                <span class="availability-status"><span>En activo</span></span>
+              </span>
+            </p>
+          </div>
+          <div class="profile-card-rail">
+            <article class="terminal-card profile-info-card">
+              <header class="terminal-card-header"><span aria-hidden="true"></span><h2>Acerca de</h2><span aria-hidden="true"></span></header>
+              <div class="terminal-card-body">
+                <p>Data/BI Consultant en Lemon Data: diseño, desarrollo y modernizo soluciones de datos y Business Intelligence, desde la integración de datos hasta la visualización y la elaboración de informes.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="profile-meta-row">
+          <p class="tag-row profile-tag-row"><span data-no-translate>Strasbourg, France</span> · <span data-no-translate>Data engineering</span> · <span data-no-translate>BI</span> · <span data-no-translate>Modern Data Stack</span></p>
+          <div class="profile-actions-control">
+            <button class="action-button command-trigger profile-actions-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="links-command-menu" data-command-button="links">
+              <span class="action-label">Enlaces</span>
+            </button>
+            <div class="command-menu" id="links-command-menu" role="menu" aria-label="Perfiles externos" data-command-menu="links" hidden>
+              <a href="https://linkedin.com/in/e-d-m" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Perfil de LinkedIn</span></a>
+              <a href="https://github.com/Brainfkt" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Perfil de GitHub</span></a>
+              <a href="https://gitlab.lemon-data.cloud/edematos" target="_blank" rel="noreferrer" role="menuitem" data-menu-item data-action-link><span class="menu-icon" aria-hidden="true">⊹</span><span>Perfil de GitLab</span></a>
+              <div class="command-menu-footer"><kbd>Esc</kbd><span>Cerrar</span></div>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main class="grid portfolio-content" id="main-content" tabindex="-1">
+        <noscript><nav aria-label="Selección de idioma"><a href="/en/projects/bank-churners/">English</a> · <a href="/fr/projets/bank-churners/">Français</a> · <a href="/es/proyectos/bank-churners/">Español</a></nav><nav aria-label="Navegación del portfolio"><a href="/es/experiencia/">Puestos</a> · <a href="/es/formacion/">Formación</a> · <a href="/es/competencias/">Competencias</a> · <a href="/es/proyectos/">Proyectos</a> · <a href="/es/certificaciones/">Certificaciones</a> · <a href="/es/idiomas/">Idiomas</a></nav><nav aria-label="Perfiles externos"><a href="https://linkedin.com/in/e-d-m">Perfil de LinkedIn</a> · <a href="https://github.com/Brainfkt">Perfil de GitHub</a> · <a href="https://gitlab.lemon-data.cloud/edematos">Perfil de GitLab</a></nav><nav aria-label="Selección de proyecto"><a href="/es/proyectos/bank-churners/">BANK CHURNERS</a> · <a href="/es/proyectos/pricelab/">PRICELAB</a> · <a href="/es/proyectos/repospace/">REPOSPACE</a> · <a href="/es/proyectos/music-label/">MUSIC LABEL PERFORMANCE ANALYTICS</a> · <a href="/es/proyectos/leadagotchi/">LEADAGOTCHI</a> · <a href="/es/proyectos/whisperauto/">WHISPERAUTO</a> · <a href="/es/proyectos/dither-studio/">DITHER STUDIO</a> · <a href="/es/proyectos/job-crm/">MY APPLICATIONS / JOB CRM</a></nav></noscript><section class="terminal-section projects-section" id="projects" tabindex="-1" data-section-anchor>
+          <article class="terminal-card projects-combobox" aria-label="Proyectos">
+            <header class="terminal-card-header"><span aria-hidden="true"></span><h2>Proyectos</h2><span aria-hidden="true"></span></header>
+            <div class="terminal-card-body">
+              <div class="project-picker" data-project-picker>
+                <button class="action-button project-picker-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="project-picker-menu" data-project-picker-trigger>
+                  <span class="action-hotkey" aria-hidden="true">↘</span>
+                  <span class="action-label">Seleccionar proyecto</span>
+                </button>
+                <div class="command-menu project-picker-menu" id="project-picker-menu" role="menu" aria-label="Selección de proyecto" data-project-picker-menu hidden>
+                  <a role="menuitemradio" aria-checked="true" data-project-choice="bank-churners" href="/es/proyectos/bank-churners/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>BANK CHURNERS</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="pricelab" href="/es/proyectos/pricelab/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>PRICELAB</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="repospace" href="/es/proyectos/repospace/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>REPOSPACE</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="music-label" href="/es/proyectos/music-label/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>MUSIC LABEL PERFORMANCE ANALYTICS</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="leadagotchi" href="/es/proyectos/leadagotchi/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>LEADAGOTCHI</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="whisperauto" href="/es/proyectos/whisperauto/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>WHISPERAUTO</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="dither-studio" href="/es/proyectos/dither-studio/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>DITHER STUDIO</span></a>
+                  <a role="menuitemradio" aria-checked="false" data-project-choice="job-crm" href="/es/proyectos/job-crm/"><span class="menu-icon" aria-hidden="true">⊹</span><span data-no-translate>MY APPLICATIONS / JOB CRM</span></a>
+                  <div class="command-menu-footer"><kbd>Esc</kbd><span>Cerrar</span></div>
+                </div>
+              </div>
+
+              <div class="project-combobox-list" data-project-list>
+                <article class="project-combobox-item" data-project-item="bank-churners">
+                  <header class="project-double-header"><span aria-hidden="true"></span><h1 data-no-translate>BANK CHURNERS</h1><span aria-hidden="true"></span></header>
+                  <div class="project-double-body">
+                    <div class="project-alert">Pipeline de scoring de churn bancario, desde el control de los datos hasta la explicación de las predicciones en Streamlit.</div>
+                    <p class="tag-row" data-no-translate>PYTHON · XGBOOST · SHAP · STREAMLIT · CRM</p>
+                    <div class="project-details-section">
+                      <div class="project-detail-stack">
+                        <div class="project-detail"><strong>Contexto</strong><p>Caso simulado de abandono de tarjetas de crédito: identificar clientes en riesgo y ayudar a un equipo de CRM a priorizar las acciones de retención.</p></div>
+                        <div class="project-detail"><strong>Rol</strong><p>Auditar los datos, crear las variables, tratar el desequilibrio de clases, comparar los modelos, elegir el umbral de decisión y explicar las predicciones con SHAP.</p></div>
+                        <div class="project-detail"><strong>Entregable</strong><p>Aplicación Streamlit documentada con scores individuales, perfiles de riesgo, pruebas y un umbral configurado para priorizar los clientes a contactar.</p></div>
+                      </div>
+                    </div>
+                    <div class="project-combobox-actions">
+                      <a class="action-button project-repo-button project-repo-button-public" href="https://github.com/Brainfkt/Bank-Churners">
+                        <span class="action-hotkey" aria-hidden="true">★</span>
+                        <span class="action-label">Ver repositorio</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
+                </div>
+
+            </div>
+          </article>
+        </section>
+
+        </main>
+
+      <footer class="grid site-footer">
+        <p><span id="year" data-no-translate>2026</span> <span data-no-translate>BRAINFKT</span> -- <span>Todos los derechos reservados</span> <span data-no-translate>(C) *</span> <a data-home-link href="/es/">Volver al inicio</a></p>
+      </footer>
+    </div>
+
+    <script src="/es/strings.js" defer></script><script src="/script.js?v=portfolio-home-7" defer></script>
+  </body>
+</html>
