@@ -35,6 +35,62 @@ function updateCurrentDate(language = activeLanguage) {
   currentDate.setAttribute("datetime", `${fullYear}-${month}-${day}`);
 }
 
+function setupGlassesReflection() {
+  const drawing = document.querySelector(".braille-face");
+  if (!drawing) return;
+
+  const original = drawing.textContent;
+  const rows = original.split("\n");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  // Only the solid interiors of the two lenses can change, never the bridge or the hand.
+  const lenses = [
+    { row: 5, left: [10, 17], right: [20, 26] },
+    { row: 6, left: [11, 17], right: [19, 25] },
+    { row: 7, left: [13, 15], right: [22, 22] }
+  ];
+  const frames = [];
+  for (let column = 10; column <= 29; column++) {
+    const frame = rows.slice();
+    for (const { row, left, right } of lenses) {
+      const cells = Array.from(rows[row]);
+      for (const [offset, shade] of ["⣷", "⡇", "⣾"].entries()) {
+        const x = column - (row - 5) - offset;
+        if (cells[x] === "⣿" && ((x >= left[0] && x <= left[1]) || (x >= right[0] && x <= right[1]))) {
+          cells[x] = shade;
+        }
+      }
+      frame[row] = cells.join("");
+    }
+    frames.push(frame.join("\n"));
+  }
+
+  let timer;
+  let index;
+  function advance() {
+    if (index === frames.length) {
+      drawing.textContent = original;
+      index = 0;
+      timer = window.setTimeout(advance, 10_000);
+    } else {
+      drawing.textContent = frames[index++];
+      timer = window.setTimeout(advance, 30);
+    }
+  }
+
+  function restart() {
+    window.clearTimeout(timer);
+    drawing.textContent = original;
+    index = 0;
+    if (!reducedMotion.matches && !document.hidden) timer = window.setTimeout(advance, 500);
+  }
+
+  reducedMotion.addEventListener("change", restart);
+  document.addEventListener("visibilitychange", restart);
+  restart();
+}
+
+setupGlassesReflection();
+
 // Old portfolio bookmarks pointed to sections on the language home page.
 function followLegacySectionLink() {
   const target = window.location.hash.slice(1);

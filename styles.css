@@ -693,6 +693,59 @@ kbd,
   padding-top: 0;
 }
 
+/* Dot spacing and blank-cell widths follow the supplied Braille drawing. */
+@font-face {
+  font-family: "Portfolio Braille";
+  src: url("assets/fonts/portfolio-braille.woff?v=2") format("woff");
+  unicode-range: U+2800-28FF;
+}
+
+/* In the caption, widen the blank Braille cell from 667 to 772 font units
+   so it occupies the same column as a cell containing dots. */
+@font-face {
+  font-family: "Caption Braille Space";
+  src: url("assets/fonts/portfolio-braille.woff?v=2") format("woff");
+  unicode-range: U+2800;
+  size-adjust: 115.742129%;
+}
+
+.braille-frame {
+  margin-block: var(--line);
+  container-type: inline-size;
+}
+
+.braille-face {
+  font-family: "Portfolio Braille", var(--font-family-mono);
+  /* The widest line occupies 26.8 em. Scale both axes together. */
+  font-size: min(15px, 3.73cqi);
+  line-height: 1.333333;
+  width: max-content;
+  margin-inline: auto;
+  white-space: pre;
+}
+
+.braille-caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .65em .9em;
+  margin-top: var(--line);
+  font-size: min(11px, 2.55cqi);
+}
+
+.braille-caption pre {
+  font-family: "Caption Braille Space", "Portfolio Braille", var(--font-family-mono);
+  font-size: inherit;
+  line-height: 1.333333;
+}
+
+.quality-note {
+  margin: calc(var(--line) / 2) 0 0;
+  text-align: center;
+  text-wrap: balance;
+}
+
 .terminal-section {
   display: block;
   scroll-margin-top: calc(var(--command-bar-height) + var(--line));
